@@ -1,6 +1,7 @@
 
 
-html, body {
+html, body { 
+    user-select: none;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -91,3 +92,14 @@ h1, h2, p {
 
     cursor : pointer;
 }
+
+.menu{
+    display: flex; 
+    margin: auto;
+}
+
+.menuItem{
+    margin: 10px;
+    color: aliceblue; 
+}
+ 
