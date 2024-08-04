@@ -2,3 +2,6 @@
 **/~*
 # pas de fichier test ou marqué d'un diese
 **/#*
+
+#pas de fichiers cachés
+**/.*
