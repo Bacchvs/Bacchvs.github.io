@@ -19,6 +19,123 @@ if (language === "fr"){
     CVname = "CV_Arnaud_SENECAUT_Biologie_EN.pdf"
 }
 
+
+// Permet de scroller à la bonne section
+
+function scrollToSection(id) {
+    const targetElement = document.getElementById(id);
+    if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+function menuUpdateSelectionMark(menu, target){
+    for (let i = 0; i<menu.children.length; i++){
+        menu.children[i].classList.remove("menu_selected");
+    };
+
+    target.classList.add("menu_selected");
+}
+
+function menuClick(menu, event){ 
+
+    // ca le fera déjà quand il verra qu'on est dessus l'élément 
+    // menuUpdateSelectionMark(menu, event.target);
+    
+
+    scrollToSection(event.target.getAttribute('target'));
+}
+
+
+
+function getMainMenu(){
+    return  document.getElementsByClassName("menu")[0];
+}
+
+function mainMenuUpdateSelectionMark(target_name){
+    let main_menu = getMainMenu();
+
+    let main_menu_children = main_menu.children;
+    
+    let menuItem = null;
+
+    for (let i = 0; i < main_menu_children.length; i++){
+        if (main_menu_children[i].getAttribute('target') == target_name){
+            menuItem = main_menu_children[i];
+            break;
+        }
+    }
+
+    if (menuItem != null){
+        menuUpdateSelectionMark(main_menu, menuItem);
+
+ 
+    }
+}
+/////////////////////////////////////////
+
+
+
+
 // document.getElementById("cv_displayer").setAttribute("src", "http://docs.google.com/gview?url=bacchvs.github.io/documents/"+CVname+"&embedded=true");
  
+ 
 
+
+//////////////////////////////////////////////////////////// RELATIF AUX 2L2MENTS
+document.addEventListener('DOMContentLoaded', () => {
+    /////// Pour le slider
+        console.log("################################################################");
+        let userpict_slider = document.querySelector("#userpict_slider");
+      
+      let lesEnfants = userpict_slider.children;
+       
+      let topIndex = 0;
+         setInterval(()=>{
+        console.log("boucle");
+        for (let i = 0; i<lesEnfants.length; i++){
+             lesEnfants[i].classList = ['slider_hide'];
+        };
+        
+        lesEnfants[(topIndex+0)%lesEnfants.length].classList = ["slider_top"];
+        lesEnfants[(topIndex+1)%lesEnfants.length].classList = ["slider_mid"];
+        lesEnfants[(topIndex+2)%lesEnfants.length].classList = ["slider_bottom"];
+        
+        
+        topIndex ++;
+       
+         },
+         1000);
+        
+    
+    ///////////////////////////////////////////
+    
+    
+
+
+////////////////////////////// 
+
+    let currentSection = 'sec_Accueil'; 
+
+    document.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('section');
+
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                
+                if (currentSection != section.id){
+                    console.log("Mise à jour de la section courante : "+currentSection + " -> "+ section.id);
+                    currentSection = section.id;
+                    
+                    mainMenuUpdateSelectionMark(currentSection);
+                }
+            }
+        });
+
+        // console.log('Current section:', currentSection);
+    });
+
+
+
+});

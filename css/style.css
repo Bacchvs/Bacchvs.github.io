@@ -1,17 +1,32 @@
 
+@font-face {
+    font-family: "Pacifico";
+    src: url("../font/Pacifico.ttf") format("truetype");
+}
 
-html, body { 
+
+@font-face {
+    font-family: "CascadiaCode";
+    src: url("../font/CascadiaCode.woff2") format("woff2");
+}
+
+
+html, body {  
     user-select: none;
     margin: 0;
-    padding: 0;
-    height: 100%;
+    height: fit-content;
 
     background-color: aliceblue;
+    background-color: black; /* Couleur de fond pour éviter le blanc */
   }
 
 body {
     font-family: Arial, sans-serif;
+   
 }
+
+
+
 /* .container {
     max-width: 600px;
     margin: auto;
@@ -19,93 +34,141 @@ body {
 h1, h2, p {
     margin-bottom: 10px;
 } */
-/*  
- 
-  
-  /* Ajoutez des styles supplémentaires selon vos besoins */
-  
+
+.main{
+    display: block;
+}
+
+
 .banner {
-    height: 100px; /* Définir une hauteur pour le div */
-
-     
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    background-color: #012345;
-
-    box-sizing: border-box;
+    height: 0px; /* Définir une hauteur pour le div */
     
+    position: sticky;
+    top: 0;
+    
+    box-sizing: border-box; 
+    
+    z-index: 10000;
+    /* background-color: #012345;  */
+    
+    /* background: radial-gradient(circle, #2C015E, #012345); */
+    
+
+}
+ 
+
+.menu_selected{
+    border: solid 2px aliceblue;
+    transition: right 2s;
+}
+
+ 
+
+section{
+    display: flex;
+    flex-direction: row; 
+    align-items: center; /* Centre verticalement */
+    
+    font-size: 2em;
+    color : aliceblue;
+    margin: 0;
+    height: 100vh;
+    
+    
+    background: red;
+}
+
+#sec_Accueil{ 
     background: radial-gradient(circle, #2C015E, #012345);
     
-
-}
-
-
-.userpict {
-
-    width: 100px;
-    height: 100px;
-    
-    
-    background: url("../img/ident.png"); 
-    background-size: 100px; 
-    
-     
-    margin-right: 40px;
-    
-    border-radius: 50%;
-    margin-top: 80px;
-    margin-left: 40px;
-    
-    scale: 150%;
+    font-family: Arial;
+    font-style: italic bold;
+    color: aliceblue;
    
-     
-    user-select: none; 
+    display: flex;
+    flex-direction: row; 
+    align-items: center; /* Centre verticalement */
     
+    font-size: 2em;
+    
+    
+    margin: 0;
+    height: 100vh;;
+} 
 
+#sec_Biologie{
+    background: #254525;
+    background: radial-gradient(circle, #154545, #254525);
+}
+
+#sec_Chimie{
+    background: #452545;
+    background: radial-gradient(circle, #650045, #452545);
 }
 
 
-.message{
-    font-style: bold;
-    text-align: center;
-    size: 3em;
+#sec_Informatique{ 
+    background: #151525;
+    background: radial-gradient(circle, #351535, #151525);
+   
+    font-style: italic bold;
+    color: aliceblue;
+   
+    display: flex;
+    flex-direction: row; 
+    align-items: center; /* Centre verticalement */
+    
+    font-size: 2em;
+    
+    
+    margin: 0;
+    height: 100vh;
+} 
+
+#sec_Informatique > #code_snippet{
+    font-family: CascadiaCode;
+    font-size : 0.7em;
+    margin-left: 50px;
+    font-style: normal;
+    
+    display: flex;
+    position: relative;
+    border: solid yellow;
+    
+    left: 0;
 }
+
+#userpict_main{
+    /* border : 1px solid pink; */
+    display: flex;
+    flex-direction: row;
+    
+    position: absolute;
+    right: 0; 
+}
+#userpict_large {
+    
+    background: url("../img/full_transp.png") no-repeat;
+    
+    background-size: 100vh;
+    
+    height: 100vh;  
+    width: 90vh;
+      
+    /* border : solid green; */
+    
+}  
+
+
+
+
+
 
 .username{
     color: aliceblue; 
     width: fit-content;
- 
-}
-
-.message{
-    font-family: Pacifico;
-    font-style: bold;
-    text-align: center;
-    font-size: 5em;
-    
-    background-color: red;
-    margin: 0;
-    
-}
-
-
-#sec_Accueil{
-    font-family: Pacifico;
-    font-style: italic bold; 
-    display: flex;
-    justify-content: center; /* Centre horizontalement */
-    
-    align-items: center; /* Centre verticalement */
-    font-size: 2em;
-   
-    
-    margin: 0;
-    height: 100px;
 } 
+
 
 
 
@@ -121,47 +184,46 @@ h1, h2, p {
 
 
 .menu{
+    /* border: solid green; */
     display: flex;
     flex-direction: row;
-   
     
     position: relative;
     left: 100px;
+    top : 20px;
    
     
+    height: fit-content; 
     width: fit-content;
     margin-right: 20px;
-    height: 100px;
+    
+    
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
     
 }
 
 .menuItem{
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding: 15px; 
+    
+    padding: 10px; 
+    margin: 0;
+ 
+    
     color: aliceblue; 
+    
     cursor: pointer; 
+    
     display: flex;
     justify-content: center; /* Centre horizontalement */
     align-items: center; /* Centre verticalement */
-
+    
 }
 
+
 .menuItem:hover{
-    scale: 120%;
-    text-shadow: 
-                0 0 5px #3D026E,
-                0 0 10px #3D026E,
-                0 0 15px #3D026E,
-                0 0 20px #3D026E,
-                0 0 25px #3D026E,
-                0 0 30px #3D026E;
-                0 0 35px #3D026E,
-                0 0 40px #3D026E,
-                0 0 45px #3D026E,
-                0 0 50px #3D026E,
-                0 0 55px #3D026E,
-                0 0 60px #3D026E;
+    
+    /* border: solid red; */
+    opacity: 0.5;
 }
  
 
@@ -180,10 +242,7 @@ h1, h2, p {
 }
 
  
-.reseau > *{
-
- 
-    
+.reseau > *{   
     color: aliceblue;
     
     height: 50px;
@@ -191,62 +250,96 @@ h1, h2, p {
 
     padding-inline:  10px;
    
-
     cursor : pointer;
+    
+    
 }
 
 
-/* 
 
-.icon_reseau:hover {
 
-    color: red;
+
+
+#userpict_textArrow { 
+    display: flex;
+    /* border: solid red; */
     
-    height: 70px;
-    width: 70px;
-
-    padding-inline:  10px;
-   
-    cursor : pointer;
-} */
-
-/* .linkedin{
-    height: 50px;
-    width: 50px;
-    cursor : wait;
-}
-
-.github{
-    height: 50px;
-    width: 50px;
-    cursor : crosshair;
-} */
-
-/* 
-
-.linkedin{
-    position: fixed;
-    right: 0;
+    height: fit-content;
+    margin-top: 20vh;
     
-    
-    height: 50px;
-    width: 50px;
-   
-    margin-right: 20px; 
-
-    cursor : pointer;
-}
-
-.github{
-    position: fixed;
-    right: 0;
-    
-    
-    height: 50px;
-    width: 50px;
-   
-    margin-right: 20px; 
-
-    cursor : pointer;
+    position: relative;
+    translate: 10%;
 } 
-*/
+
+#userpict_text { 
+    /* border: solid 1px green; */
+    justify-self: center;
+    
+    display: flex;
+    flex-direction: row;
+ 
+    align-items: center; /* Centre verticalement */
+    
+    height: fit-content;
+    
+    white-space: nowrap; /* Empêche les éléments de se casser en plusieurs lignes */
+    
+     gap: 20px;
+    
+    /* border: solid red; */
+} 
+
+
+#userpict_arrow { 
+       
+    scale: 100%;
+    translate: 10px 20px;
+    rotate: 180deg;
+    transform: scaleX(-1);
+    
+ 
+    width: 30%;
+    height: 50%;
+    
+} 
+
+
+#userpict_slider{
+    /* border: solid 1px red; */
+    display: flex;
+    flex-direction: column; 
+    text-align: left;
+    width: fit-content;
+   
+    
+    border: solid green;
+    
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+
+
+.slider_top{
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(61, 2, 110, 0.5)); /* Dégradé du bleu au rouge avec 50% de transparence */
+    opacity: 0.5;
+    order: 1;
+    
+}
+
+.slider_mid{
+    background: rgba(61, 2, 110, 0.25);
+    order: 2;
+    
+}
+
+.slider_bottom{
+    background: linear-gradient(rgba(61, 2, 110, 0.5), rgba(0, 0, 0, 0)); /* Dégradé du bleu au rouge avec 50% de transparence */
+    opacity: 0.5;
+    order: 3;
+    
+}
+
+.slider_hide{
+    display: none;
+} 
+

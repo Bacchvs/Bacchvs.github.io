@@ -12,7 +12,6 @@ html, body {
 body {
     font-family: Arial, sans-serif;
 }
-
 /* .container {
     max-width: 600px;
     margin: auto;
@@ -70,31 +69,6 @@ h1, h2, p {
 }
 
 
-#sec_Accueil{ 
-    background: radial-gradient(circle, #2C015E, #012345);
-
-    font-family: Pacifico;
-    font-style: italic bold;
-
-    display: flex;
-    justify-content: center; /* Centre horizontalement */
-    
-    align-items: center; /* Centre verticalement */
-    font-size: 2em;
-   
-    
-    margin: 0;
-    height: 100px;
-} 
-
-.userpict_large {
-    
-    background: url("../img/ident.png"); 
-    background-size: 100px; 
- 
-    height: 400px; /* Définir une hauteur pour le div */
-    
-}
 .message{
     font-style: bold;
     text-align: center;
@@ -119,6 +93,19 @@ h1, h2, p {
 }
 
 
+#sec_Accueil{
+    font-family: Pacifico;
+    font-style: italic bold; 
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    
+    align-items: center; /* Centre verticalement */
+    font-size: 2em;
+   
+    
+    margin: 0;
+    height: 100px;
+} 
 
 
 

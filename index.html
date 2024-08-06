@@ -5,82 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arnaud Sénécaut</title>
     <script src="js/main.js"></script>
+    <script src="js/code_snippet.js"></script>
     <link href="css/style.css" rel="stylesheet"/>
- 
+
 </head>
-<body>
-    <div class="banner">
-
-        <!-- <img class="userpict"  src="img/ident.png" ></img> -->
-
-        <div class="userpict" ></div>
-
-        <h1 class="username">Arnaud Sénécaut</h1>
-
-        <div class="menu">
-            <h2 class="menuItem">Accueil</h2>
-            <h2 class="menuItem">Biologie</h2>
-            <h2 class="menuItem">Chimie</h2>
-            <h2 class="menuItem">Informatique</h2>
-            <h2 class="menuItem">CV</h2>
-            <h2 class="menuItem">Contact</h2>
+<body >
+    <div class="banner"> 
+    <!--   <h1 class="username">Arnaud Sénécaut</h1> -->
+        <div class="menu" onclick="menuClick(this, event)">
+            <h2 target="sec_Accueil" class="menuItem menu_selected">Accueil</h2>
+            <h2 target="sec_Biologie" class="menuItem">Biologie</h2>
+            <h2 target="sec_Chimie" class="menuItem">Chimie</h2>
+            <h2 target="sec_Informatique" class="menuItem">Informatique</h2>
+            <h2 target="sec_CV" class="menuItem">CV</h2>
+            <h2 target="sec_Contact" class="menuItem">Contact</h2>
         </div>
-
-
-        <div class="reseau">
+        <!-- <div class="reseau">
             <a href="https://www.linkedin.com/in/arnaud-s%C3%A9n%C3%A9caut-44a3231b8/" target="_blank" class="icon_reseau linkedin">
                 <svg  viewBox="0 0 24 24"   fill="currentColor"  focusable="false">
                     <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
                 </svg>
             </a>
-
             <a alt="test" href="https://github.com/Bacchvs" target="_blank" class="icon_reseau github">
                 <svg viewBox="0 0 24 24"  fill="currentColor" focusable="false">
                     <path d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"></path>
                 </svg>
             </a>
-        </div>
-
+        </div> -->
     </div>
 
-    <section id="sec_Accueil">
-        <a>Scientifique interdisciplinaire, je suis passionné par la biologie, la chimie et l'informatique.</a>
-        
-    </section>
+    <div class="main">
+        <section id="sec_Accueil">
+            <div id="userpict_main">
+                <div id="userpict_textArrow">
+                    <div id="userpict_text"><div>Scientifique interdisciplinaire,  passionné par  </div>
+                        <div id="userpict_slider">
+                            <div  class="slider_top">
+                                la Biologie
+                            </div>
+                            <div class="slider_mid">
+                                la Chimie
+                            </div>
+                            <div class="slider_hide">
+                                l'Informatique
+                            </div>
+                            <div class="slider_bottom">
+                                le Théâtre
+                            </div>
+                            <div  class="slider_mid">
+                                l'écriture
+                            </div>
+                        </div>
+                    </div>
+                    <svg id="userpict_arrow" width="200" height="100" viewBox="80 32 170 10">
+                        <path d="M 76.14,55.59 C 136.45,35.27 157.69,25.03 221.60,38.96 
+                                 287.63,54.64 201.13,87.28 152.84,70.89 
+                                 103.05,53.38 203.53,8.46 243.07,0 
+                                 M 240,0 c 4,0 3,39 0,0 
+                                 M 208,0 c 40,0 43,0 0,0"
+                              stroke="aliceblue"
+                              stroke-width="5"
+                              fill="none" />
+                    </svg>   
+                </div>
+                <div id="userpict_large"></div>
+            </div>
+        </section>
 
-    <section id="sec_Biologie">
-        <a>Scientifique interdisciplinaire, je suis passionné par la biologie, la chimie et l'informatique.</a>
-        
-    </section>
+         
 
-    <section id="sec_Chimie">
-        <a>Scientifique interdisciplinaire, je suis passionné par la biologie, la chimie et l'informatique.</a>
-        
-    </section>
+        <section id="sec_Biologie">
+            <a>La biologie cellulaire et moléculaire !</a>
+        </section>
 
-    <section id="sec_Informatique">
-        <a>Scientifique interdisciplinaire, je suis passionné par la biologie, la chimie et l'informatique.</a>
-    </section>
+        <section id="sec_Chimie">
+            <a>Scientifique interdisciplinaire, je suis passionné par la biologie, la chimie et l'informatique.</a>
+        </section>
+        <section id="sec_Informatique">
+            <pre id="code_snippet">
+                vide
+            </pre>
+        </section>
 
-    <!-- <section id="sec_message">
-        <p class="message">Il se passera bientôt quelquechose ici.</p>
-    </section> -->
+        <section id="sec_CV"></section>
+        <section id="sec_Contact"></section>
 
-    <section id="sec_CV">
-          
-        <div class="container">
-            <embed id="cv_displayer" src="http://docs.google.com/gview?url=bacchvs.github.io/documents/CV_Arnaud_SENECAUT_Biologie.pdf&embedded=true" width="100%" height="1024" type="application/pdf"/>
-        </div>
-    </section>
+    <!--        
 
+        <section id="sec_CV">
 
-    <!-- <section id="sec_osef">
-        <div style="background-color: red; height: 10000px;" >
-
-        </div>
-    </section> -->
+            <div class="container">
+                <embed id="cv_displayer" src="http://docs.google.com/gview?url=bacchvs.github.io/documents/CV_Arnaud_SENECAUT_Biologie.pdf&embedded=true" width="100%" height="1024" type="application/pdf"/>
+            </div>
+        </section> -->
 
 
-    <div class="orangefooter"><p class="copyright"></p></div>
+        <!-- <section id="sec_osef">
+            <div style="background-color: red; height: 10000px;" >
+
+            </div>
+        </section> -->
+
+    <!--     
+        <div class="orangefooter"><p class="copyright"></p></div> -->
+    </div>
 </body>
 </html>
