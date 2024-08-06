@@ -312,7 +312,7 @@ section{
     width: fit-content;
    
     
-    border: solid green;
+    /* border: solid green; */
     
     transition: transform 0.25s ease, opacity 0.25s ease;
 }
