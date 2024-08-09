@@ -19,9 +19,11 @@ html, body {
     margin: 0;
     height: fit-content;
  
-    background-color: black; /* Couleur de fond pour éviter le blanc */
+    background-color:  black; /* Couleur de fond pour éviter le blanc */
+   
     
-  }
+    
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -76,6 +78,7 @@ section{
     color : aliceblue;
     margin: 0;
     height: 100vh;
+    width: 100vw;
     
     
     background: red;
@@ -240,9 +243,15 @@ section{
     
     position: absolute;
     right: 0;
+    top : 20px;
     
+   
     width: fit-content;
     margin-right: 50px;
+    
+    text-align: center;
+    
+    gap: 10px;
     
 }
 
@@ -253,7 +262,6 @@ section{
     height: 50px;
     width: 50px;
 
-    padding-inline:  10px;
    
     cursor : pointer;
     
@@ -345,3 +353,35 @@ section{
     display: none;
 } 
 
+
+#sec_Contact{
+    background: radial-gradient(circle, #2C015E, #012345);
+    
+    font-family: Arial;
+    font-style: italic bold;
+    color: aliceblue;
+    
+    align-items:baseline;
+  
+}
+
+#mes_resaux{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 90px;
+    margin-top: 130px; 
+    
+     
+     
+    font-family: Pacifico;
+    font-style: italic;
+    font-size: 1.5em;
+    width: fit-content;
+   
+}
+
+#mes_resaux > svg{ 
+    width: 100px;
+    translate: 10px -30px;
+}

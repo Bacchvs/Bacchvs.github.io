@@ -84,8 +84,6 @@ function mainMenuUpdateSelectionMark(target_name){
 
     if (menuItem != null){
         menuUpdateSelectionMark(main_menu, menuItem);
-
- 
     }
 }
 /////////////////////////////////////////
