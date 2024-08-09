@@ -1,3 +1,19 @@
+function isDarkMode(){
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
+// pour mettre à jour le favicon en fonction du theme
+function updateFavicon() {
+    const favicon = document.getElementById('favicon');
+    const darkMode = isDarkMode();
+    favicon.href = darkMode ? '/img/favicons/favicon_dark.png' : '/img/favicons/favicon_light.png';
+}
+
+document.addEventListener('DOMContentLoaded', updateFavicon);
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
+
+
+
 // Sélectionner toutes les balises Test
 let nodeCopyright = document.getElementsByClassName('copyright'); 
 

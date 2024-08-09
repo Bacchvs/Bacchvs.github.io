@@ -1,4 +1,4 @@
-
+ 
 @font-face {
     font-family: "Pacifico";
     src: url("../font/Pacifico.ttf") format("truetype");
@@ -11,13 +11,16 @@
 }
 
 
+
+
+
 html, body {  
     user-select: none;
     margin: 0;
     height: fit-content;
-
-    background-color: aliceblue;
+ 
     background-color: black; /* Couleur de fond pour éviter le blanc */
+    
   }
 
 body {
@@ -89,7 +92,7 @@ section{
     flex-direction: row; 
     align-items: center; /* Centre verticalement */
     
-    font-size: 2em;
+    /*font-size: 2em; */
     
     
     margin: 0;
@@ -133,32 +136,34 @@ section{
     
     display: flex;
     position: relative;
-    border: solid yellow;
+    /* border: solid yellow; */
     
     left: 0;
 }
 
 #userpict_main{
-    /* border : 1px solid pink; */
+    /* border : solid pink; */
     display: flex;
     flex-direction: row;
+    align-items: center;
+    text-align: center;
     
-    position: absolute;
-    right: 0; 
+    width: 75vw;
+    height: 100vh;
 }
-#userpict_large {
-    
-    background: url("../img/full_transp.png") no-repeat;
-    
-    background-size: 100vh;
-    
-    height: 100vh;  
-    width: 90vh;
-      
-    /* border : solid green; */
-    
-}  
 
+#userpict_large {
+    background: url("../img/full_transp.png") no-repeat;
+    background-size: 25vw auto; /* Redimensionner l'image en fonction de la hauteur */
+    background-position: bottom right; /* Positionner l'image en bas à droite */
+    
+    height: 100vh; /* La hauteur est fixée à 100% de la hauteur de la fenêtre */
+    width: 25vw; /* La largeur s'adapte à celle de l'image après le redimensionnement */
+    position: absolute;
+    right: 0;
+    
+    /* border: solid green; */
+}
 
 
 
@@ -262,47 +267,44 @@ section{
 
 #userpict_textArrow { 
     display: flex;
-    /* border: solid red; */
+    flex-flow: row;
     
-    height: fit-content;
-    margin-top: 20vh;
+    width: 75vw;
     
-    position: relative;
-    translate: 10%;
+    
+    position: absolute;
+    
+   
+    /* border: solid red;  */
+    text-align: center;
 } 
 
 #userpict_text { 
-    /* border: solid 1px green; */
-    justify-self: center;
+    /* border: solid green; */
+    
     
     display: flex;
     flex-direction: row;
  
     align-items: center; /* Centre verticalement */
+   
     
-    height: fit-content;
-    
-    white-space: nowrap; /* Empêche les éléments de se casser en plusieurs lignes */
-    
+     white-space: nowrap; /* Empêche les éléments de se casser en plusieurs lignes */
+    margin-left: 10vw;
      gap: 20px;
-    
-    /* border: solid red; */
+     
 } 
-
 
 #userpict_arrow { 
-       
-    scale: 100%;
-    translate: 10px 20px;
-    rotate: 180deg;
-    transform: scaleX(-1);
+  align-self: flex-end;
+  scale: 200%;
     
- 
-    width: 30%;
-    height: 50%;
-    
+  rotate: 50deg;
+  transform: scaleY(1) scaleX(0.5);
+  position: relative;
+  right: -3vw;
+  top: 5vh;
 } 
-
 
 #userpict_slider{
     /* border: solid 1px red; */

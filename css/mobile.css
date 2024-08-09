@@ -1,0 +1,100 @@
+
+section{
+     
+    font-size: 1em;
+     
+    background: red;
+}
+
+
+.menu{
+   
+    left: 10px;
+    top : 20px;
+   
+    
+    margin-right: 20px;
+    
+    font-size: 0.5em;
+}
+
+.menuItem{
+    
+    padding: 10px; 
+   
+}
+
+
+#userpict_main{ 
+    display: flex;
+    flex-direction: column;
+  
+    position: absolute; 
+    
+     align-items: center;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+#userpict_large{ 
+  width: 100vw;
+  background-position: bottom right; /* Positionner l'image en bas à droite */
+  
+  background-size: 50vw auto;
+  
+  transform: scaleX(-1);
+  
+}
+
+#sec_Informatique > #code_snippet{ 
+    font-size : 0.35em;
+    margin-left: 15px; 
+}
+
+
+
+
+#userpict_textArrow { 
+  /* border: solid red; */
+    
+  margin-top: 15vh;
+   
+  
+  display: flex;
+  flex-flow: column;
+
+  height: fit-content;
+  
+  align-items: center;
+} 
+
+#userpict_text { 
+    /* border: solid green;  */
+    
+    display: flex;
+    flex-direction: row;
+
+     
+     margin-left: 0vw;
+     gap: 10px;
+     
+} 
+
+
+#userpict_arrow { 
+  align-self: flex-end;
+    scale: 150%;
+    translate: -5vh 15vh;
+    rotate: 90deg;
+    transform: scaleY(-1) scaleX(1);
+  position: relative;
+} 
+
+
+#userpict_slider{
+  
+}
+
+
