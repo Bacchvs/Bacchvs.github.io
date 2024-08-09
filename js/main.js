@@ -142,13 +142,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         sections.forEach(section => {
             const rect = section.getBoundingClientRect();
-            if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+            if (rect.top <= window.innerHeight /2 && rect.bottom >= window.innerHeight / 2) {
                 
                 if (currentSection != section.id){
                     console.log("Mise à jour de la section courante : "+currentSection + " -> "+ section.id);
                     currentSection = section.id;
                     
                     mainMenuUpdateSelectionMark(currentSection);
+                    scrollToSection(currentSection);
                 }
             }
         });
