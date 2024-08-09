@@ -89,6 +89,12 @@ function mainMenuUpdateSelectionMark(target_name){
 /////////////////////////////////////////
 
 
+document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.key === 's') {
+        event.preventDefault(); // Empêche le comportement par défaut (enregistrement de la page)
+         
+    }
+});
 
 
 // document.getElementById("cv_displayer").setAttribute("src", "http://docs.google.com/gview?url=bacchvs.github.io/documents/"+CVname+"&embedded=true");
@@ -150,6 +156,31 @@ document.addEventListener('DOMContentLoaded', () => {
         // console.log('Current section:', currentSection);
     });
 
+
+
+
+    // Récupérer l'élément elem0
+    const elem0 = document.getElementsByClassName('reseau')[0];
+
+    // Récupérer l'élément section
+    const section = document.getElementById('sec_Contact');
+
+    // Créer un observer pour surveiller si la section est visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Ajouter la nouvelle classe quand la section est visible
+                elem0.classList.add('hide');
+                
+            } else {
+                // Revenir à la classe d'origine quand la section n'est plus visible
+                elem0.classList.remove('hide');
+            }
+        });
+    });
+
+    // Observer la section
+    observer.observe(section);
 
 
 });
