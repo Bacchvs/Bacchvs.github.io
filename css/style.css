@@ -19,12 +19,14 @@ html, body {
     margin: 0;
     height: fit-content;
  
+    font-family: Arial, sans-serif;
+    color: aliceblue;
     background-color:  black; /* Couleur de fond pour éviter le blanc */
    
-    
-    
 }
-
+ 
+ 
+ 
 .hide{
     opacity: 0;
     transition: opacity 2s ease-in-out;
@@ -492,7 +494,7 @@ section{
     flex-flow: column;
     gap: 1vh;
     
-    
+    cursor: pointer;
     
 }
 
