@@ -37,12 +37,18 @@ if (language === "fr"){
 
 
 // Permet de scroller à la bonne section
+// dit si on est pas déjà entrain de scrller automatiquement (affin de diférencier automatique de manuel)
+let isScrollingAuto = false;
 
 function scrollToSection(id) {
+    isScrollingAuto = true;
     const targetElement = document.getElementById(id);
     if (targetElement) {
         targetElement.scrollIntoView({ behavior: 'smooth' });
     }
+    setTimeout(() => {
+        isScrollingAuto = false;  
+    }, 500);
 }
 
 function menuUpdateSelectionMark(menu, target){
@@ -62,6 +68,29 @@ function menuClick(menu, event){
     scrollToSection(event.target.getAttribute('target'));
 }
 
+
+function copyElemVal(elem) {
+
+  let text = elem.getAttribute('value');
+
+  const copyContent = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      console.log('Content copied to clipboard');
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  }
+    copyContent();
+    
+    const messageElement = document.getElementById('message_copy');
+    messageElement.style.display = 'block';
+    
+  
+    setTimeout(() => {
+        messageElement.style.display = 'none';
+    }, 3000);
+}
 
 
 function getMainMenu(){
@@ -135,6 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ////////////////////////////// 
 
+   
     let currentSection = 'sec_Accueil'; 
 
     document.addEventListener('scroll', function() {
@@ -142,20 +172,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
         sections.forEach(section => {
             const rect = section.getBoundingClientRect();
-            if (rect.top <= window.innerHeight /2 && rect.bottom >= window.innerHeight / 2) {
+            if (rect.top <= window.innerHeight /3 && rect.bottom >= window.innerHeight / 3) {
                 
                 if (currentSection != section.id){
                     console.log("Mise à jour de la section courante : "+currentSection + " -> "+ section.id);
                     currentSection = section.id;
                     
                     mainMenuUpdateSelectionMark(currentSection);
-                    scrollToSection(currentSection);
+                    if (!isScrollingAuto) scrollToSection(currentSection);
                 }
             }
         });
 
         // console.log('Current section:', currentSection);
     });
+
+    //////////////////////////////////////////////////////////////////////////////////////////////
+ 
+    ///////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -164,24 +198,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const elem0 = document.getElementsByClassName('reseau')[0];
 
     // Récupérer l'élément section
-    const section = document.getElementById('sec_Contact');
+    const big_item = document.getElementById('big_item');
+    const general_big_item = document.getElementById('big_reseau')
+
 
     // Créer un observer pour surveiller si la section est visible
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting ) {
                 // Ajouter la nouvelle classe quand la section est visible
                 elem0.classList.add('hide');
-                
+                general_big_item.classList.remove('hide');
+                console.log("Cache les réseaux");
             } else {
                 // Revenir à la classe d'origine quand la section n'est plus visible
                 elem0.classList.remove('hide');
+                general_big_item.classList.add('hide');
+                console.log("Affiche les réseaux");
             }
         });
     });
 
     // Observer la section
-    observer.observe(section);
+    observer.observe(big_item);
 
 
 });

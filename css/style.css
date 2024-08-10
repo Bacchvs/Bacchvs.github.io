@@ -31,8 +31,12 @@ body {
 }
 
 .hide{
-    display: none;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    /*display: none !important;*/
+ 
 }
+
 
 
 /* .container {
@@ -256,6 +260,8 @@ section{
     
     gap: 10px;
     
+    
+    transition: opacity 0.5s ease-in-out;
 }
 
  
@@ -414,13 +420,15 @@ section{
 #sec_Atouts{ 
    
     background: radial-gradient(circle, #FFFF00, #FFA500);
+    
+   
     height: 100vh;
     position: bottom right; 
    
 }
 
 #logo_lang{
-    background: url("../img/lang.svg") no-repeat;
+    background: url("../img/svg/lang.svg") no-repeat;
     background-size: 15vw auto; /* Redimensionner l'image en fonction de la hauteur */
     background-position: bottom right; /* Positionner l'image en bas à droite */
     transform: scaleX(-1);
@@ -454,18 +462,53 @@ section{
     transform: scaleY(-1);
 }
 
-
-#logo_cv{
-    background: url("../img/cv.svg") no-repeat;
-    background-size: 30; /* Redimensionner l'image en fonction de la hauteur */ 
-    transform: scaleX(-1);
-  
-    height: 30vh; /* La hauteur est fixée à 100% de la hauteur de la fenêtre */
-    width: 30vh; /* La largeur s'adapte à celle de l'image après le redimensionnement */
+#big_reseau{
+    display: flex;
+    flex-flow: row;  
     
-    position: absolute;
-    left: 27vw;
-
-   align-self:end;
-     
+    height: 100vh;
+    width: 100vw;
+    
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    
+    
+    transition: opacity 0.5s ease-in-out;
+    
 }
+
+#big_item{
+    height: 30vh;  
+    width: 30vh;  
+    color: aliceblue; 
+    margin: 30px;
+
+    transition: opacity 0.5s ease-in-out;
+    
+    text-align: center;
+    
+    text-decoration: none; 
+    text-transform: uppercase; /* Met le texte en majuscules */
+    font-weight: bold;         /* Met le texte en gras */
+   
+     
+    
+    display: flex;
+    flex-flow: column;
+    gap: 1vh;
+    
+    
+    
+}
+
+.cv{
+    
+    height: inherit;
+    
+    background: url("../img/svg/cv.svg") no-repeat;
+    background-size: 30; /* Redimensionner l'image en fonction de la hauteur */ 
+    background-position: center center; 
+}
+
+
+ 
