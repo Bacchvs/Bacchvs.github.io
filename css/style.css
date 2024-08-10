@@ -96,20 +96,25 @@ section{
     color: aliceblue;
    
     display: flex;
-    flex-direction: row; 
+    flex-direction: column; 
+    
     align-items: center; /* Centre verticalement */
     
     /*font-size: 2em; */
     
     
     margin: 0;
-    height: 100vh;;
+    height: 100vh;
+   
 } 
 
-#sec_Biologie{
-    background: #254525;
-    background: radial-gradient(circle, #154545, #254525);
+.monNom{ 
+    font-weight: normal;
+    font-size: 3em;
+    
 }
+
+
 
 #sec_Chimie{
     background: #452545;
@@ -148,17 +153,35 @@ section{
     left: 0;
 }
 
+#sec_Informatique>.diplome{
+    position: relative;
+    left: 1vw;
+    top: -20vh
+    
+}
+
+
+
 #userpict_main{
     /* border : solid pink; */
     display: flex;
-    flex-direction: row;
+    
+    flex-direction: column;
+    
     align-items: center;
+    
     text-align: center;
+     
     
     width: 75vw;
-    height: 100vh;
+    height: 75vh;
+    
+    position: absolute;
+    top: 15vh;
+     
 }
 
+ 
 #userpict_large {
     background: url("../img/full_transp.png") no-repeat;
     background-size: 25vw auto; /* Redimensionner l'image en fonction de la hauteur */
@@ -173,24 +196,11 @@ section{
 }
 
 
-
-
-
-.username{
-    color: aliceblue; 
-    width: fit-content;
-} 
+ 
 
 
 
 
-.orangefooter{
-    background-color: orange;
-    width: 100%;
-    height: 10px;
-    position: relative;
-    bottom: 0;
-}
 
 
 
@@ -254,7 +264,6 @@ section{
     width: fit-content;
     margin-right: 50px;
     
-    text-align: center;
     
     gap: 10px;
     
@@ -278,19 +287,12 @@ section{
 }
 
 
-
-
-
-
+ 
 #userpict_textArrow { 
     display: flex;
     flex-flow: row;
     
-    width: 75vw;
-    
-    
-    position: absolute;
-    
+    width: fit-content;
    
     /* border: solid red;  */
     text-align: center;
@@ -307,19 +309,19 @@ section{
    
     
      white-space: nowrap; /* Empêche les éléments de se casser en plusieurs lignes */
-    margin-left: 10vw;
+   
      gap: 20px;
      
 } 
 
 #userpict_arrow { 
   align-self: flex-end;
-  scale: 200%;
+  scale: 150%;
     
   rotate: 50deg;
   transform: scaleY(1) scaleX(0.5);
   position: relative;
-  right: -3vw;
+    
   top: 5vh;
 } 
 
@@ -363,6 +365,17 @@ section{
 } 
 
 
+
+#sec_Formation{
+    background: radial-gradient(circle, #550000, #000000);
+    
+    font-family: Arial;
+    font-style: italic bold;
+    color: aliceblue;
+    
+    align-items:baseline;
+  
+}
 #sec_Contact{
     background: radial-gradient(circle, #2C015E, #012345);
     
@@ -532,3 +545,108 @@ section{
     
 }
  
+
+.footer{
+
+    align-self: end; 
+    
+    /*background-color: orange;*/
+    width: 100vw;
+    height: fit-content;  
+ 
+    justify-self: center; /* Centre horizontalement */
+    text-align: center;
+    
+    padding: 5px;
+    
+    font-family: Arial;
+    
+    font-size: 0.5em;
+    position:absolute;
+     
+}
+
+
+
+.compet_list {
+  list-style-type: none; 
+  font-size: 0.75em;
+}
+
+.compet_item {
+  /* Ajoute ici des styles pour les éléments de la liste */
+  margin-bottom: 10px;   /* Exemple de marge entre les éléments de la liste */
+}
+
+ 
+
+#sec_Biologie{
+    background: #254525;
+    background: radial-gradient(circle, #154545, #254525);
+    display: flex;
+    flex-flow: row;
+}
+
+#sec_Biologie>.diplome{
+    position: relative;
+    left: 1vw;
+    top: -20vh
+    
+}
+
+.diplome{
+    display: flex;
+    flex-flow: column; 
+   
+    align-items: center;
+    width: fit-content;
+}
+
+.diplome_icon{ 
+    background: url("../img/svg/diplome.svg") no-repeat;
+    background-size: 3em auto; /* Redimensionner l'image en fonction de la hauteur */
+    background-position: center center; /* Positionner l'image en bas à droite */
+    transform: scaleX(-1);
+    height: 3em; /* La hauteur est fixée à 100% de la hauteur de la fenêtre */
+    width: 3em; /* La largeur s'adapte à celle de l'image après le redimensionnement */   
+}
+
+.diplome_name{
+    font-weight: bold;
+}
+
+.diplome_domain{
+    font-style: italic;
+    font-size: 0.75em;
+    
+}
+
+
+#project_timeline{
+    border:solid blue;
+    width: 100vw;
+    height: 10vh;
+    
+    
+    
+    
+}
+
+.dot{
+    height: 50px;
+    width: 50px;
+    border: solid green;
+    background-color: blue; 
+    
+    border-radius: 100%;
+}
+
+
+
+
+
+
+
+
+
+

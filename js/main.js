@@ -1,7 +1,9 @@
 let isFullyCharged = false;
 const time_start = new Date().getTime(); // Renvoie le temps en millisecondes depuis le 1er janvier 1970
 
-
+const copyright_string = "Copyright © "+ (new Date().getFullYear()) + " Arnaud Sénécaut - All Rights Reserved.";
+const monAge = new Date().getFullYear() - 2000;
+              
 function isDarkMode(){
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
 }
@@ -13,20 +15,10 @@ function updateFavicon() {
     favicon.href = darkMode ? '/img/favicons/favicon_dark.png' : '/img/favicons/favicon_light.png';
 }
 
-document.addEventListener('DOMContentLoaded', updateFavicon);
+updateFavicon();
+
+// document.addEventListener('DOMContentLoaded', updateFavicon);
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
-
-
-
-// Sélectionner toutes les balises Test
-let nodeCopyright = document.getElementsByClassName('copyright'); 
-
-
-for ( node in nodeCopyright){
-    node.innerHTML = "Copyright (c) "+ (new Date().getFullYear()) + " Arnaud Sénécaut. -- All Rights Reserved.";
-}
-
-
 
 let monNom = "BΔcchvs";
 
@@ -137,6 +129,8 @@ document.addEventListener('keydown', function(event) {
 
 //////////////////////////////////////////////////////////// RELATIF AUX 2L2MENTS
 document.addEventListener('DOMContentLoaded', () => {
+ 
+
     /////// Pour le slider
         console.log("################################################################");
         let userpict_slider = document.querySelector("#userpict_slider");
@@ -227,6 +221,21 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(big_item);
 
 
+
+    ///////////////////////////////////////////////////////////////////////////// put copyright
+
+    let nodeCopyright = document.getElementsByTagName('copyright'); 
+    for (let i = 0; i<nodeCopyright.length; i++){
+      nodeCopyright[i].innerHTML = copyright_string; 
+    }
+
+
+
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     isFullyCharged = true;
 });
 
@@ -247,3 +256,10 @@ function checkVariable() {
 
 
 checkVariable(); // Commence la vérification
+
+
+
+
+
+
+////////////////////////// TEST PROGRESSBAR

@@ -1,0 +1,37 @@
+{
+    "menu": {
+        "Accueil": "Home",
+        "Biologie": "Biology",
+        "Chimie": "Chemistry",
+        "Informatique": "Computer Science",
+        "Formation": "Education",
+        "Atouts": "Strengths",
+        "Contact": "Contact"
+    },
+    "reseau": {
+        "Linkedin": "My Linkedin Profile",
+        "Github": "My Github Profile",
+        "Mail": "My Email Address",
+        "CV": "My CV"
+    },
+    "message_copy": "Email address copied",
+    "sec_Accueil": {
+        "Scientifique": "Interdisciplinary scientist, passionate about",
+        "Biologie": "Biology",
+        "Chimie": "Chemistry",
+        "Informatique": "Computer Science",
+        "Theatre": "Theatre",
+        "Ecriture": "Writing"
+    },
+    "sec_Biologie": "Cellular and molecular biology!",
+    "sec_Chimie": "During my biology studies, I was able to do some chemistry: add diploma (with diploma logo and university logo that change color when you hover over them).",
+    "sec_Informatique": "empty",
+    "sec_Formation": "This summarizes my education",
+    "sec_Atouts": "I speak English and Spanish.",
+    "sec_Contact": {
+        "Linkedin": "Linkedin",
+        "Github": "Github",
+        "Mail": "Mail",
+        "CV": "My CV"
+    }
+}

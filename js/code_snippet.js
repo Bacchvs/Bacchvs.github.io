@@ -4,7 +4,13 @@ function escapeHTML(text) {
                .replace(/</g, '&lt;')
                .replace(/>/g, '&gt;')
                .replace(/"/g, '&quot;')
-               .replace(/'/g, '&#039;');
+               .replace(/'/g, '&#039;')
+               
+               
+            //    .replace(/#idt#/g, '<idt/>');
+            // .replace(/\s\s\s\s/g, '<idt/>');
+               
+               ;
 }
 
 
@@ -39,14 +45,40 @@ function replaceOutsideQuotes(text, target, replacement) {
 }
 
 
-function colorTocken(text, regex, color_str){
-    text.replace(regex, "<span style='color:'" + color_str + ">"+regex+"</span>");
+function replace_beginer_space(text) {
+    // Utiliser une expression régulière pour trouver les espaces au début de la chaîne
+    const match = text.match(/^( +)/);
+    
+    if (match) {
+        // Nombre d'espaces trouvés
+        let numSpaces = match[0].length;
+        let replacement = '';
+        
+        // Remplacer les groupes de 4 espaces par &emsp;
+        while (numSpaces >= 4) {
+            replacement += '&emsp;';
+            numSpaces -= 4;
+        }
+        
+        // Remplacer les espaces restants par &nbsp;
+        replacement += '&nbsp;'.repeat(numSpaces);
+        
+        // Remplacer les espaces au début de la chaîne par la chaîne de remplacement
+        return replacement + text.slice(match[0].length);
+    }
+    
+    // Retourner la chaîne originale si aucun espace n'est trouvé au début
+    return text;
+}
 
+
+function colorTocken(text, regex, color_str){
+    return text.replace(regex, ("<span style='color:'" + color_str + ">"+regex+"</span>"));
 }
 
 
 document.addEventListener('DOMContentLoaded', () => {
-
+  
     ///////////////////////////////////////////
 
 
@@ -63,19 +95,28 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(textContent => {
             // Diviser le texte en lignes
-            const linesArray = textContent.split(/\r?\n/); 
+            let linesArray = textContent.split(/\r?\n/); 
             console.log("elem 0 : "+ linesArray[0]);
 
             for (let i = 0; i<linesArray.length; i++){
-                linesArray[i] = replaceOutsideQuotes(linesArray[i], "main", "HELLO MY DEAR");
+                // linesArray[i] = replaceOutsideQuotes(linesArray[i], "main", "HELLO MY DEAR");
                 
+                
+                
+                // echappe les caractères interdits.
                 linesArray[i] = escapeHTML(linesArray[i]);
-                linesArray[i].replace(/\t/g, "&emsp;"); 
+
+             
+                //remplace les espace par des &spaces....
+                linesArray[i] = replace_beginer_space(linesArray[i]);
+       
+                // color le include. 
                 colorTocken(linesArray[i], "#include", "#FF00FF");
+                
             }
             
             // Afficher les lignes dans un élément HTML
-            const fileContentElement = document.getElementById('code_snippet');
+            let fileContentElement = document.getElementById('code_snippet');
 
 
             

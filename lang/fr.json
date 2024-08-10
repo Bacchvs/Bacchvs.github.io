@@ -1,0 +1,37 @@
+{
+       "menu": {
+        "Accueil": "Accueil",
+        "Biologie": "Biologie",
+        "Chimie": "Chimie",
+        "Informatique": "Informatique",
+        "Formation": "Formation",
+        "Atouts": "Atouts",
+        "Contact": "Contact"
+    },
+    "reseau": {
+        "Linkedin": "Mon Profil Linkedin",
+        "Github": "Mon Profil Github",
+        "Mail": "Mon Addresse eMail",
+        "CV": "Mon CV"
+    },
+    "message_copy": "Addresse mail copiée",
+    "sec_Accueil": {
+        "Scientifique": "Scientifique interdisciplinaire, passionné par",
+        "Biologie": "la Biologie",
+        "Chimie": "la Chimie",
+        "Informatique": "l'Informatique",
+        "Theatre": "le Théâtre",
+        "Ecriture": "l'Écriture"
+    },
+    "sec_Biologie": "La biologie cellulaire et moléculaire !",
+    "sec_Chimie": "Durant mes études de biologie j'ai pu faire de la chimie : ajouter diplome(avec logo diplome et logo université qui se colore quand on met le doigt dessus).",
+    "sec_Informatique": "vide",
+    "sec_Formation": "ca résume mes formations",
+    "sec_Atouts": "Je sais parler Anglais et Espagnol.",
+    "sec_Contact": {
+        "Linkedin": "Linkedin",
+        "Github": "Github",
+        "Mail": "Mail",
+        "CV": "Mon CV"
+    }
+}

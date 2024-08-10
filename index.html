@@ -54,7 +54,10 @@
 
     <div class="main">
         <section id="sec_Accueil">
+          
+            <!-- idée : rajouter Dr et une barre de chargement pour montrer ou j'en suis.  -->
             <div id="userpict_main">
+                <h1 class="monNom">Arnaud Sénécaut</h1>
                 <div id="userpict_textArrow">
                     <div id="userpict_text"><div>Scientifique interdisciplinaire,  passionné par  </div>
                         <div id="userpict_slider">
@@ -86,32 +89,62 @@
                               fill="none" />
                     </svg>   
                 </div>
-                <div id="userpict_large"></div>
+               
             </div>
+            <div id="userpict_large"></div>
         </section>
 
          
 
-        <section id="sec_Biologie">
-            <a>La biologie cellulaire et moléculaire !</a>
+        <section id="sec_Biologie" >
+            <div class="diplome" title="Licence Biologie Cellulaire et Moléculaire">
+                <div class="diplome_icon"></div>
+                <a class="diplome_name">Licence</a>
+                <a class="diplome_domain">Biologie Cellulaire et Moléculaire</a>
+                
+            </div>
+            
+            <!-- <ul id="bio_compétences" class="compet_list">
+                <li class="compet_item">PCR</li>
+                <li class="compet_item">mutagenèse dirigée par PCR</li>
+                <li class="compet_item">Spectrophotométrie</li>
+                <li class="compet_item">Electrophorèse</li>
+                <li class="compet_item">SDS-PAGE</li>
+                <li class="compet_item">western-blot</li>
+                <li class="compet_item">manipulations en environnement stérile</li>
+                <li class="compet_item">purification et quantification protéiques</li>
+                <li class="compet_item">Etude et écriture d’articles scientifiques</li>
+                <li class="compet_item">culture interdisciplinaire en Biologie et Informatique</li>
+                <li class="compet_item">Etudes « in silico »</li> 
+            </ul> -->
         </section>
 
         <section id="sec_Chimie">
-            <a>Durant mes études de biologie j'ai pu faire de la chimie : ajouter diplome(avec logo diplome et logo université qui se colore quand on met le doigt dessus).</a>
+            <!-- <a>Durant mes études de biologie j'ai pu faire de la chimie : ajouter diplome(avec logo diplome et logo université qui se colore quand on met le doigt dessus).</a> -->
         </section>
         <section id="sec_Informatique">
+            <div class="diplome" title="DUT Informatique - Développeur d'Applications">
+                <div class="diplome_icon"></div>
+                <a class="diplome_name">DUT</a>
+                <a class="diplome_domain">Informatique</a>
+            </div>
             <p id="code_snippet">
                 vide
             </p>
         </section>
 
         <section id="sec_Formation">
-            <a>
-                ca résume mes formations
-            </a>
-            
-            <div id="logo_diplome">
-               
+            <!-- Une barre de chargement qui résume mon projet Universitaire -->
+            <div id="project_timeline"> 
+                <div class="loading_bar"> 
+
+
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
             </div>
         </section>
 
@@ -155,6 +188,10 @@
                 </a>
     
             </div>
+
+            <div class="footer">
+                <copyright/>
+            </div>
         </section>
 
         <!-- <section id="sec_Contact">
@@ -177,7 +214,7 @@
             </a>
         </section> -->
 
-        <!-- <div class="orangefooter"><p class="copyright"></p></div> -->
+        
     </div>
 </body>
 </html>
