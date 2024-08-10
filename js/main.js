@@ -1,3 +1,7 @@
+let isFullyCharged = false;
+const time_start = new Date().getTime(); // Renvoie le temps en millisecondes depuis le 1er janvier 1970
+
+
 function isDarkMode(){
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
 }
@@ -84,12 +88,12 @@ function copyElemVal(elem) {
     copyContent();
     
     const messageElement = document.getElementById('message_copy');
-    messageElement.style.display = 'block';
+    messageElement.classList.remove("hide");
     
   
     setTimeout(() => {
-        messageElement.style.display = 'none';
-    }, 3000);
+        messageElement.classList.add("hide");
+    }, 1000);
 }
 
 
@@ -223,4 +227,23 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(big_item);
 
 
+    isFullyCharged = true;
 });
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////// Pour faire un splash screen si besoin est. 
+function checkVariable() {
+    if (isFullyCharged) {
+        // alert('Fin du chargement : '+(new Date().getTime() - time_start) + ' ms');
+    } else {
+        // console.log('La variable est encore fausse, vérification dans 100 ms.');
+        setTimeout(checkVariable, 100); // Re-vérifie après 100 ms
+    }
+}
+
+
+checkVariable(); // Commence la vérification

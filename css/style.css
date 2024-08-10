@@ -236,6 +236,7 @@ section{
     
     /* border: solid red; */
     opacity: 0.5;
+    scale: 105%;
 }
  
 
@@ -269,9 +270,11 @@ section{
     width: 50px;
 
    
-    cursor : pointer;
-    
-    
+    cursor : pointer;   
+}
+
+.reseau>*:hover{
+    scale: 105%;
 }
 
 
@@ -507,5 +510,25 @@ section{
     background-position: center center; 
 }
 
+#big_item:hover{
+    scale: 105%;
+}
 
+
+#message_copy{
+   
+    width: fit-content;
+    position:  absolute;
+    right: 1vw;
+    background: rgba(128, 128, 128, 0.5);
+    font-size: 2em;
+    top: 15vh;
+    padding-inline: 10px;
+    
+    transition: opacity 0.5s ease-in-out;
+ 
+    border: solid aliceblue;
+    border-radius: 25% ;
+    
+}
  
