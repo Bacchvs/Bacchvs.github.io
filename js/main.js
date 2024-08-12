@@ -65,6 +65,16 @@ function menuClick(menu, event){
 }
 
 
+function switch_menuVisibility(){
+    const menu = getMainMenu();
+    if (menu.style.display === 'none'){
+        menu.style.display = 'flex';
+    }else{
+        menu.style.display = 'none';
+    } 
+}
+
+
 function copyElemVal(elem) {
 
   let text = elem.getAttribute('value');

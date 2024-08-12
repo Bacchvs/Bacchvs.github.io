@@ -9,11 +9,17 @@
     <script src="js/code_snippet.js"></script>
 
     <link href="css/style.css" rel="stylesheet"/> 
-    <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 600px)">
+    <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 768px)">
 </head>
 <body>
-    
     <div class="banner"> 
+        <div id="hamburger" onclick="switch_menuVisibility()">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"> 
+                <rect x="2" y="6" width="20" height="3" rx="1" ry="1"/> 
+                <rect x="2" y="12" width="20" height="3" rx="1" ry="1"/> 
+                <rect x="2" y="18" width="20" height="3" rx="1" ry="1"/>
+              </svg>              
+        </div>
     <!--   <h1 class="username">Arnaud Sénécaut</h1> -->
         <nav class="menu" onclick="menuClick(this, event)">
             <h2 target="sec_Accueil" class="menuItem menu_selected">Accueil</h2>

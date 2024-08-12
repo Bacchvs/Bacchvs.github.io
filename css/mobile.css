@@ -94,9 +94,9 @@ section{
   position: relative;
 } 
 
+ 
 
-#userpict_slider{
-  
+#hamburger{
+    width: 35px;
+    display: flex;
 }
-
-

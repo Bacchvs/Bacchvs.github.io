@@ -3,7 +3,7 @@
     font-family: "Pacifico";
     src: url("../font/Pacifico.ttf") format("truetype");
 }
-
+ 
 
 @font-face {
     font-family: "CascadiaCode";
@@ -684,6 +684,23 @@ section{
     grid-template-columns: repeat(5, 1fr);
      
 }
+
+
+
+#hamburger{
+    width: 50px;
+    padding: 20px;
+    
+    cursor: pointer;
+    
+    
+    
+    
+    display: none;
+}
+
+
+
 
 
 
