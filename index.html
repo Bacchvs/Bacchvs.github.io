@@ -15,7 +15,7 @@
     
     <div class="banner"> 
     <!--   <h1 class="username">Arnaud Sénécaut</h1> -->
-        <div class="menu" onclick="menuClick(this, event)">
+        <nav class="menu" onclick="menuClick(this, event)">
             <h2 target="sec_Accueil" class="menuItem menu_selected">Accueil</h2>
             <h2 target="sec_Biologie" class="menuItem">Biologie</h2>
             <h2 target="sec_Chimie" class="menuItem">Chimie</h2>
@@ -24,7 +24,7 @@
             <h2 target="sec_Atouts" class="menuItem">Atouts</h2>
             <!-- <h2 target="sec_CV" class="menuItem">CV</h2> -->
             <h2 target="sec_Contact" class="menuItem">Contact</h2>
-        </div>
+        </nav>
         <div class="reseau">
             <a alt="Linkedin Link" title="Mon Profil Linkedin" href="https://www.linkedin.com/in/arnaud-s%C3%A9n%C3%A9caut-44a3231b8/" target="_blank" rel="noopener noreferrer" class="icon_reseau linkedin">
                 <svg  viewBox="0 0 24 24"   fill="currentColor"  focusable="false">
@@ -54,8 +54,7 @@
 
     <div class="main">
         <section id="sec_Accueil">
-          
-            <!-- idée : rajouter Dr et une barre de chargement pour montrer ou j'en suis.  -->
+        
             <div id="userpict_main">
                 <h1 class="monNom">Arnaud Sénécaut</h1>
                 <div id="userpict_textArrow">
@@ -136,15 +135,62 @@
         <section id="sec_Formation">
             <!-- Une barre de chargement qui résume mon projet Universitaire -->
             <div id="project_timeline"> 
-                <div class="loading_bar"> 
+                <div class="lesDiplomes">
+                    <!-- BAC SCIENTIFIQUE -->
+                    
+                    <div class="diplome" title="Bac Scientifique SVT">
+                        <div class="diplome_icon"></div>
+                        <a class="diplome_name">BAC Scientifique</a>
+                        <a class="diplome_domain">Sciences de la Vie et de la Terre</a>
+                    </div>
+                        
+                
+                    <!-- DUT INFORMATIQUE -->
+                    
+                    <div class="diplome" title="DUT Informatique - Développeur d'Applications">
+                        <div class="diplome_icon"></div>
+                        <a class="diplome_name">DUT</a>
+                        <a class="diplome_domain">Informatique</a>
+                    </div>
+                    
+                    
+                    <!-- LICENCE BIOLOGIE CELL ET MOL -->
+                  
+                    <div class="diplome" title="Licence Biologie Cellulaire et Moléculaire">
+                        <div class="diplome_icon"></div>
+                        <a class="diplome_name">Licence</a>
+                        <a class="diplome_domain">Biologie Cellulaire et Moléculaire</a>
+                    </div>
+                    
+                    <!-- MASTER PHYSIOPATHOLOGIE INTEGRATIVE -->
+                    <div class="diplome" title="Master Physiopathologie Intégrative">
+                        <div class="diplome_icon"></div>
+                        <a class="diplome_name">Master</a>
+                        <a class="diplome_domain">Physiopathologie Intégrative</a>
+                    </div>
+                   
+                    <!-- DOCTORAT EN PROJET -->
+                    <div class="diplome" title="Doctorat en Sciences Interdisciplinaires">
+                        <div class="diplome_icon"></div>
+                        <a class="diplome_name">Doctorat</a>
+                        <a class="diplome_domain">Sciences Interdisciplinaires</a>
+                    </div>
 
-
                     <div class="dot"></div>
                     <div class="dot"></div>
                     <div class="dot"></div>
                     <div class="dot"></div>
                     <div class="dot"></div>
+                    <div class="progress"></div>
                 </div>
+                
+                <!-- <div class="loading_bar"> 
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div> -->
             </div>
         </section>
 

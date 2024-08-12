@@ -622,23 +622,67 @@ section{
 }
 
 
-#project_timeline{
-    border:solid blue;
+#project_timeline{ 
+    
     width: 100vw;
-    height: 10vh;
+    height: fit-content;
+ 
+    position: relative;
+    top: 30%;
     
+   
+    display: grid;
     
+    justify-items : center;
+    align-items: center;
     
-    
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 1fr;  /* 1 colonne */ 
 }
 
 .dot{
     height: 50px;
     width: 50px;
-    border: solid green;
-    background-color: blue; 
+
+    background-color: aliceblue; 
     
     border-radius: 100%;
+    margin: auto;
+    margin-top: 5%;  
+}
+
+.progress{ 
+    background-color: aliceblue;
+    
+    width: 55% ;
+    height: 55px;
+    
+    grid-row: 2;
+    grid-column: 1/-1; /* Occupe toutes les colonnes de la grille */
+    grid-row: 3; /* Place l'élément sur la première ligne mais en le superposant */
+    z-index: 1 ; /* Assure que cet élément est au-dessus des autres */
+    position: absolute; /* Nécessaire pour que z-index prenne effet */
+    left: 0;
+    bottom: 0;
+    
+    border-radius: 20px; /* Ajustez cette valeur pour changer le rayon des coins */
+    overflow: hidden; /* Empêche les éléments internes de dépasser les coins arrondis */
+    
+     
+   
+    
+}
+
+
+.lesDiplomes{
+    width: 100vw;
+    display: grid;
+    
+    justify-items : center;
+    align-items: top;
+    
+    grid-template-columns: repeat(5, 1fr);
+     
 }
 
 
@@ -646,7 +690,4 @@ section{
 
 
 
-
-
-
-
+ 
