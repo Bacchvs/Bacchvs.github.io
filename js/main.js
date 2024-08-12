@@ -24,6 +24,7 @@ let monNom = "BΔcchvs";
 
 
 let language = navigator.language;
+ 
 let CVname;
 if (language === "fr"){
     CVname = "CV_Arnaud_SENECAUT_Biologie.pdf"
