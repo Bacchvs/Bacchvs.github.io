@@ -1,17 +1,18 @@
+import util from "./util.js"
+
+
 let isFullyCharged = false;
-const time_start = new Date().getTime(); // Renvoie le temps en millisecondes depuis le 1er janvier 1970
+const time_start = new Date().getTime(); 
 
 const copyright_string = "Copyright © "+ (new Date().getFullYear()) + " Arnaud Sénécaut - All Rights Reserved.";
 const monAge = new Date().getFullYear() - 2000;
               
-function isDarkMode(){
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
-}
+
 
 // pour mettre à jour le favicon en fonction du theme
 function updateFavicon() {
     const favicon = document.getElementById('favicon');
-    const darkMode = isDarkMode();
+    const darkMode = util.isDarkMode();
     favicon.href = darkMode ? '/img/favicons/favicon_dark.png' : '/img/favicons/favicon_light.png';
 }
 
@@ -19,8 +20,7 @@ updateFavicon();
 
 // document.addEventListener('DOMContentLoaded', updateFavicon);
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
-
-let monNom = "BΔcchvs";
+ 
 
 
 let language = navigator.language;
