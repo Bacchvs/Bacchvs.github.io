@@ -7,6 +7,7 @@
     <title>Arnaud Sénécaut</title>
     <script src="/js/main.js"></script>
     <script src="/js/code_snippet.js"></script>
+    <script src="/js/loadingBars.js"></script>
 
     <link href="css/style.css" rel="stylesheet"/> 
     <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 768px)">
@@ -201,10 +202,30 @@
         </section>
 
         <section id="sec_Atouts">
-            <a>
+            <!-- <a>
                 Je sais parler Anglais et Espagnol.
-            </a>
+            </a> -->
             
+            <div id="espagnol_circle">
+                Espagnol
+                <div class="cercle-container">
+                    <svg class="cercle-svg" width="200" height="200">
+                        <circle class="cercle-bg" cx="100" cy="100" r="70"/>
+                        <circle class="cercle-progress" cx="100" cy="100" r="70" />
+                    </svg>
+                </div>
+            </div>
+
+            <div id="anglais_circle">
+                Anglais
+                <div class="cercle-container">
+                    <svg class="cercle-svg" width="200" height="200">
+                        <circle class="cercle-bg" cx="100" cy="100" r="70"/>
+                        <circle class="cercle-progress" cx="100" cy="100" r="70" />
+                    </svg>
+                </div>
+            </div>
+
             <div id="logo_lang">
                
             </div>

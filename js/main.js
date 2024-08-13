@@ -304,6 +304,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+    /////////////////////////////////////////////// NIVEAU ANGLAIS ESPAGNOL
+
+
+    setProgress(40, 70, document.getElementById('espagnol_circle'))
+    setProgress(70, 70, document.getElementById('anglais_circle'))
+
+
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     isFullyCharged = true;

@@ -94,6 +94,20 @@ section{
   position: relative;
 } 
 
+
+
+.dot{
+    height: 15px;
+    width: 15px;
+}
+
+.progress{ 
+    height: 20px;
+    
+    border-radius: 20px;  
+    overflow: hidden;  
+   
+}
  
 
 #hamburger{
