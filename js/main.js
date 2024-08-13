@@ -1,5 +1,11 @@
-import util from "./util.js"
+// import util from "./util.js"
 
+
+alert("chargé jusquici");
+
+  function isDarkMode(){
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
 
 let isFullyCharged = false;
 const time_start = new Date().getTime(); 
@@ -7,16 +13,21 @@ const time_start = new Date().getTime();
 const copyright_string = "Copyright © "+ (new Date().getFullYear()) + " Arnaud Sénécaut - All Rights Reserved.";
 const monAge = new Date().getFullYear() - 2000;
               
-
+function messageCaviard(){
+    alert("Bonjour,\n\nVeuillez noter que la version du CV que vous avez téléchargée est une version caviardée pour des raisons de confidentialité. Pour toute question ou pour obtenir des informations supplémentaires, n'hésitez pas à me contacter par e-mail.\nMerci de votre compréhension.\n\nCordialement,\n\tArnaud Sénécaut");
+}
 
 // pour mettre à jour le favicon en fonction du theme
 function updateFavicon() {
     const favicon = document.getElementById('favicon');
-    const darkMode = util.isDarkMode();
+    const darkMode =  isDarkMode();
     favicon.href = darkMode ? '/img/favicons/favicon_dark.png' : '/img/favicons/favicon_light.png';
 }
 
 updateFavicon();
+
+
+
 
 // document.addEventListener('DOMContentLoaded', updateFavicon);
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
@@ -25,12 +36,13 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', upd
 
 let language = navigator.language;
  
-let CVname;
-if (language === "fr"){
-    CVname = "CV_Arnaud_SENECAUT_Biologie.pdf"
-}else{
-    CVname = "CV_Arnaud_SENECAUT_Biologie_EN.pdf"
-}
+
+// let CVname;
+// if (language === "fr"){
+//     CVname = "CV_Arnaud_SENECAUT_Biologie.pdf"
+// }else{
+//     CVname = "CV_Arnaud_SENECAUT_Biologie_EN.pdf"
+// }
 
 
 // Permet de scroller à la bonne section
@@ -76,6 +88,7 @@ function switch_menuVisibility(){
 }
 
 
+ 
 function copyElemVal(elem) {
 
   let text = elem.getAttribute('value');
@@ -135,8 +148,6 @@ document.addEventListener('keydown', function(event) {
 
 // document.getElementById("cv_displayer").setAttribute("src", "http://docs.google.com/gview?url=bacchvs.github.io/documents/"+CVname+"&embedded=true");
  
- 
-
 
 //////////////////////////////////////////////////////////// RELATIF AUX 2L2MENTS
 document.addEventListener('DOMContentLoaded', () => {

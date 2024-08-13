@@ -641,8 +641,8 @@ section{
 }
 
 .dot{
-    height: 50px;
-    width: 50px;
+    height: 25px;
+    width: 25px;
 
     background-color: aliceblue; 
     
@@ -655,7 +655,7 @@ section{
     background-color: aliceblue;
     
     width: 55% ;
-    height: 55px;
+    height: 30px;
     
     grid-row: 2;
     grid-column: 1/-1; /* Occupe toutes les colonnes de la grille */
@@ -682,6 +682,7 @@ section{
     align-items: top;
     
     grid-template-columns: repeat(5, 1fr);
+    font-size: 0.75em;
      
 }
 
