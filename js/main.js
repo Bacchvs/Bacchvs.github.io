@@ -243,6 +243,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+    ///////////////////////////////////////////////////////////////////////////////
+
+    // Dates de début et de fin
+    const startDate = new Date('2024-06-24');  // Remplacez par votre date de début
+
+    // Date actuelle
+    const now = new Date();
+    if (now < startDate) now = startDate;
+ 
+
+    /////// from  https://www.scriptol.fr/javascript/dates-difference.php
+
+    function dateDiff(dateold, datenew){
+        return new Number((datenew.getTime() - dateold.getTime()) / 31536000000);
+    }
+
+    ////// end from 
+    var progression;
+    var elapsedYears = dateDiff(startDate, now);
+
+    // Calcul du pourcentage basé sur la règle spécifiée
+    if (elapsedYears <= 2) {
+        // Si moins de 2 ans, la progression est linéaire de 0% à 50%
+        progression = (elapsedYears / 2) * 20 + 52;
+    } else{
+        // Entre 2 et 5 ans, la progression est linéaire de 50% à 100%
+        progression = 52 + ((elapsedYears - 2) / 3) * 40;
+    } 
+ 
+    // Récupérer l'élément progress
+    const progress = document.getElementsByClassName('progress')[0];
+     
+    // Créer un observer pour surveiller si la section est visible
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting ) {
+                
+                progress.style.cssText += 'width: '+ progression + '%';
+            } else {
+                progress.style.cssText += 'width: 0%';
+            }
+        });
+    });
+
+    // Observer la section
+    obs.observe(progress);
+
+
+
     ///////////////////////////////////////////////////////////////////////////// put copyright
 
     let nodeCopyright = document.getElementsByTagName('copyright'); 
