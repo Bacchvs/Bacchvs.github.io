@@ -1,7 +1,6 @@
 // import util from "./util.js"
 
-
-alert("chargé jusquici");
+ 
 
   function isDarkMode(){
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
