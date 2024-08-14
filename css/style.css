@@ -140,19 +140,7 @@ section{
     margin: 0;
     height: 100vh;
 } 
-
-#sec_Informatique > #code_snippet{
-    font-family: CascadiaCode;
-    font-size : 0.7em;
-    margin-left: 50px;
-    font-style: normal;
-    
-    display: flex;
-    position: relative;
-    /* border: solid yellow; */
-    
-    left: 0;
-}
+  
 
 #sec_Informatique>.diplome{
     position: relative;

@@ -1,0 +1,66 @@
+.code_snippet{ 
+    font-family: CascadiaCode;
+    font-size : 0.7em;
+    margin-left: 50px;
+    font-style: normal;
+    
+    display: flex;
+    position: relative;
+    /* border: solid yellow; */
+    
+    left: 0; 
+ 
+  display: flex;
+  flex-flow: column;
+}
+
+ 
+#snipInf{
+  background-color: rgba(256,256, 256, 0.125);
+  border-radius: 25px;
+  padding: 10px;
+  
+  
+}
+
+ 
+.directive {
+  color: #FF69B4; /* Rose vif */
+}
+
+.keyword {
+  color: #00CED1; /* Turquoise */
+}
+
+.types {
+  color: #4682B4; /* Bleu acier */
+}
+
+.comment {
+  color: #228B22; /* Vert forêt */
+}
+
+.varname {
+  color: #4682B4; /* Bleu acier */
+}
+
+.text{
+  color: yellow;
+}
+
+.ponctuation{
+  color: lightskyblue;
+}
+
+.line{
+  color: lightgrey;
+  
+}
+.line:before{
+  content:  attr(n) " ";
+  color: grey;
+}
+.line:hover{
+  opacity: 1;
+   background-color: rgba(256,256, 256, 0.25);
+}
