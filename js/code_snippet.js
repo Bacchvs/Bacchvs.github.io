@@ -1,5 +1,5 @@
 // prépare une chaine à être utilisé dans une balise via innerHTML
-function escapeHTML(text) {
+async function escapeHTML(text) {
     return text.replace(/&/g, '&amp;')
                .replace(/</g, '&lt;')
                .replace(/>/g, '&gt;')
@@ -14,7 +14,7 @@ function escapeHTML(text) {
 
 
 // ne remplace que les truc quil voit en dehors des quotes
-function replaceOutsideQuotes(text, target, replacement) {
+async function replaceOutsideQuotes(text, target, replacement) {
     // Expression régulière pour trouver les parties entre guillemets
     const quotedRegex = /"[^"]*"/g;
     const unquotedTextParts = [];
@@ -44,76 +44,93 @@ function replaceOutsideQuotes(text, target, replacement) {
 }
 
 
-function replace_beginer_space(text) {
-    // Utiliser une expression régulière pour trouver les espaces au début de la chaîne
-    const match = text.match(/^( +)/);
-    
-    if (match) {
-        // Nombre d'espaces trouvés
-        let numSpaces = match[0].length;
-        let replacement = '';
-        
-        // Remplacer les groupes de 4 espaces par &emsp;
-        while (numSpaces >= 4) {
-            replacement += '&emsp;';
-            numSpaces -= 4;
+async function replace_beginer_space(text) {
+    let nbSpace= 0;
+    for (nbSpace=0; nbSpace<text.length; nbSpace++){
+        if ([nbSpace] != text[nbSpace]){
+            break;
         }
-        
-        // Remplacer les espaces restants par &nbsp;
-        replacement += '&nbsp;'.repeat(numSpaces);
-        
-        // Remplacer les espaces au début de la chaîne par la chaîne de remplacement
-        return replacement + text.slice(match[0].length);
-    }
+    } 
     
-    // Retourner la chaîne originale si aucun espace n'est trouvé au début
-    return text;
-}
+    if (nbSpace == 0){
+        return text;
+    }
+
+    let numSpaces = nbSpace;
+        
+    // Remplacer les groupes de 4 espaces par &emsp;
+    while (numSpaces >= 4) {
+        replacement += '&emsp;';
+        numSpaces -= 4;
+    }
+        
+    // Remplacer les espaces restants par &nbsp;
+    replacement += '&nbsp;'.repeat(numSpaces);
+        
+    // Remplacer les espaces au début de la chaîne par la chaîne de remplacement
+    return replacement + text.substring(0, nbSpace);
+}   
 
 
-function colorTocken(text, regex, class_name){
+async function colorTocken(text, regex, class_name){
     let ret;
     if (Array.isArray(regex)){
         ret = text;
         for (let i=0; i<regex.length; i++){
-            ret = extractAndReplace(ret, regex[i], class_name);
+            ret = await extractAndReplace(ret, regex[i], class_name);
         }
     }
     else{
-         ret = extractAndReplace(ret, regex, class_name);
+         ret = await extractAndReplace(ret, regex, class_name);
     }
     
     return ret;
 }
 
 
+ 
 
-function colorComment(text){
+async function colorComment(text){
     let ret = text.replace("//", "<span class='comment'>"+"//");
     ret = ret + "</span>";
     return ret;
 }
 
-function extractAndReplace(text, regexPattern, className) {
+async function extractAndReplace(text, regexPattern, className) {
     try {
         // Crée une expression régulière à partir du modèle fourni
         let regex = new RegExp(regexPattern, 'g');
         let matches = [];
         let match;
 
-        console.log("regex : "+regex);
+        // console.log("regex : "+regex);
         // Trouve toutes les occurrences correspondant au modèle regex
-        if ((match = regex.exec(text)) !== null) {
-            matches.push(match); // Ajouter la correspondance trouvée au tableau
-            console.log("match : "+match);
+        while ((match = regex.exec(text)) !== null) {
+            matches.push({
+                text: match[0],
+                index: match.index
+            });        
         }
 
-        let ret = text; 
+        // console.log("matches : "+ '['+matches+']');
+        
+        let ret = ""; 
+        let id_start = 0;
+
+      
+
         // Remplace chaque occurrence par elle-même entourée d'une balise HTML avec la classe
-        for( let i = 0; i< matches.length; i++){
-            ret = ret.replace(matches[i], `<span class="${className}">${matches[i]}</span>`);            
+        for(let i = 0; i< matches.length; i++){
+            let rep_str = `<span class="${className}">${matches[i].text}</span>`;
+             
+            ret += text.substring(id_start, matches[i].index)  + rep_str;
+
+            // console.log(rep_str + " LONGUEUR "+rep_str.length);
+            id_start =   matches[i].index  + matches[i].text.length;
         }
-         
+        
+        ret += text.substring(id_start, text.length); 
+
         return ret;
     } catch (e) {
         // Gestion des erreurs si le modèle regex est invalide
@@ -122,15 +139,21 @@ function extractAndReplace(text, regexPattern, className) {
     }
 }
 
+async function colorStrings(text){
+    return extractAndReplace(text, "\"([^\"\\\\]*(\\\\.[^\"\\\\]*)*)\"", "text")
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   
     ///////////////////////////////////////////
 
 
     // URL du fichier à charger
-    const fileUrl = '../documents/snippets/snippet.cpp';
+    const fileUrl = '../documents/snippets/snippet.';
     
-    fetch(fileUrl)
+    var lesLanguages = ["cpp"];
+
+    fetch(fileUrl+ lesLanguages[new Date().getTime()%lesLanguages.length])
         .then(response => {
             // Vérifier si la requête a réussi
             if (!response.ok) {
@@ -138,45 +161,45 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             return response.text(); // Lire le contenu du fichier en tant que texte
         })
-        .then(textContent => {
+        .then(async textContent => {
             // Diviser le texte en lignes
             let linesArray = textContent.split(/\r?\n/); 
             console.log("elem 0 : "+ linesArray[0]);
 
             for (let i = 0; i<linesArray.length; i++){
-                // linesArray[i] = replaceOutsideQuotes(linesArray[i], "main", "HELLO MY DEAR");
-                 
                 
-
-                // echappe les caractères interdits.
-                linesArray[i] = escapeHTML(linesArray[i]);
-
-                linesArray[i] = colorTocken(linesArray[i], ["/",":?","\\:", "\\[", "\\]", "\\(", "\\)", "\\{", "\\}",  "\\\\", ",", "[*]", "<<"], "ponctuation");
-                
-             
-                //remplace les espace par des &spaces....
-                linesArray[i] = replace_beginer_space(linesArray[i]);
-
-                
-                
-                // linesArray[i] = colorTocken(linesArray[i], ["main", "argc", "argv", "std"], "varname");
-                linesArray[i] = colorTocken(linesArray[i], ["#include"], "directive");
-                linesArray[i] = colorTocken(linesArray[i], ["if", "else", "elif", "switch", "case", "break", "goto", "return", "for", "while", "do"], "keyword");
-                linesArray[i] = colorTocken(linesArray[i], ["char", "short", "int", "float", "double", "long", "const", "string", "std"], "types");
-                // linesArray[i] = colorComment(linesArray[i]);
-
                   
+                // echappe les caractères interdits.
+                linesArray[i] = await escapeHTML(linesArray[i]); 
+                linesArray[i] = await colorTocken(linesArray[i], ["/","\\:", "\\[", "\\]", "\\(", "\\)", "\\{", "\\}",  "\\\\", ",", "[*]", "<<"], "ponctuation");
+                 
+                //remplace les espace par des &spaces....
+                linesArray[i] = await replace_beginer_space(linesArray[i]);
+                // console.log(linesArray[i]);
+                 
+                // linesArray[i] = await colorTocken(linesArray[i], ["main", "argc", "argv", "std"], "varname");
+                linesArray[i] = await colorTocken(linesArray[i], ["#include"], "directive");
+                linesArray[i] = await colorTocken(linesArray[i], ["if", "else", "elif", "switch", "case", "break", "goto", "return", "for", "while", "do"], "keyword");
+                linesArray[i] = await colorTocken(linesArray[i], ["char", "short", "int", "float", "double", "long", "const", "string", "std"], "types");
+                linesArray[i] = await colorComment(linesArray[i]);
+
+                // linesArray[i] = await colorStrings(linesArray[i]);
+                
+
+                // linesArray[i] = await colorTocken(linesArray[i], ["int"], "types");
+
+                console.log(linesArray[i]);
+
+
 
                 linesArray[i] = "<div class='line' n='"+i+"'>" + linesArray[i] + "</div>";
             }
-            
+
             // Afficher les lignes dans un élément HTML
             let fileContentElement = document.getElementById('snipInf');
 
 
-
-
-
+ 
             fileContentElement.innerHTML = linesArray.join("<br>"); // Joindre les lignes avec des retours à la ligne
 
             // Optionnel : Afficher le tableau des lignes dans la console
