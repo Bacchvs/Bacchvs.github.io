@@ -1,5 +1,11 @@
 @import '/css/circle-progress.css';
 
+:root{
+    --blue_arnaud : #012345; 
+    --white: aliceblue;
+}
+
+
 @font-face {
     font-family: "Pacifico";
     src: url("../font/Pacifico.ttf") format("truetype");
@@ -22,7 +28,7 @@ html, body {
     width: 100vw; 
     
     font-family: Arial, sans-serif;
-    color: aliceblue;
+    color: var(--white);
     background-color:  black; /* Couleur de fond pour éviter le blanc */
    
 }
@@ -69,7 +75,7 @@ h1, h2, p {
  
 
 .menu_selected{
-    border: solid 2px aliceblue;
+    border: solid 2px var(--white);
     transition: right 2s;
 }
 
@@ -81,10 +87,15 @@ section{
     align-items: center; /* Centre verticalement */
     
     font-size: 2em;
-    color : aliceblue;
+    color : var(--white);
     margin: 0;
+    
     height: 100vh;
-    width: 100vw;
+    
+    min-height: 512px; /* Hauteur minimale */
+    
+    width: 100%;
+    
     
     
     background: red;
@@ -95,7 +106,7 @@ section{
     
     font-family: Arial;
     font-style: italic bold;
-    color: aliceblue;
+    color: var(--white);
    
     display: flex;
     flex-direction: column; 
@@ -128,11 +139,12 @@ section{
     background: radial-gradient(circle, #351535, #151525);
    
     font-style: italic bold;
-    color: aliceblue;
+    color: var(--white);
    
-    display: flex;
-    flex-direction: row; 
+   
     align-items: center; /* Centre verticalement */
+    text-align: center;
+     
     
     font-size: 2em;
     
@@ -143,14 +155,48 @@ section{
   
 
 #sec_Informatique>.diplome{
-    position: relative;
-    left: 1vw;
-    top: -20vh
+    position: absolute;
+    left: 1vw; 
+    padding-top: 10%;
     
 }
 
+.cd_and_lang{
+    display: flex;
+    flex-flow: column;
+     
+    align-items: center;
+}
 
+#mesLanguagesInformatiques{
+    display: flex;
+    
+    width: fit-content;
+    height: 10%;
+    
+    align-items: center;
+    gap:30px; 
+}
 
+#lang_detail{
+    width: 80%;
+    font-size: 0.75em;
+    text-align: left; 
+}
+  
+.btn_lang{
+  width: 70px;
+   
+  border-radius: 4%; 
+  
+  cursor: pointer;
+}
+
+.btn_lang:hover{
+     scale: 105%;
+}
+
+ 
 #userpict_main{
     /* border : solid pink; */
     display: flex;
@@ -162,7 +208,7 @@ section{
     text-align: center;
      
     
-    width: 75vw;
+    width: 75%;
     height: 75vh;
     
     position: absolute;
@@ -173,11 +219,11 @@ section{
  
 #userpict_large {
     background: url("../img/full_transp.png") no-repeat;
-    background-size: 25vw auto; /* Redimensionner l'image en fonction de la hauteur */
+    background-size: 25 auto; /* Redimensionner l'image en fonction de la hauteur */
     background-position: bottom right; /* Positionner l'image en bas à droite */
     
     height: 100vh; /* La hauteur est fixée à 100% de la hauteur de la fenêtre */
-    width: 25vw; /* La largeur s'adapte à celle de l'image après le redimensionnement */
+    width: 25%; /* La largeur s'adapte à celle de l'image après le redimensionnement */
     position: absolute;
     right: 0;
     
@@ -220,7 +266,7 @@ section{
     margin: 0;
  
     
-    color: aliceblue; 
+    color: var(--white); 
     
     cursor: pointer; 
     
@@ -262,7 +308,7 @@ section{
 
  
 .reseau > *{   
-    color: aliceblue;
+    color: var(--white);
     
     height: 50px;
     width: 50px;
@@ -330,20 +376,20 @@ section{
 
 
 .slider_top{
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(61, 2, 110, 0.5)); /* Dégradé du bleu au rouge avec 50% de transparence */
+    /*background: linear-gradient(rgba(0, 0, 0, 0), rgba(61, 2, 110, 0.5));*/ /* Dégradé du bleu au rouge avec 50% de transparence */
     opacity: 0.5;
     order: 1;
     
 }
 
 .slider_mid{
-    background: rgba(61, 2, 110, 0.25);
+   /* background: rgba(61, 2, 110, 0.25);*/
     order: 2;
     
 }
 
 .slider_bottom{
-    background: linear-gradient(rgba(61, 2, 110, 0.5), rgba(0, 0, 0, 0)); /* Dégradé du bleu au rouge avec 50% de transparence */
+    /*background: linear-gradient(rgba(61, 2, 110, 0.5), rgba(0, 0, 0, 0));*/ /* Dégradé du bleu au rouge avec 50% de transparence */
     opacity: 0.5;
     order: 3;
     
@@ -360,7 +406,7 @@ section{
     
     font-family: Arial;
     font-style: italic bold;
-    color: aliceblue;
+    color: var(--white);
     
     align-items:baseline;
   
@@ -370,7 +416,7 @@ section{
     
     font-family: Arial;
     font-style: italic bold;
-    color: aliceblue;
+    color: var(--white);
     
     align-items:baseline;
   
@@ -397,50 +443,50 @@ section{
     translate: 10px -30px;
 }
 
-
-
-
-
-/* 
-#reseau_items{ 
-    width: 100vw;
-    height: 100vh;
-    
-    display: flex;
-    flex-flow: row;
-    
-    align-items: center; 
-}
-
-#itemTest{ 
-    background-color: red;
-    width: 33vw;
-    height: 60vh;
-    margin-inline: 15px; 
-} */
+ 
 
 #sec_Atouts{ 
    
     background: radial-gradient(circle, #FFFF00, #FFA500);
     
-   
     height: 100vh;
     position: bottom right; 
-   
+  
+}
+
+
+#atout_lang{
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes de taille égale */
+    grid-template-rows: 1fr; 
+    text-align: center;
+    font-weight: bold; 
+    
+   column-gap: 10px;
+    
 }
 
 #logo_lang{
     background: url("../img/svg/lang.svg") no-repeat;
-    background-size: 15vw auto; /* Redimensionner l'image en fonction de la hauteur */
-    background-position: bottom right; /* Positionner l'image en bas à droite */
     transform: scaleX(-1);
     height: 100%; /* La hauteur est fixée à 100% de la hauteur de la fenêtre */
-    width: 15vw; /* La largeur s'adapte à celle de l'image après le redimensionnement */
-    position: absolute;
-    left: 0;
-    
+    width: auto; /* La largeur s'adapte à celle de l'image après le redimensionnement */
+    background-position: bottom left; 
 }
- 
+
+
+.language_progress{
+    display: flex;
+    flex-flow: column;
+    align-items: center;  
+    text-align: center;
+    
+    stroke-width: 8%;
+}
+
+.circle-progress-pourcentage{ 
+    position: absolute;
+}
 
 
 #mon_cv{
@@ -482,7 +528,7 @@ section{
 #big_item{
     height: 30vh;  
     width: 30vh;  
-    color: aliceblue; 
+    color: var(--white); 
     margin: 30px;
 
     transition: opacity 0.5s ease-in-out;
@@ -518,7 +564,6 @@ section{
 
 
 #message_copy{
-   
     width: fit-content;
     position:  absolute;
     right: 1vw;
@@ -529,21 +574,19 @@ section{
     
     transition: opacity 0.5s ease-in-out;
  
-    border: solid aliceblue;
+    border: solid var(--white);
     border-radius: 25% ;
     
 }
  
 
 .footer{
-
     align-self: end; 
-    
-    /*background-color: orange;*/
-    width: 100vw;
+     
+    width: 99%;
     height: fit-content;  
  
-    justify-self: center; /* Centre horizontalement */
+    justify-self: center;  
     text-align: center;
     
     padding: 5px;
@@ -552,6 +595,8 @@ section{
     
     font-size: 0.5em;
     position:absolute;
+   
+    
      
 }
 
@@ -633,7 +678,7 @@ section{
     height: 25px;
     width: 25px;
 
-    background-color: aliceblue; 
+    background-color: var(--white); 
     
     border-radius: 100%;
     margin: auto;
@@ -641,7 +686,7 @@ section{
 }
 
 .progress{ 
-    background-color: aliceblue;
+    background-color: var(--white); 
     
     width: 55% ;
     height: 30px;
@@ -677,7 +722,10 @@ section{
      
 }
 
+ 
+ 
 
+ 
 
 #hamburger{
     width: 50px;
@@ -689,15 +737,7 @@ section{
     display: none;
 }
 
-#espagnol_circle{
-    stroke-width: 15;
-    
-}
 
-#anglais_circle{
-    stroke-width: 15;
-    
-}
 
 
 

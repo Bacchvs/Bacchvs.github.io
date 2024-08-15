@@ -6,14 +6,20 @@
     height: inherit;
     width: inherit;
     stroke-width: inherit;
+
+
+   
 }
 .cercle-svg {
     transform: rotate(-90deg); /* Rotation pour commencer le tracé de 12 heures */
+    
 }
 .cercle-bg {
     fill: none;
     stroke: #e0e0e0; /* Couleur de la bordure non remplie */
     stroke-width: inherit;
+
+    
 }
 .cercle-progress {
     fill: none;
@@ -23,4 +29,6 @@
     stroke-dasharray: 440; /* Valeur totale du périmètre du cercle */
     stroke-dashoffset: 440; /* Valeur initiale du tracé */
     transition: stroke-dashoffset 0.3s ease;
+
+    
 } 

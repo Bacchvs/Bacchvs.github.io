@@ -1,0 +1,18 @@
+html,body{
+  background-color: white; 
+} 
+
+
+  
+.btn_lang{
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  border: solid red;
+ 
+   
+  content:"hello";
+  padding: 0.5%;
+}
+
+ 

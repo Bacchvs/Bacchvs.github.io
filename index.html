@@ -15,15 +15,14 @@
     <link href="css/mobile.css" rel="stylesheet" media="screen and (max-width: 768px)">
 </head>
 <body>
-    <div class="banner"> 
+    <header class="banner"> 
         <div id="hamburger" onclick="switch_menuVisibility()">
             <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"> 
                 <rect x="2" y="6" width="20" height="3" rx="1" ry="1"/> 
                 <rect x="2" y="12" width="20" height="3" rx="1" ry="1"/> 
                 <rect x="2" y="18" width="20" height="3" rx="1" ry="1"/>
               </svg>              
-        </div>
-    <!--   <h1 class="username">Arnaud Sénécaut</h1> -->
+        </div> 
         <nav class="menu" onclick="menuClick(this, event)">
             <h2 target="sec_Accueil" class="menuItem menu_selected">Accueil</h2>
             <h2 target="sec_Biologie" class="menuItem">Biologie</h2>
@@ -59,7 +58,7 @@
         <div id="message_copy" class="hide">
             Addresse mail copiée
         </div>
-    </div>
+    </header>
 
     <div class="main">
         <section id="sec_Accueil">
@@ -104,13 +103,13 @@
 
          
 
-        <section id="sec_Biologie" >
+        <!-- <section id="sec_Biologie" >
             <div class="diplome" title="Licence Biologie Cellulaire et Moléculaire">
                 <div class="diplome_icon"></div>
                 <a class="diplome_name">Licence</a>
                 <a class="diplome_domain">Biologie Cellulaire et Moléculaire</a>
                 
-            </div>
+            </div> -->
             
             <!-- <ul id="bio_compétences" class="compet_list">
                 <li class="compet_item">PCR</li>
@@ -125,20 +124,30 @@
                 <li class="compet_item">culture interdisciplinaire en Biologie et Informatique</li>
                 <li class="compet_item">Etudes « in silico »</li> 
             </ul> -->
-        </section>
-
+        <!-- </section> -->
+<!-- 
         <section id="sec_Chimie">
-            <!-- <a>Durant mes études de biologie j'ai pu faire de la chimie : ajouter diplome(avec logo diplome et logo université qui se colore quand on met le doigt dessus).</a> -->
-        </section>
+        </section> -->
         <section id="sec_Informatique">
             <div class="diplome" title="DUT Informatique - Développeur d'Applications">
                 <div class="diplome_icon"></div>
                 <a class="diplome_name">DUT</a>
                 <a class="diplome_domain">Informatique</a>
             </div>
-            <p id="snipInf" class="code_snippet">
-                vide
-            </p>
+            
+            <div class="cd_and_lang">
+                <div id="mesLanguagesInformatiques">
+                   
+                </div>
+
+                <p id="lang_detail">
+                     
+                </p>
+                
+                <p id="snipInf" class="code_snippet">
+                    vide
+                </p>
+            </div>
         </section>
 
         <section id="sec_Formation">
@@ -193,43 +202,36 @@
                     <div class="progress"></div>
                 </div>
                 
-                <!-- <div class="loading_bar"> 
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div> -->
+               
             </div>
         </section>
 
         <section id="sec_Atouts">
-            <!-- <a>
-                Je sais parler Anglais et Espagnol.
-            </a> -->
-            
-            <div id="espagnol_circle" class="language_progress">
-                Espagnol
-                <div class="cercle-container">
-                    <svg class="cercle-svg" width="200" height="200">
-                        <circle class="cercle-bg" cx="100" cy="100" r="70"/>
-                        <circle class="cercle-progress" cx="100" cy="100" r="70" />
-                    </svg>
+            <div id="atout_lang">
+                <div id="logo_lang"></div>
+    
+                <div id="espagnol_circle" class="language_progress">
+                    <div class="cercle-container">
+                        <svg class="cercle-svg" width="200" height="200">
+                            <circle class="cercle-bg" cx="100" cy="100" r="70"/>
+                            <circle class="cercle-progress" cx="100" cy="100" r="70" />
+                        </svg>
+                        <a class="circle-progress-pourcentage">XX%</a>
+                    </div>
+                    Espagnol
                 </div>
-            </div>
-
-            <div id="anglais_circle" class="language_progress">
-                Anglais
-                <div class="cercle-container">
-                    <svg class="cercle-svg" width="200" height="200">
-                        <circle class="cercle-bg" cx="100" cy="100" r="70"/>
-                        <circle class="cercle-progress" cx="100" cy="100" r="70" />
-                    </svg>
+    
+                <div id="anglais_circle" class="language_progress">
+                    <div class="cercle-container">
+                        <svg class="cercle-svg" width="200" height="200">
+                            <circle class="cercle-bg" cx="50%" cy="50%" r="35%"/>
+                            <circle class="cercle-progress" cx="50%" cy="50%" r="35%"/>
+                        </svg>
+                        <a class="circle-progress-pourcentage">XX%</a>
+                    </div>
+                    Anglais
                 </div>
-            </div>
-
-            <div id="logo_lang">
-               
+    
             </div>
         </section>
 
@@ -264,31 +266,12 @@
     
             </div>
 
-            <div class="footer">
+            <footer class="footer">
                 <copyright/>
-            </div>
+            </footer>
         </section>
 
-        <!-- <section id="sec_Contact">
-
-            <a id="mes_resaux">
-                Pour mes réseaux, c'est par ici 
-                <svg viewBox="0 0 24 24"  fill="none" focusable="false" >
-                    <path d="M12 4.5L17 9.5M12 4.5L7 9.5M12 4.5L12 11M12 14.5C12 16.1667 11 19.5 7 19.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </a>
-
-            <a id="mon_cv">
-                Pour mon CV, c'est par là
-                <svg viewBox="0 0 24 24" fill="none" focusable="false" id="arrow" >
-                    <path d="M12 4.5L17 9.5M12 4.5L7 9.5M12 4.5L12 11M12 14.5C12 16.1667 11 19.5 7 19.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </a>
-
-            <a id="logo_cv" alt="CV Link" title="Mon CV" href="documents/CV_Arnaud_SENECAUT_Biologie.pdf" target="_blank" rel="noopener noreferrer" >
-            </a>
-        </section> -->
-
+    
         
     </div>
 </body>

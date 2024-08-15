@@ -210,3 +210,154 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
 });    
+
+
+/////////////////////////////////////////////////////////////////////////////////////// Les boutons avec logo du language
+
+
+function getFile(path, callback) {
+ 
+        fetch(path)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur lors du chargement du fichier.');
+                }
+                return response.text(); // Lire le contenu du fichier en tant que texte
+            })
+            .then(callback)
+            .catch(error => {
+                console.error('Erreur:', error);
+            });
+}
+
+
+
+
+// map <String, {logo, detail}>
+// var data_languages = new Map();
+
+
+let data_languages = []; // Déclaration globale pour que `data_languages` soit accessible partout
+
+async function fetchDataForLanguages(lesLangages) {
+    const promises = [];
+
+    for (let i = 0; i < lesLangages.length; i++) {
+        const lang = lesLangages[i];
+        const data = { name: lang };
+
+        const promise = Promise.all([
+            getFile(`/img/svg/languages/${lang}.svg`).then(textContent => {
+                data.logo = textContent;
+            }),
+            getFile(`/documents/snippets/${lang}.txt`).then(textContent => {
+                data.detail = textContent;
+            })
+        ]).then(() => {
+            data_languages.push(data); // Utilisation de `push` pour ajouter l'objet au tableau
+        });
+
+        promises.push(promise);
+    }
+
+    await Promise.all(promises);
+}
+
+// Exemple de fonction getFile
+function getFile(url) {
+    return new Promise((resolve, reject) => {
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(resolve)
+            .catch(reject);
+    });
+}
+ 
+
+
+var isLanguageDataReady = false;
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    var lesLangages = ["C", "C++", "Java", "Python", "R", "SQL"]; //, "COBOL", "VBA", "JavaScript", "HTML"
+
+
+    let mesLanguages_container = document.getElementById("mesLanguagesInformatiques");
+    let lang_detail_container = document.getElementById("lang_detail");
+    
+
+    // Appel de fetchDataForLanguages
+    fetchDataForLanguages(lesLangages).then(() => {
+        isLanguageDataReady = true;
+
+        for (let i = 0; i < data_languages.length; i++) {
+            mesLanguages_container.innerHTML += `<div onclick="lang_click(this)" class="btn_lang" id="${i}">${data_languages[i].logo}</div>`;
+        }
+
+        lang_detail_container.innerText = data_languages[0].detail;
+    });
+
+
+
+    // for(let i = 0; i< les_boutons_languages.length; i++){
+    //     let lang = les_boutons_languages[i].getAttribute('lang').toUpperCase();
+    //     if (lang != 'undefined'){
+    //         if (! logos_languages.has(lang)){
+    //             getFile("/img/svg/languages/"+lang+".svg", async textContent => {
+    //                     logos_languages.set(lang, textContent);
+    //                     les_boutons_languages[i].innerHTML = textContent;
+    //                 });
+
+    //             getFile("/img/documents/languages/"+lang+".txt", async textContent => {
+    //                 detail_lang.set(lang, textContent);
+    //             });
+    //         }else{
+    //             console.log("LOGO "+lang +" déjà présent. ");
+    //             les_boutons_languages[i].innerHTML = logos_languages.get(lang);
+    //         } 
+    //     }
+    // }
+
+
+
+    // lang_detail_container.innerText = detail_lang.get("R");
+
+
+
+
+
+});
+
+
+var lastSelected = 0;
+
+function lang_click(src){
+    // si c'est pas pret, on fait rien
+    if ( ! isLanguageDataReady) return;
+
+    const btns = document.getElementsByClassName("btn_lang");
+
+    let id = src.getAttribute("id");
+
+
+
+    /// déséléctionne l'ancien language.
+    btns[lastSelected%btns.length].classList.remove("selected_lang");
+
+    
+    /// séléctionne le language choisis.
+    btns[id%btns.length].classList.add("selected_lang");
+
+    /// met le text correspondant
+
+    let lang_detail_container = document.getElementById("lang_detail");
+    lang_detail_container.innerText = data_languages[id].detail;
+
+    // met le code snippet correspondant
+    // TODO: 
+}
