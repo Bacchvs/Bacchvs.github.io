@@ -1,8 +1,7 @@
 // import util from "./util.js"
 
- 
 
-  function isDarkMode(){
+function isDarkMode(){
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
 }
 
@@ -102,13 +101,16 @@ function copyElemVal(elem) {
   }
     copyContent();
     
-    const messageElement = document.getElementById('message_copy');
-    messageElement.classList.remove("hide");
+
+    Toast.makeText(document.body, "Mail copié", Toast.LENGTH_LONG).show();
+
+    // const messageElement = document.getElementById('message_copy');
+    // messageElement.classList.remove("hide");
     
   
-    setTimeout(() => {
-        messageElement.classList.add("hide");
-    }, 1000);
+    // setTimeout(() => {
+    //     messageElement.classList.add("hide");
+    // }, 1000);
 }
 
 

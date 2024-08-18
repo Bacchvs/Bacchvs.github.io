@@ -6,13 +6,16 @@
     <link id="favicon" rel="icon" href="/img/favicons/favicon_light.png" type="image/png">
     <title>Arnaud Sénécaut</title>
     <script src="/js/main.js"></script>
+    <script src="/js/Toast.js" type="module"></script>
     <script src="/js/code_snippet.js"></script>
     <script src="/js/loadingBars.js"></script>
 
-    <link href="css/style.css" rel="stylesheet"/> 
-    <link href="css/code-snippet.css" rel="stylesheet"/> 
 
-    <link href="css/mobile.css" rel="stylesheet" media="screen and (max-width: 768px)">
+    <link href="/css/style.css" rel="stylesheet"/> 
+    <link href="/css/code-snippet.css" rel="stylesheet"/> 
+    <link href="/css/Toast.css" rel="stylesheet"/> 
+
+    <link href="/css/mobile.css" rel="stylesheet" media="screen and (max-width: 768px)">
 </head>
 <body>
     <header class="banner"> 
@@ -25,8 +28,8 @@
         </div> 
         <nav class="menu" onclick="menuClick(this, event)">
             <h2 target="sec_Accueil" class="menuItem menu_selected">Accueil</h2>
-            <h2 target="sec_Biologie" class="menuItem">Biologie</h2>
-            <h2 target="sec_Chimie" class="menuItem">Chimie</h2>
+            <!-- <h2 target="sec_Biologie" class="menuItem">Biologie</h2>
+            <h2 target="sec_Chimie" class="menuItem">Chimie</h2> -->
             <h2 target="sec_Informatique" class="menuItem">Informatique</h2>
             <h2 target="sec_Formation" class="menuItem">Formation</h2>
             <h2 target="sec_Atouts" class="menuItem">Atouts</h2>
@@ -55,9 +58,9 @@
             </a>
 
         </div>
-        <div id="message_copy" class="hide">
+        <!-- <div id="message_copy" class="hide">
             Addresse mail copiée
-        </div>
+        </div> -->
     </header>
 
     <div class="main">

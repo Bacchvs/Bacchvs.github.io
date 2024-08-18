@@ -1,0 +1,81 @@
+
+/*!
+ * Notification Toast CSS Styles v1.0.0
+ * Copyright (c) 2024 Bacchvs -- Sén.Ar. 
+ * License: MIT (https://opensource.org/licenses/MIT)
+ * Description: CSS styles for displaying toast notifications with an Android-like appearance.
+ * 
+ * These styles are designed to provide the sleek and modern look of Android toast notifications
+ * for your web applications. They ensure that notifications are visually appealing and consistent
+ * with Android design principles.
+ *
+ * Usage:
+ * - Include this CSS file in your HTML to apply styles to your toast notifications.
+ * - Ensure that your notification HTML elements use the appropriate classes defined in this file.
+ *
+ * Author: A.S aka Bacchvs
+ * GitHub: https://github.com/Bacchvs/AndroidLikeWebToast
+ *
+ * This software is provided "as is", without warranty of any kind.
+ * See the LICENSE file for more details.
+ */
+
+
+:root{
+    --toast_text: aliceblue;
+    --toast_border: none;
+    --toast_background : #636363; 
+    --toast_radius: 10000px;
+    --toast_padding: 0.75%;
+}
+ 
+
+
+/* the toast class */
+.toast{
+    color: var(--toast_text);
+    border: var(--toast_border);
+    background-color: var(--toast_background);
+    border-radius: var(--toast_radius);
+ 
+    padding: var(--toast_padding);
+    
+    
+    width: fit-content;
+   
+    height: fit-content;
+    
+    position: fixed;  
+    bottom: 5%;     
+    left: 50%;        
+    transform: translateX(-50%); 
+ 
+   transition: all 1.5s ease;
+}
+ 
+/* Hide the toast*/
+.toast_hide{
+    opacity: 0; 
+    overflow: hidden;
+    visibility: hidden;  
+    transition: all 1.5s ease;
+}
+ 
+
+/* special toast that accumulate inside a view*/
+.squared_toast {
+    background-color: var(--toast_background);
+    color: var(--toast_text);
+    padding: 10px 20px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.squared_toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
