@@ -155,10 +155,9 @@ section{
   
 
 #sec_Informatique>.diplome{
-    position: absolute;
-    left: 1vw; 
-    padding-top: 10%;
+    position: static;
     
+   
 }
 
 .cd_and_lang{
@@ -634,6 +633,7 @@ section{
    
     align-items: center;
     width: fit-content;
+
 }
 
 .diplome_icon{ 
