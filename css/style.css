@@ -29,8 +29,7 @@ html, body {
     
     font-family: Arial, sans-serif;
     color: var(--white);
-    background-color:  black; /* Couleur de fond pour éviter le blanc */
-   
+    background-color:  black; /* Couleur de fond pour éviter le blanc */  
 }
  
  
@@ -217,15 +216,19 @@ section{
 
  
 #userpict_large {
-    background: url("../img/full_transp.png") no-repeat;
-    background-size: 25 auto; /* Redimensionner l'image en fonction de la hauteur */
-    background-position: bottom right; /* Positionner l'image en bas à droite */
+    background: url("../img/file_adobe.png") no-repeat;
+    background-size: auto 100%; /* Redimensionner l'image en fonction de la hauteur */
+    background-position: bottom left; /* Positionner l'image en bas à droite */
     
-    height: 100vh; /* La hauteur est fixée à 100% de la hauteur de la fenêtre */
-    width: 25%; /* La largeur s'adapte à celle de l'image après le redimensionnement */
+    height: 50vh; /* La hauteur est fixée à 100% de la hauteur de la fenêtre */
+    width: 50vh; /* La largeur s'adapte à celle de l'image après le redimensionnement */
     position: absolute;
     right: 0;
+    bottom: 0;
     
+     
+    
+    transform: scaleX(-1);
     /* border: solid green; */
 }
 
