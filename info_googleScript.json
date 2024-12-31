@@ -29,8 +29,7 @@
     {
       "@type": "CollegeOrUniversity",
       "name": "IUT de Vannes",
-      "alternateName": "Université Bretagne Sud",
-      "alternateName": "UBS",
+      "alternateName": ["Université Bretagne Sud", "UBS"],
       "degree": "Diplôme Universitaire et Technologique en Informatique"
     },
     {
