@@ -1,0 +1,63 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Arnaud Sénécaut",
+  "alternateName": "Arnaud Senecaut",
+  "url": "https://arnaud.senecaut.fr",
+  "image": "https://arnaud.senecaut.fr/img/file_adobe.png",
+  "sameAs": [
+    "https://www.linkedin.com/in/arnaud-sénécaut-44a3231b8",
+    "https://github.com/Bacchvs"
+  ],
+  "jobTitle": "Scientifique interdisciplinaire",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "École Pratique des Hautes Études"
+  },
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "École Pratique des Hautes Études"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Université Bretagne Sud"
+    }
+  ],
+  "knowsLanguage": [
+    {
+      "@type": "Language",
+      "name": "Français"
+    },
+    {
+      "@type": "Language",
+      "name": "Anglais"
+    },
+    {
+      "@type": "Language",
+      "name": "Espagnol"
+    },
+    {
+      "@type": "Language",
+      "name": "C"
+    },
+    {
+      "@type": "Language",
+      "name": "C++"
+    },
+    {
+      "@type": "Language",
+      "name": "Java"
+    },
+    {
+      "@type": "Language",
+      "name": "Python"
+    },
+    {
+      "@type": "Language",
+      "name": "Assembleur"
+    }
+  ],
+  "email": "mailto:arnaud@senecaut.fr",
+  "description": "Scientifique passionné, explorant les frontières de l'interdisciplinarité. Toujours curieux d'apprendre et de partager des connaissances."
+}
