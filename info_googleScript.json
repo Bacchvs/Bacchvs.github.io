@@ -19,7 +19,7 @@
   "knows": {
     "@type": "Person",
     "name": "Nicolas Sénécaut",
-    "alternateName": ["Nicolas Senecaut", "Dr Nicolas Sénécaut", "Nicolas Sénécuat, PhD"],
+    "alternateName": ["Nicolas Senecaut", "Dr Nicolas Sénécaut", "Nicolas Sénécaut, PhD"],
     "url": "https://nicolas.senecaut.fr",
     "description": "Frère, collègue de travail et collaborateur scientifique."
   },
