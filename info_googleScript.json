@@ -2,6 +2,8 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Arnaud Sénécaut",
+  "familyName": "Sénécaut",
+  "givenName": "Arnaud",
   "alternateName": "Arnaud Senecaut",
   "url": "https://arnaud.senecaut.fr",
   "image": "https://arnaud.senecaut.fr/img/file_adobe.png",
@@ -13,6 +15,13 @@
   "worksFor": {
     "@type": "Organization",
     "name": "École Pratique des Hautes Études"
+  },
+  "knows": {
+    "@type": "Person",
+    "name": "Nicolas Sénécaut",
+    "alternateName": ["Nicolas Senecaut", "Dr Nicolas Sénécaut", "Nicolas Sénécuat, PhD"],
+    "url": "https://nicolas.senecaut.fr",
+    "description": "Frère, collègue de travail et collaborateur scientifique."
   },
   "alumniOf": [
     {
