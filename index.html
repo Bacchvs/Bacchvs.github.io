@@ -20,78 +20,120 @@
 
     <link href="/css/mobile.css" rel="stylesheet" media="screen and (max-width: 1500px)">
 
+
+
     <script type="application/ld+json">
         {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Arnaud Sénécaut",
-        "familyName": "Sénécaut",
-        "givenName": "Arnaud",
-        "alternateName": "Arnaud Senecaut",
-        "url": "https://arnaud.senecaut.fr",
-        "image": "https://arnaud.senecaut.fr/img/full_transp.png",
-        "sameAs": [
-          "https://www.linkedin.com/in/arnaud-sénécaut-44a3231b8",
-          "https://github.com/Bacchvs"
-        ],
-        "jobTitle": "Scientifique interdisciplinaire",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "École Pratique des Hautes Études"
-        },
-        "knows": {
-          "@type": "Person",
-          "name": "Nicolas Sénécaut",
-          "alternateName": ["Nicolas Senecaut", "Dr Nicolas Sénécaut", "Nicolas Sénécaut, PhD"],
-          "url": "https://nicolas.senecaut.fr",
-          "description": "Frère, collègue de travail et collaborateur scientifique."
-        },
-        "alumniOf": [
-          {
-            "@type": "CollegeOrUniversity",
-            "name": "École Pratique des Hautes Études",
-            "description": "Master de Biologie [en cours]"
-          },
-          {
-            "@type": "CollegeOrUniversity",
-            "name": "Université Bretagne Sud",
-            "alternateName": "UBS",
-            "description": "Licence de Biologie"
-          },
-          {
-            "@type": "CollegeOrUniversity",
-            "name": "IUT de Vannes",
-            "alternateName": ["Université Bretagne Sud", "UBS"],
-            "description": "Diplôme Universitaire et Technologique en Informatique"
-          },
-          {
-            "@type": "CollegeOrUniversity",
-            "name": "Université Paris Descartes",
-            "alternateName": ["Université Paris V", "Université De Paris", "Université Paris Cité"]
-          }
-        ],
-        "knowsAbout": ["R", "C", "C++", "Java", "Python", "Assembleur", "HTML", "CSS", "Javascript"],
-        "knowsLanguage": [
-          {
-            "@type": "Language",
-            "name": "Français"
-          },
-          {
-            "@type": "Language",
-            "name": "Anglais"
-          },
-          {
-            "@type": "Language",
-            "name": "Espagnol"
-          },
-          {
-            "@type": "Language",
-            "name": "Espagnol"
-          }
-        ],
-        "email": "mailto:arnaud@senecaut.fr",
-        "description": "Scientifique passionné, explorant les frontières de l'interdisciplinarité. Toujours curieux d'apprendre et de partager des connaissances."
-      }
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "ProfilePage",
+                    "url": "https://arnaud.senecaut.fr",
+                    "mainEntity": {
+                        "@type": "Person",
+                        "name": "Arnaud Sénécaut",
+                        "familyName": "Sénécaut",
+                        "givenName": "Arnaud",
+                        "alternateName": "Arnaud Senecaut",
+                        "url": "https://arnaud.senecaut.fr",
+                        "image": "https://arnaud.senecaut.fr/img/full_transp.png",
+                        "sameAs": [
+                            "https://www.linkedin.com/in/arnaud-sénécaut-44a3231b8",
+                            "https://github.com/Bacchvs"
+                        ],
+                        "jobTitle": "Scientifique interdisciplinaire",
+                        "description": "Scientifique passionné, explorant les frontières de l'interdisciplinarité. Toujours curieux d'apprendre et de partager des connaissances.",
+                        "worksFor": {
+                            "@id": "#ephe"
+                        },
+                        "knows": {
+                            "@id": "#nicolas"
+                        },
+                        "alumniOf": [
+                            {
+                                "@id": "#ephe"
+                            },
+                            {
+                                "@id": "#ubs"
+                            },
+                            {
+                                "@id": "#iut-vannes"
+                            },
+                            {
+                                "@id": "#paris-descartes"
+                            }
+                        ],
+                        "knowsAbout": [
+                            "R", "C", "C++", "Java", "Python", "Assembleur", "HTML", "CSS", "Javascript"
+                        ],
+                        "knowsLanguage": [
+                            {
+                                "@type": "Language",
+                                "name": "Français"
+                            },
+                            {
+                                "@type": "Language",
+                                "name": "Anglais"
+                            },
+                            {
+                                "@type": "Language",
+                                "name": "Espagnol"
+                            }
+                        ],
+                        "email": "mailto:arnaud@senecaut.fr",
+                        "mainEntityOfPage": {
+                            "@type": "ProfilePage",
+                            "url": "https://arnaud.senecaut.fr"
+                        }
+                    }
+                },
+                {
+                    "@type": "Person",
+                    "@id": "#nicolas",
+                    "name": "Nicolas Sénécaut",
+                    "alternateName": [
+                        "Nicolas Senecaut",
+                        "Dr Nicolas Sénécaut",
+                        "Nicolas Sénécaut, PhD"
+                    ],
+                    "url": "https://nicolas.senecaut.fr",
+                    "description": "Frère, collègue de travail et collaborateur scientifique."
+                },
+                {
+                    "@type": "Organization",
+                    "@id": "#ephe",
+                    "name": "École Pratique des Hautes Études"
+                },
+                {
+                    "@type": "CollegeOrUniversity",
+                    "@id": "#ubs",
+                    "name": "Université Bretagne Sud",
+                    "alternateName": "UBS",
+                    "description": "Licence de Biologie"
+                },
+                {
+                    "@type": "CollegeOrUniversity",
+                    "@id": "#iut-vannes",
+                    "name": "IUT de Vannes",
+                    "alternateName": [
+                        "Université Bretagne Sud",
+                        "UBS"
+                    ],
+                    "description": "Diplôme Universitaire et Technologique en Informatique"
+                },
+                {
+                    "@type": "CollegeOrUniversity",
+                    "@id": "#paris-descartes",
+                    "name": "Université Paris Descartes",
+                    "alternateName": [
+                        "Université Paris V",
+                        "Université De Paris",
+                        "Université Paris Cité"
+                    ]
+                }
+            ]
+        }
+
     </script>
 </head>
 <body>
