@@ -216,7 +216,7 @@ section{
 
  
 #userpict_large {
-    background: url("../img/file_adobe.png") no-repeat;
+    background: url("../img/full_transp.png") no-repeat;
     background-size: auto 100%; /* Redimensionner l'image en fonction de la hauteur */
     background-position: bottom left; /* Positionner l'image en bas à droite */
     

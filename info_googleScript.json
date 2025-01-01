@@ -6,7 +6,7 @@
   "givenName": "Arnaud",
   "alternateName": "Arnaud Senecaut",
   "url": "https://arnaud.senecaut.fr",
-  "image": "https://arnaud.senecaut.fr/img/file_adobe.png",
+  "image": "https://arnaud.senecaut.fr/img/full_transp.png",
   "sameAs": [
     "https://www.linkedin.com/in/arnaud-sénécaut-44a3231b8",
     "https://github.com/Bacchvs"
@@ -47,6 +47,7 @@
       "alternateName": ["Université Paris V", "Université De Paris", "Université Paris Cité"]
     }
   ],
+  "knowsAbout": ["R", "C", "C++", "Java", "Python", "Assembleur", "HTML", "CSS", "Javascript"],
   "knowsLanguage": [
     {
       "@type": "Language",
@@ -62,23 +63,7 @@
     },
     {
       "@type": "Language",
-      "name": "C"
-    },
-    {
-      "@type": "Language",
-      "name": "C++"
-    },
-    {
-      "@type": "Language",
-      "name": "Java"
-    },
-    {
-      "@type": "Language",
-      "name": "Python"
-    },
-    {
-      "@type": "Language",
-      "name": "Assembleur"
+      "name": "Espagnol"
     }
   ],
   "email": "mailto:arnaud@senecaut.fr",
