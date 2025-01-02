@@ -55,11 +55,7 @@
             "name": "Espagnol"
           }
         ],
-        "email": "mailto:arnaud@senecaut.fr",
-        "mainEntityOfPage": {
-          "@type": "ProfilePage",
-          "url": "https://arnaud.senecaut.fr"
-        }
+        "email": "mailto:arnaud@senecaut.fr"
       }
     },
     {
