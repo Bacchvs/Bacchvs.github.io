@@ -1,116 +1,842 @@
-* >{
-    overflow: clip;
+/* 
+  Auteur: Arnaud Sénécaut
+*/
+
+
+@import '/css/circle-progress.css';
+
+:root{
+    --blue_arnaud : #012345; 
+    --white: aliceblue;
+    
+    --disp_hamburger: flex;
+    
+    --grad_blue : radial-gradient(circle, #2C015E, #012345);
+    --grad_green :  radial-gradient(circle, #154545, #254525);
+    --grad_purpple : radial-gradient(circle, #351535, #151525);
+    --grad_red : radial-gradient(circle, #550000, #000000); 
 }
 
+
+@font-face {
+    font-family: "Pacifico";
+    src: url("../font/Pacifico.ttf") format("truetype");
+}
+ 
+
+@font-face {
+    font-family: "CascadiaCode";
+    src: url("../font/CascadiaCode.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Dosis";
+    src: url("../font/Dosis-VariableFont_wght.ttf") format("truetype");
+}
+
+
+
+
+
+html, body {  
+    user-select: none;
+    margin: 0;
+    height: fit-content;
+    width: 100vw; 
+    
+    font-family: Arial, sans-serif;
+    color: var(--white);
+    background-color:  black; /* Couleur de fond pour éviter le blanc */
+    
+    
+    box-sizing: border-box;
+     
+}
+ 
+h2{
+    margin: 10px;
+}
+  
+p{
+    font-size: 14px;
+    text-align: justify;
+    padding: 10px;
+ 
+}
+
+
+ 
+ 
+ 
+.hide{
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    /*display: none !important;*/ 
+}
+
+
+ 
+
+.main{
+    display: flex;
+    flex-flow : column;
+}
+
+
+banner {
+    height: 0px; /* Définir une hauteur pour le div */
+    
+    position: sticky;
+    top: 0;
+    
+    box-sizing: border-box; 
+    
+
+    /* background-color: #012345;  */
+    
+    /* background: radial-gradient(circle, #2C015E, #012345); */
+}
+
+header{
+    display: none;
+}
+
+
+footer{
+    background-color: var(--blue_arnaud);
+    font-size: 13px;
+    text-align: center;
+    width: 100vw;
+}
+
+
+ 
 
 section{
-     
-    font-size: 1em;
-     
+    display: flex;
+    flex-direction: column; 
+    align-items: center; /* Centre verticalement */
+    
+    font-size: 2em;
+    color : var(--white);
+    
+    margin: 0;
+    
+    height: 100vh;
+    
+    min-height: 512px; /* Hauteur minimale */
+    
+    width: 100%;
+    
+    
+    
     background: red;
+    
+    box-sizing: border-box;
 }
+ 
 
 
-.menu{
-   
-    left: 10px;
-    top : 20px;
-   
+
+/*
+------------------------
+    MENU A GAUCHE 
+------------------------
+*/
+
+ 
+nav{
     
-    margin-right: 20px;
+    position: fixed;
+    top: 0px;  
     
-    font-size: 0.5em;
+    display: flex;
     
-    flex-flow:column;
+    height: 100vh;
+     
+    box-sizing: border-box;
+    
+    z-index: 100000;
+      
+     
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+     
+    transition: all 0.3s;
+    
+
 }
+
+body{
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+   
 
 .menuItem{
     
     padding: 10px; 
-   
+    margin: 0;
+
+    font-size: 13px;
+     
+    
+    
+  
+    color: var(--white); 
+    
+    cursor: pointer; 
+    
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    
+    
 }
 
 
-#userpict_main{ 
-    display: flex;
-    flex-direction: column;
-  
-    position: absolute; 
+.menuItem:hover{
+    /* border: solid red; */
+    opacity: 0.5;
+    scale: 105%;
+}
+ 
+.menu_selected{
+    border: solid 2px var(--white);
+    transition: right 2s;
+}
+ 
+ 
+.topsidemenu {
+   
+    padding: 10px;
     
-     align-items: center;
     text-align: center;
-    width: 100vw;
-    height: 100vh;
-}
-
-
-#userpict_large{ 
-  width: 100vw;
-  background-position: bottom right; /* Positionner l'image en bas à droite */
-  
-  background-size: 50vw auto;
-  
-  transform: scaleX(-1);
-  
-}
-
-
-
-
-
-#userpict_textArrow { 
-  /* border: solid red; */
-    
-  margin-top: 15vh;
-   
-  
-  display: flex;
-  flex-flow: column;
-
-  height: fit-content;
-  
-  align-items: center;
-} 
-
-#userpict_text { 
-    /* border: solid green;  */
     
     display: flex;
-    flex-direction: row;
+    flex-flow: column;
+    
+    
+    box-sizing: border-box;
+   
+    
+    width : 150px; 
+    height: 200dvh;
+    background: linear-gradient(black, var(--blue_arnaud));
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    
+    transform: translateX(0);  /* Position initiale */
+    transition: transform 0.25s ease;  /* Animation pour déplacer et rendre invisible */
+    
 
-     
-     margin-left: 0vw;
-     gap: 10px;
-     
-} 
-
-
-#userpict_arrow { 
-  align-self: flex-end;
-    scale: 150%;
-    translate: -5vh 15vh;
-    rotate: 90deg;
-    transform: scaleY(-1) scaleX(1);
-  position: relative;
-} 
-
-
-
-.dot{
-    height: 15px;
-    width: 15px;
+}
+ 
+.topsidemenu.hide {
+    transform: translateX(-100%);  
 }
 
-.progress{ 
-    height: 20px;
+
+
+#hamburger{
+    width: fit-content;
+    height: fit-content;
     
-    border-radius: 20px;  
-    overflow: hidden;  
-   
+     
+    margin: 5px;
+    cursor: pointer;
+    
+      
+    font-size: 30px;
+    font-weight: bold;
+    
+    display: var(--disp_hamburger);
+    
+    
+    position: absolute;  
+    left: 100%;  
+    top: 0;  
+    
+    box-sizing: border-box;
+    
+    border-radius: 15%;
+    width: 50px;
+    height: 50px;
+    
+    align-items: center;
+    justify-content: center;
+    
+    padding-bottom: 2px;
+    background: #1C1C1C;
+    
+    
+    
 }
  
 
-#hamburger{
-    width: 35px;
+
+/* 
+------------------------
+    PHOTO RONDE
+------------------------
+*/
+
+
+.ident_round{
+    height: 100px;
+    width: 100px;
+    margin-inline: auto;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    border: solid #101010;
+    border-radius: 100%;  
+    
+    background: url("../img/ident.png") no-repeat;
+    background-size: cover; 
+    background-position: center; 
+}
+
+/*
+------------------------
+    SECTION ACCUEIL
+------------------------
+*/
+ 
+#sec_Accueil{ 
+    background: var(--grad_purpple);
+    
+   height: fit-content;
+   height: 100vh;
+   
+ 
+}
+
+
+#photo_pro_full{
+    
+    height: 50%;
+    width: 80%;
+    
+    background: url('../img/full_transp.png') no-repeat;
+     
+    background-size: cover; 
+    background-position: center; 
+    background-size: contain;
+    
+   
+}
+
+#monNom{ 
+    margin-top: 5px; 
+    font-size: 1.2em;
+     
+    margin-bottom: 0px;
+}
+
+#titre{
+    font-size: 0.6em;
+    text-align: center;   
+    margin-top: 5px;
+}
+
+#nom_titre{
+    text-align: center;
+}
+
+#p_message_accueil{
+    border : none;
+    font-size: 0.5em;
+     
+    margin-top: 0px;
+    padding-inline: 25px; 
+}
+ 
+/*
+
+--------------------
+    FIELDS BOXES
+--------------------
+*/
+
+
+
+#field_container {
+    display: flex;  
+    flex-wrap: wrap;  
+     
+   
+    box-sizing: border-box; 
+    
+    justify-content: center;
+    align-items: center;
+    
+     
+    height: 150px;
+    width: 100%;
+}
+ 
+.field {
+    flex: 1 1 100px;  
+   
+    box-sizing: border-box;
+    
+    cursor: pointer;
+    
+    text-align: center;
+  
+    align-content: center;  
+    
+    max-width: 100px;
+    min-width: 100px; 
+    
+    width: 20%; 
+    height: 70%;
+    
+    border: solid aliceblue 1px;
+   
+    margin: 5px;
+   
+   
+    font-size: 20px;
+   
+    
+    border-radius: 6px;
+    
+  
+    opacity: 75%;
+    
+    
+    
+} 
+ 
+
+
+.field.selected{
+    border: solid green;
+    opacity: 100%;
+    border: solid aliceblue 2px;
+}
+
+.field#biologie{
+    background: var(--grad_green);    
+}
+
+#biologie > svg{
+    scale: 0.9;    
+}
+
+
+.field#chimie{
+     background: radial-gradient(circle, #650045, #452545);
+}
+.field#informatique{
+      background: radial-gradient(circle, #351535, #151525);   
+}
+
+#informatique > svg{
+    scale: 0.7;    
+}
+
+
+
+.field_logo{
+    height: 100%;
+    width: 100%;
+   
+    background-size: cover; 
+    background-position: center; 
+    background-size: contain;
+    
+    background: url('../img/svg/buikigue.svg') no-repeat;
+   
+}
+
+#field_text{
+    font-size: 15px;
+    border: none;
+}
+
+#field_text > *.hide{
+    display: none;
+}
+
+#field_titlemix{
+    border:solid green;
+    margin-bottom: 0px;
+}
+
+  
+
+/*
+------------------------
+    SECTION TEST
+------------------------
+*/
+
+#sec_Test{
+   background: radial-gradient(circle, #351535, #151525);
+}
+
+
+
+/*
+------------------------
+    SECTION EXPERIENCE
+------------------------
+*/
+
+#sec_Experience{
+   background: var(--grad_red);
+   color: var(--white);
+   
+   display: flex;  
+   flex-flow: column; 
+     
+   padding: 10px;
+   
+   height: fit-content;
+   width: 100%;
+    
+}
+
+
+#sec_Experience::before{
+   content: "Experience";
+   font-family: "Dosis";
+   font-size: 1.5em;
+}
+ 
+
+
+.xp_item{
+    border: solid 1px;
+    
+    border-radius: 5px;
+    
+    padding: 5px;
+    margin-block: 5px;
+    min-width: 100%;
+    
+    box-sizing: border-box;
+    
+    
+    display: grid;
+   
+    grid-gap: 10px;
+    
+   
+}
+
+.xp_title{
+   
+    padding-inline:  5px;
+    font-size: 20px;
+    
+    font-size: 0.65em;
+    
+    font-weight: normal;
+    margin-block: 0;
+    
+    
+    grid-row: 2;
+    height: fit-content;
+    
+}
+
+.xp_localisation{
+    font-size: 16px; 
+    font-size: 0.50em;
+    
+    grid-row: 3;
+    
+    cursor: pointer;
+    padding-inline:  5px;
+}
+
+
+
+.periode{
+   
+    padding-inline: 5px;
+    padding-block: 5px;
+    
+    grid-row: 1;
+    
+    border-radius: 5px;
+    
+    background: lightgray;
+    
+    font-size: 16px;  
+    
+    font-weight: bold;
+    text-align: center;
+    
+    width: fit-content;
+    
+    
+    font-family: Dosis;
+    font-weight: bold; /* Met en gras */
+    color: black;  
+    
+}
+
+ 
+
+.xp_detail{
+    width: 100%;
+    max-height: 100%;
+    overflow: scroll;
+    
+    box-sizing: border-box;
+    
+    border: none;
+    
+    margin: 0;
+    padding: 5px;
+    font-size: 0.45em;
+    
+    width: 100%;
+ 
+    grid-row: 5;
+}
+
+.xp_encadrant{
+    display: flex;
+    flex-flow: row; 
+    flex-wrap: wrap;
+    
+    font-size: 12px;
+     
+        
+    grid-row: 4;
+    
+}
+
+.encadrant{ 
+    margin-inline: 10px;
+    padding: 5px;
+    margin: 5px;
+    flex: 1 1 100px;
+    
+    max-width: fit-content;
+    
+    text-align: center;
+    
+    border: solid  1px;
+    
+    cursor: pointer;
+    
+    
+    font-size: 1em;
+}
+
+
+ 
+/*
+------------------------
+    SECTION FORMATION
+------------------------
+*/
+
+
+#sec_Formation{
+    background: radial-gradient(circle, #351535, #151525);
+    height: fit-content;
+    padding: 10px;
+   
+}
+
+#sec_Formation::before{
+   content: "Formation";
+   font-family: "Dosis";
+   font-size: 1.5em;
+}
+
+.diplome{
+    display: flex; 
+    grid-gap: 5px;
+    
+    flex-flow: column; 
+    
+   /* align-items: center;  */
+    width: 100%;
+    
+    
+ 
+}
+ 
+
+
+.diplome_name{
+    font-weight: bold;
+    font-size: 0.6em;
+    
+}
+
+.diplome_domain{
+    font-style: italic;
+    font-size: 0.5em; 
+}
+
+
+.diplome_icon{ 
+    background: url("../img/svg/diplome.svg") no-repeat;
+    background-size: 1.8em auto; 
+    background-position: center center; 
+    transform: scaleX(-1);
+    height: 1.9em;  
+    width: 1.9em;  
+    
+    box-sizing: border-box;
+     
+    margin: 10px;
+   
+    padding: 2px;
+    
+    
+}
+
+.diplome_ecole{
+    font-size: 0.4em;
+}
+
+.dip_info{
+    display: flex; 
+    flex-flow: column;
+    height: 100%; 
+   
+    
+    padding-top: 10px;
+    padding-left: 10px;
+    gap: 3px;
+    
+    box-sizing: border-box;
+    
+   justify-content: flex-start;
+    
+}
+
+.dip_container{
     display: flex;
 }
+
+.dip_container > .periode{
+    margin: auto;
+}
+
+
+.icon_periode{
+    margin-inline: 5px;
+}
+
+
+
+/*
+------------------------
+    SECTION CONTACT
+------------------------
+*/
+
+
+#sec_Contact{
+    background: var(--grad_blue);
+    height: 100vh;
+    
+}
+
+#sec_Contact::before{
+    content: "Retrouvez-moi sur ...";
+    font-family: "Dosis";
+    font-size: 1.5em;
+    height: 20%; 
+    
+    align-content: center;
+}
+
+
+#reseau {
+    display: flex;  
+    flex-wrap: wrap; 
+    gap: 1rem;  
+    justify-content: center;  
+    padding: 1rem;  
+    
+   
+    
+    height: 80%;
+    
+    
+}
+ 
+.icon_reseau {
+    width: 150px;  
+    height: 150px;  
+      
+    display: flex;  
+    align-items: center;  
+    justify-content: center; 
+     
+    transition: transform 0.2s; 
+      
+    color: var(--white);
+      
+    cursor: pointer;
+    
+     
+}
+   
+.icon_reseau:hover {
+    transform: scale(1.1); /* Agrandit légèrement l'icône */ 
+}
+
+
+
+.cv{
+    
+    height: inherit;
+    
+    background: url("../img/svg/cv.svg") no-repeat;
+    
+    background-position: center center; 
+     
+    width: 100%;
+   
+  
+    
+}
+
+
+
+.wrappable_container {
+    display: flex;  
+    flex-wrap: wrap;  
+    gap: 10px; 
+    padding: 10px;
+    width: 100%
+}
+
+
+.wrappable_item {
+   border: solid yellow; 
+   
+   flex: 1 1 200px; /* Gère la taille minimale et la flexibilité */
+    
+   box-sizing: border-box;
+    
+  
+} 
+ 
+
+
+  
+.sectitle{
+    font-family: "Dosis";
+    font-weight: normal;
+}
+
+  
+ 

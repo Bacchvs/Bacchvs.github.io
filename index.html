@@ -2,394 +2,293 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <link rel="canonical" href="https://bacchvs.github.io/" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link id="favicon" rel="icon" href="/img/favicons/favicon_light.png" type="image/png">
-    <meta property="og:image" content="https://www.arnaud.senecaut.fr/img/ident.png">
-
+    
     <title>Arnaud Sénécaut</title>
+
     <script src="/js/main.js"></script>
-    <script src="/js/Toast.js" type="module"></script>
-    <script src="/js/code_snippet.js"></script>
-    <script src="/js/loadingBars.js"></script>
-
-
-    <link href="/css/style.css" rel="stylesheet"/> 
-    <link href="/css/code-snippet.css" rel="stylesheet"/> 
-    <link href="/css/Toast.css" rel="stylesheet"/> 
-
-    <link href="/css/mobile.css" rel="stylesheet" media="screen and (max-width: 1500px)">
-
-
-
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@graph": [
-                {
-                    "@type": "ProfilePage",
-                    "url": "https://arnaud.senecaut.fr",
-                    "mainEntity": {
-                        "@type": "Person",
-                        "name": "Arnaud Sénécaut",
-                        "familyName": "Sénécaut",
-                        "givenName": "Arnaud",
-                        "alternateName": "Arnaud Senecaut",
-                        "url": "https://arnaud.senecaut.fr",
-                        "image": "https://arnaud.senecaut.fr/img/full_transp.png",
-                        "sameAs": [
-                            "https://www.linkedin.com/in/arnaud-sénécaut-44a3231b8",
-                            "https://github.com/Bacchvs"
-                        ],
-                        "jobTitle": "Scientifique interdisciplinaire",
-                        "description": "Scientifique passionné, explorant les frontières de l'interdisciplinarité. Toujours curieux d'apprendre et de partager des connaissances.",
-                        "worksFor": {
-                            "@id": "#ephe"
-                        },
-                        "knows": {
-                            "@id": "#nicolas"
-                        },
-                        "alumniOf": [
-                            {
-                                "@id": "#ephe"
-                            },
-                            {
-                                "@id": "#ubs"
-                            },
-                            {
-                                "@id": "#iut-vannes"
-                            },
-                            {
-                                "@id": "#paris-descartes"
-                            }
-                        ],
-                        "knowsAbout": [
-                            "R", "C", "C++", "Java", "Python", "Assembleur", "HTML", "CSS", "Javascript"
-                        ],
-                        "knowsLanguage": [
-                            {
-                                "@type": "Language",
-                                "name": "Français"
-                            },
-                            {
-                                "@type": "Language",
-                                "name": "Anglais"
-                            },
-                            {
-                                "@type": "Language",
-                                "name": "Espagnol"
-                            }
-                        ],
-                        "email": "mailto:arnaud@senecaut.fr"
-                    }
-                },
-                {
-                    "@type": "Person",
-                    "@id": "#nicolas",
-                    "name": "Nicolas Sénécaut",
-                    "alternateName": [
-                        "Nicolas Senecaut",
-                        "Dr Nicolas Sénécaut",
-                        "Nicolas Sénécaut, PhD"
-                    ],
-                    "url": "https://nicolas.senecaut.fr",
-                    "description": "Frère, collègue de travail et collaborateur scientifique."
-                },
-                {
-                    "@type": "Organization",
-                    "@id": "#ephe",
-                    "name": "École Pratique des Hautes Études"
-                },
-                {
-                    "@type": "CollegeOrUniversity",
-                    "@id": "#ubs",
-                    "name": "Université Bretagne Sud",
-                    "alternateName": "UBS",
-                    "description": "Licence de Biologie"
-                },
-                {
-                    "@type": "CollegeOrUniversity",
-                    "@id": "#iut-vannes",
-                    "name": "IUT de Vannes",
-                    "alternateName": [
-                        "Université Bretagne Sud",
-                        "UBS"
-                    ],
-                    "description": "Diplôme Universitaire et Technologique en Informatique"
-                },
-                {
-                    "@type": "CollegeOrUniversity",
-                    "@id": "#paris-descartes",
-                    "name": "Université Paris Descartes",
-                    "alternateName": [
-                        "Université Paris V",
-                        "Université De Paris",
-                        "Université Paris Cité"
-                    ]
-                }
-            ]
-        }
-    </script>
+    
+    <link href="/css/mobile.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet" media="screen and (min-width: 1080px)"/> 
+    
 </head>
 <body>
-    <header class="banner"> 
+    <nav class="topsidemenu hide"> 
+       
         <div id="hamburger" onclick="switch_menuVisibility()">
-            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"> 
-                <rect x="2" y="6" width="20" height="3" rx="1" ry="1"/> 
-                <rect x="2" y="12" width="20" height="3" rx="1" ry="1"/> 
-                <rect x="2" y="18" width="20" height="3" rx="1" ry="1"/>
-              </svg>              
-        </div> 
-        <nav class="menu" onclick="menuClick(this, event)">
-            <h2 target="sec_Accueil" class="menuItem menu_selected">Accueil</h2>
-            <!-- <h2 target="sec_Biologie" class="menuItem">Biologie</h2>
-            <h2 target="sec_Chimie" class="menuItem">Chimie</h2> -->
-            <h2 target="sec_Informatique" class="menuItem">Informatique</h2>
-            <h2 target="sec_Formation" class="menuItem">Formation</h2>
-            <h2 target="sec_Atouts" class="menuItem">Atouts</h2>
-            <!-- <h2 target="sec_CV" class="menuItem">CV</h2> -->
-            <h2 target="sec_Contact" class="menuItem">Contact</h2>
-        </nav>
-        <div class="reseau">
-            <a alt="Linkedin Link" title="Mon Profil Linkedin" href="https://www.linkedin.com/in/arnaud-s%C3%A9n%C3%A9caut-44a3231b8/" target="_blank" rel="noopener noreferrer" class="icon_reseau linkedin">
-                <svg  viewBox="0 0 24 24"   fill="currentColor"  focusable="false">
-                    <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
-                </svg>
-            </a>
-            <a alt="Github Link" title="Mon Profil Github" href="https://github.com/Bacchvs" target="_blank" rel="noopener noreferrer" class="icon_reseau github">
-                <svg viewBox="0 0 24 24"  fill="currentColor" focusable="false">
-                    <path d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"></path>
-                </svg>
-            </a>
+            ☰
+        </div>  
 
-            <a alt="Mail Link" title="Mon Addresse eMail"  onclick="copyElemVal(this)" value="arnaud+cv@senecaut.fr" target="_blank" rel="noopener noreferrer" class="icon_reseau mail">
-                <svg  fill="currentColor" focusable="false" viewBox="0 0 75.294 75.294">
-                    <path d="M66.097,12.089h-56.9C4.126,12.089,0,16.215,0,21.286v32.722c0,5.071,4.126,9.197,9.197,9.197h56.9c5.071,0,9.197-4.126,9.197-9.197V21.287C75.295,16.215,71.169,12.089,66.097,12.089z M61.603,18.089L37.647,33.523L13.691,18.089H61.603z M66.097,57.206h-56.9C7.434,57.206,6,55.771,6,54.009V21.457l29.796,19.16c0.04,0.025,0.083,0.042,0.124,0.065c0.043,0.024,0.087,0.047,0.131,0.069c0.231,0.119,0.469,0.215,0.712,0.278c0.025,0.007,0.05,0.01,0.075,0.016c0.267,0.063,0.537,0.102,0.807,0.102c0.001,0,0.002,0,0.002,0c0.002,0,0.003,0,0.004,0c0.27,0,0.54-0.038,0.807-0.102c0.025-0.006,0.05-0.009,0.075-0.016c0.243-0.063,0.48-0.159,0.712-0.278c0.044-0.022,0.088-0.045,0.131-0.069c0.041-0.023,0.084-0.04,0.124-0.065l29.796-19.16v32.551C69.295,55.771,67.86,57.206,66.097,57.206z"/>
-                </svg>
-            </a>
-
-            <a  class="icon_reseau cv" alt="CV Link" title="Mon CV" href="documents/CV_Arnaud_SENECAUT_Biologie_caviarde.pdf" target="_blank" rel="noopener noreferrer" onclick="messageCaviard()">
-            </a>
-
-        </div>
-        <!-- <div id="message_copy" class="hide">
-            Addresse mail copiée
-        </div> -->
-    </header>
+        <div class="ident_round"></div>
+        <h2 target="sec_Accueil" class="menuItem menu_selected" onclick="mainMenuUpdateSelectionMark(this)">Accueil</h2>
+        <h2 target="sec_Experience" class="menuItem" onclick="mainMenuUpdateSelectionMark(this)">Experience</h2>
+        <h2 target="sec_Formation" class="menuItem" onclick="mainMenuUpdateSelectionMark(this)">Formation</h2>
+        <h2 target="sec_Contact" class="menuItem" onclick="mainMenuUpdateSelectionMark(this)">Contact</h2>
+        
+        
+    </nav>
 
     <div class="main">
-        <section id="sec_Accueil">
         
-            <div id="userpict_main">
-                <h1 class="monNom">Arnaud Sénécaut</h1>
-                <div id="userpict_textArrow">
-                    <div id="userpict_text"><div>Scientifique interdisciplinaire,  passionné par  </div>
-                        <div id="userpict_slider">
-                            <div  class="slider_top">
-                                la Biologie
-                            </div>
-                            <div class="slider_mid">
-                                la Chimie
-                            </div>
-                            <div class="slider_bottom">
-                                l'Informatique
-                            </div>
-                            <div class="slider_hide">
-                                le Théâtre
-                            </div>
-                            <div  class="slider_hide">
-                                l'Écriture
-                            </div>
-                        </div>
-                    </div>
-                    <svg id="userpict_arrow" width="200" height="100" viewBox="80 32 170 10">
-                        <path d="M 76.14,55.59 C 136.45,35.27 157.69,25.03 221.60,38.96 
-                                 287.63,54.64 201.13,87.28 152.84,70.89 
-                                 103.05,53.38 203.53,8.46 243.07,0 
-                                 M 240,0 c 4,0 3,39 0,0 
-                                 M 208,0 c 40,0 43,0 0,0"
-                              stroke="aliceblue"
-                              stroke-width="5"
-                              fill="none" />
-                    </svg>   
-                </div>
-               
+        
+        <section id="sec_Accueil"> 
+            <div id="photo_pro_full"></div>
+            <div id="nom_titre">
+                <H1 id="monNom">Arnaud Sénécaut</H1>
+                <H2 id="titre">Scientifique interdisciplinaire</H2>
             </div>
-            <div id="userpict_large"></div>
-        </section>
 
-         
-
-        <!-- <section id="sec_Biologie" >
-            <div class="diplome" title="Licence Biologie Cellulaire et Moléculaire">
-                <div class="diplome_icon"></div>
-                <a class="diplome_name">Licence</a>
-                <a class="diplome_domain">Biologie Cellulaire et Moléculaire</a>
-                
-            </div> -->
+            <p id="p_message_accueil">
+                Titulaire d'une Licence Biologie Cellulaire et Moléculaire ainsi que d'un DUT Informatique, je poursuis mes études en Master de Physiopathologie intégrative axé sur les cellules normales, cancéreuses et thérapies, afin de spécialiser mes compétences dans la recherche fondamentale et interdisciplinaire en thérapies anticancéreuses.
+            </p>
+           
+            <!-- <div id="field_container">
+                <div class="field" id="biologie"     onclick="onFieldAction(this)"><svg class="field_logo" width="64" height="64" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" overflow="hidden" viewBox="0 0 547 547"><g stroke="#F0F8FF"><path d="M14 273.5C14 130.182 130.18 14 273.5 14S533 130.182 533 273.5 416.82 533 273.5 533 14 416.818 14 273.5Z" stroke-width="27.5" stroke-miterlimit="8" fill="none"/><path d="M118 172c0-21.539 17.24-39 38.5-39s38.5 17.461 38.5 39-17.24 39-38.5 39-38.5-17.461-38.5-39Z" stroke-width="27.5" stroke-miterlimit="8" fill="#F0F8FF" fill-rule="evenodd"/><path d="M333.407 413.44c36.281-19.409 63.95-38.399 61.802-42.416-2.15-4.018-33.303 8.459-69.585 27.867s-63.95 38.398-61.801 42.416 33.303-8.46 69.584-27.867Zm10.911 26.096c27.041-14.466 47.22-29.449 45.07-33.466-2.148-4.018-25.812 4.452-52.853 18.917-27.04 14.465-47.22 29.448-45.07 33.466 2.148 4.018 25.812-4.452 52.853-18.917Zm-53.01-94.801c27.041-14.466 47.22-29.449 45.07-33.466-2.148-4.018-25.812 4.452-52.853 18.917-27.04 14.465-47.22 29.448-45.07 33.466 2.148 4.018 25.812-4.452 52.853-18.917Zm17.759 22.487c36.281-19.409 63.95-38.399 61.802-42.416-2.15-4.018-33.303 8.459-69.585 27.867s-63.95 38.398-61.801 42.416 33.303-8.46 69.584-27.867Zm9.823 23.542c44.641-23.88 79.088-46.496 76.939-50.513-2.15-4.018-40.08 12.084-84.721 35.964s-79.088 46.496-76.939 50.513c2.15 4.018 40.08-12.084 84.721-35.964Z" stroke-width="4.583" stroke-miterlimit="8" fill="#F0F8FF" fill-rule="evenodd"/><path d="M223.04 158.312c11.23 30.229-5.64 63.325-37.69 73.922a65 65 0 0 1-27.26 2.899m54.22 5.293c-19.66 17.197-52.65 21.103-78.2 9.26" stroke-width="6.875" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"/><path d="M249.66 171.643c13.17 39.852-8.45 82.84-48.3 96.015a76 76 0 0 1-32.91 3.301m42.2-54.363L184.5 199.5m68.15 5.096L226.5 187.5m-57 67.488V235.5m20 36.488V252.5" stroke-width="6.875" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"/></g></svg></div>
+                <div class="field" id="chimie"       onclick="onFieldAction(this)"><svg class="field_logo" width="64" height="41.55" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" overflow="hidden" viewBox="0 0 1132 735"><path d="M151.25 552.25h827.93v27.5H151.25Zm752.36-46.252L1006.47 566l-102.86 60.002c-6.56 3.826-14.98 1.611-18.8-4.949-3.83-6.559-1.61-14.978 4.94-18.805l82.5-48.125v23.754l-82.5-48.125c-6.55-3.826-8.77-12.246-4.94-18.805 3.82-6.559 12.24-8.775 18.8-4.949" fill="#F0F8FF"/><path d="M178.75 574.453V152.225h-27.5v422.228Zm46.252-346.656L165 124.936l-60.002 102.861c-3.826 6.559-1.61 14.979 4.949 18.805s14.979 1.611 18.805-4.949l48.125-82.5h-23.754l48.125 82.5c3.827 6.56 12.246 8.775 18.805 4.949 6.56-3.826 8.776-12.246 4.95-18.805" fill="#F0F8FF"/><path d="M295.5 575.297V488.5m91 86.531V315.5m91 259.203V221.5m91 353.727V350.5m182 224.234V429.5" stroke="#F0F8FF" stroke-width="36.667" stroke-miterlimit="8" fill="none"/><text fill="#F0F8FF" font-family="Cascadia Code,Cascadia Code_MSFontService,sans-serif" font-weight="700" font-size="83" transform="translate(432.32 665)">m/Z</text><text fill="#F0F8FF" font-family="Cascadia Code,Cascadia Code_MSFontService,sans-serif" font-weight="700" font-size="83" transform="translate(576.69 665)"> </text><text fill="#F0F8FF" font-family="Cascadia Code,Cascadia Code_MSFontService,sans-serif" font-weight="700" font-size="83" transform="translate(49.72 425)">I</text><text fill="#F0F8FF" font-family="Cascadia Code,Cascadia Code_MSFontService,sans-serif" font-weight="700" font-size="83" transform="translate(97.84 425)"> </text></svg></div>
+                <div class="field" id="informatique" onclick="onFieldAction(this)"><svg class="field_logo" width="64" height="64" viewBox="0 -2 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M12.736.064c.52.2.787.805.598 1.353L8.546 15.305c-.19.548-.763.83-1.282.631-.52-.2-.787-.805-.598-1.353L11.454.695c.19-.548.763-.83 1.282-.631M2.414 8.256 5.95 11.99c.39.412.39 1.08 0 1.492a.963.963 0 0 1-1.414 0L.293 9.003a1.1 1.1 0 0 1 0-1.493l4.243-4.48a.963.963 0 0 1 1.414 0 1.1 1.1 0 0 1 0 1.494zm15.172 0L14.05 4.524a1.1 1.1 0 0 1 0-1.493.963.963 0 0 1 1.414 0l4.243 4.479c.39.412.39 1.08 0 1.493l-4.243 4.478a.963.963 0 0 1-1.414 0 1.1 1.1 0 0 1 0-1.492z" fill="aliceblue"/></svg></div> 
+            </div> 
+            <div id="field_text">
+                <p id="f_default">Sélectionnez un ou plusieurs domaines !</p>
+                <p id="f_bio_chimie_info" class="hide">La <strong>chimie</strong> pour comprendre les mécanismes sous-jacents, l'<strong>informatique</strong> pour traiter les données massives, et la <strong>biologie</strong> pour donner du sens et du contexte à ces informations : c'est cette combinaison unique de compétences que j'ai développée pour aborder les défis complexes de la recherche et proposer des solutions innovantes.</p>
+                <p id="f_bio_chimie" class="hide">Tout au long de mon parcours en <strong>biologie</strong>, j'ai été animé par le désir de comprendre les mécanismes fondamentaux de la vie, en m'intéressant particulièrement aux protéines et enzymes qui en catalysent les réactions essentielles.</p>
+                <p id="f_bio_info" class="hide">Au cours de mon parcours en <strong>biologie</strong> et de mon DUT en <strong>informatique</strong>, j'ai développé des compétences pointues en traitement et modélisation des données biologiques, me permettant de décoder des systèmes complexes. Grâce à cette expertise, je suis en mesure de proposer des solutions novatrices pour répondre aux défis actuels et futurs de la <strong>biologie</strong> moderne.</p>
+                <p id="f_bio" class="hide">Au cours de mon parcours, j'ai acquis une expertise approfondie en <strong>biologie</strong>, tant dans la recherche théorique qu'expérimentale, me permettant de maîtriser des techniques de pointe et d'explorer de nouvelles solutions innovantes. Mon approche allie rigueur scientifique et créativité pour répondre aux enjeux complexes de la <strong>biologie</strong> moderne et anticiper les avancées de la recherche de demain.</p>
+                <p id="f_chimie" class="hide">Tout au long de mon parcours, ma passion pour la <strong>chimie</strong> m'a poussé à plonger au cœur des mécanismes réactionnels et des théories physiques fondamentales qui régissent notre monde. Convaincu que la <strong>chimie</strong> est la clé de la <strong>biologie</strong>, j'ai acquis une expertise dans des techniques d'analyses chimiques de pointe, telles que la chromatographie, la spectrométrie de masse (LC et GC-MS), la RMN, la spectroscopie infrarouge et titrage, afin d'élargir notre compréhension des phénomènes biologiques complexes.</p>
+                <p id="f_chimie_info" class="hide">Au fil de mon parcours, j'ai eu l'opportunité de traiter des volumes considérables de données issues d'analyses chimiques informatisées. Face à l'ampleur de ces données, il devient crucial de maîtriser des techniques et concepts <strong>informatiques</strong> avancés pour optimiser l'efficacité de l'analyse et réduire le temps de calcul. Grâce à ma solide expertise en <strong>informatique</strong> de bas niveau et en algorithmique, je suis en mesure de concevoir des solutions sur-mesure, parfaitement adaptées aux défis complexes de la recherche moderne.</p>
+                <p id="f_info" class="hide">Dans le contexte des enjeux de la recherche du XXIe siècle, l'<strong>informatique</strong> est devenue un levier incontournable pour l'innovation scientifique. Passionné par cette discipline, j'ai su perfectionner mes compétences en <strong>informatique</strong> lors de mon DUT, où j'ai acquis une maîtrise approfondie des technologies de pointe. J'ai également eu l'opportunité de mettre en œuvre ces compétences dans chacun des stages que j'ai réalisé, aussi bien en <strong>informatique</strong> qu'en <strong>biologie</strong>, où j'ai conçu des solutions <strong>informatiques</strong> performantes et optimisées pour répondre aux défis complexes de la recherche moderne.</p>
+            </div>             -->
             
-            <!-- <ul id="bio_compétences" class="compet_list">
-                <li class="compet_item">PCR</li>
-                <li class="compet_item">mutagenèse dirigée par PCR</li>
-                <li class="compet_item">Spectrophotométrie</li>
-                <li class="compet_item">Electrophorèse</li>
-                <li class="compet_item">SDS-PAGE</li>
-                <li class="compet_item">western-blot</li>
-                <li class="compet_item">manipulations en environnement stérile</li>
-                <li class="compet_item">purification et quantification protéiques</li>
-                <li class="compet_item">Etude et écriture d’articles scientifiques</li>
-                <li class="compet_item">culture interdisciplinaire en Biologie et Informatique</li>
-                <li class="compet_item">Etudes « in silico »</li> 
-            </ul> -->
-        <!-- </section> -->
-<!-- 
-        <section id="sec_Chimie">
+        </section>
+        <!-- <section id="sec_Test">
+            <div class="wrappable_container">
+                <div class="wrappable_item">Item 1</div>
+                <div class="wrappable_item">Item 2</div>
+                <div class="wrappable_item">Item 3</div>
+                <div class="wrappable_item">Item 4</div>
+            </div>
         </section> -->
-        <section id="sec_Informatique">
-            <div class="diplome" title="DUT Informatique - Développeur d'Applications">
-                <div class="diplome_icon"></div>
-                <a class="diplome_name">DUT</a>
-                <a class="diplome_domain">Informatique</a>
-            </div>
-            
-            <div class="cd_and_lang">
-                <div id="mesLanguagesInformatiques">
-                   
+        <section id="sec_Experience"> 
+            <div id="sec_Exp_container">
+                <div class="xp_item">
+                    <h3 class="xp_title">
+                        Stage de Master 1
+                    </h3>
+                    <div class="xp_localisation" onclick="window.open('https://www.bricbordeaux.com/', '_blank');">
+                        Unité 1312 Inserm - Hôpital Beaujon - BRIC
+                     </div>
+                    <div class="periode">
+                        <time class="xp_year" datetime="2025">2025</time>
+                    </div>
+                    <p class="xp_detail">
+                        Je mène une étude sur des données d'imagerie par spectrométrie de masse (MALDI-TOF MSI) provenant d'échantillons de carcinomes hépatocellulaires. L'objectif de cette recherche est d'analyser, à l'aide d'algorithmes complexes, les différences morphochimiques entre les carcinomes hépatocellulaires classiques et ceux associés à une déficience en alpha-1 antitrypsine.
+                    </p>
+                    <div class="xp_encadrant">
+                        <a class="encadrant">Samuel Amintas</a>
+                        <a class="encadrant">Etienne Becht</a>
+                        <a class="encadrant">Hélène Cazier</a>
+                    </div>
                 </div>
 
-                <p id="lang_detail">
-                     
-                </p>
-                
-                <p id="snipInf" class="code_snippet">
-                    vide
-                </p>
-            </div>
+
+                <div class="xp_item">
+                    <h3 class="xp_title">
+                        Stage de fin de Licence de Biologie
+                    </h3>
+                    <div class="xp_localisation" onclick="window.open('https://www.kamenzlab.com/', '_blank');">
+                        GBB - Kamenz Lab : Cell Cycle Dynamics
+                    </div>
+                    <div class="periode">
+                        <time class="xp_year" datetime="2024">2024</time>
+                    </div>
+                    <p class="xp_detail">
+                        J'ai codéveloppé une méthode d'étude des profils conformationnels et des partenaires du complexe APC/C CDC20 par réticulation et spectrométrie de masse. Cette méthode innovante sera utilisée ultérieurement pour caractériser les changements structurels dynamiques de l'APC/C. Cette stratégie permet de "geler" rapidement l'interaction biochimique en cours dans son état actuel et permet d'identifier les interactions momentanées et faibles.
+                    </p>
+                    <div class="xp_encadrant">
+                        <a class="encadrant">Julia Kamenz</a>
+                        <a class="encadrant">Nicolas Sénécaut</a>
+                    </div>
+                </div>
+
+                <div class="xp_item">
+                    <h3 class="xp_title">
+                        Stage de fin de DUT Informatique
+                    </h3>
+                    <div class="xp_localisation" onclick="window.open('https://www.lp3c.fr/', '_blank');">
+                        IFPS pour le laboratoire LP3C de l'UBS.
+                    </div>
+                    <div class="periode">
+                        <time class="xp_year" datetime="2022">2022</time>
+                    </div>
+                    <p class="xp_detail">
+                        J'ai concu et développé une application mission critique d'aide au calcul de dosage et à la préparation médicamenteuse dans le cadre du projet ADCEM, ayant pour objectif d'aider les soignants à gagner en rapidité de prise en charge.
+                    </p>
+                    <div class="xp_encadrant">
+                        <a class="encadrant">Thierry Morineau</a>
+                        <a class="encadrant">Jean-Baptiste Perron</a>
+                    </div>
+                </div>
+
+                <div class="xp_item">
+                    <h3 class="xp_title">
+                        Dévelopement d'interface bioinformatique
+                    </h3>
+                    <div class="xp_localisation" onclick="window.open('https://www.lp3c.fr/', '_blank');">
+                        Institut Jaques-Monod (CNRS)
+                    </div>
+                    <div class="periode">
+                        <time class="xp_year" datetime="2021">2021</time>
+                    </div>
+                    <p class="xp_detail">
+                        Durant ce stage volontaire, j'ai développé trois nœuds KNIME en Java et C++ pour simplifier l'utilisation du logiciel RAId du NCBI, avec optimisations des interfaces utilisateur et conception d'algorithmes performants en termes de temps de calcul et d'espace mémoire.
+                    </p>
+                    <div class="xp_encadrant">
+                        <a class="encadrant">Nicolas Sénécaut</a>
+                        <a class="encadrant">Jean-Michel Camadro</a>
+                    </div>
+                </div>
+           </div>
         </section>
+        
+        
+        <!-- ################################################################################################################################################################ -->
+
 
         <section id="sec_Formation">
-            <!-- Une barre de chargement qui résume mon projet Universitaire -->
-            <div id="project_timeline"> 
-                <div class="lesDiplomes">
-                    <!-- BAC SCIENTIFIQUE -->
-                    
-                    <div class="diplome" title="Bac Scientifique SVT">
-                        <div class="diplome_icon"></div>
-                        <a class="diplome_name">BAC Scientifique</a>
-                        <a class="diplome_domain">Sciences de la Vie et de la Terre</a>
-                    </div>
-                        
-                
-                    <!-- DUT INFORMATIQUE -->
-                    
-                    <div class="diplome" title="DUT Informatique - Développeur d'Applications">
-                        <div class="diplome_icon"></div>
-                        <a class="diplome_name">DUT</a>
-                        <a class="diplome_domain">Informatique</a>
-                    </div>
-                    
-                    
-                    <!-- LICENCE BIOLOGIE CELL ET MOL -->
-                  
-                    <div class="diplome" title="Licence Biologie Cellulaire et Moléculaire">
-                        <div class="diplome_icon"></div>
-                        <a class="diplome_name">Licence</a>
-                        <a class="diplome_domain">Biologie Cellulaire et Moléculaire</a>
-                    </div>
-                    
-                    <!-- MASTER PHYSIOPATHOLOGIE INTEGRATIVE -->
-                    <div class="diplome" title="Master Physiopathologie Intégrative">
-                        <div class="diplome_icon"></div>
-                        <a class="diplome_name">Master</a>
-                        <a class="diplome_domain">Physiopathologie Intégrative</a>
-                    </div>
-                   
-                    <!-- DOCTORAT EN PROJET -->
-                    <div class="diplome" title="Doctorat en Sciences Interdisciplinaires">
-                        <div class="diplome_icon"></div>
-                        <a class="diplome_name">Doctorat</a>
-                        <a class="diplome_domain">Sciences Interdisciplinaires</a>
-                    </div>
+            <div id="sec_Form_container">
+                <div class="xp_item diplome">
+                    <div class="dip_container">
+                        <div class="icon_periode">
+                            <div class="diplome_icon"></div>
+                            <div class="periode">
+                                <time class="xp_year" datetime="2024">2024</time> - 
+                                <time class="xp_year" datetime="2026">2026</time>
+                            </div>
+                        </div>
 
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="progress"></div>
+                        <div class="dip_info">
+                            <a class="diplome_name">Master</a>
+                            <a class="diplome_domain">Science Du Vivant <br/> Physiopathologie intégrative</a>
+                            <a class="diplome_ecole">
+                                Ecole Pratique des Hautes Etudes (EPHE) <br/> Paris Sciences et Lettres (PSL)
+                            </a>
+                        </div>
+
+                    </div> 
+
+                    <p class="xp_detail">
+                        Je me spécialise dans l’étude des mécanismes biologiques fondamentaux à différents niveaux d’organisation, de la molécule à l’organisme, en explorant de manière approfondie les interactions complexes entre cellules normales et cancéreuses, ainsi que les approches thérapeutiques innovantes. Ce programme de formation de haut niveau, résolument interdisciplinaire, vise à former des experts capables de comprendre et de résoudre les enjeux émergents de la biologie contemporaine, en intégrant les connaissances des sciences fondamentales et leur application dans les domaines biomédicaux, écologiques et thérapeutiques.
+                    </p>
                 </div>
-                
-               
+
+                <div class="xp_item diplome">
+                    <div class="dip_container">
+                        <div class="icon_periode">
+                            <div class="diplome_icon"></div>
+                            <div class="periode">
+                                <time class="xp_year" datetime="2022">2022</time> - 
+                                <time class="xp_year" datetime="2024">2024</time>
+                            </div>
+                        </div>
+
+                        <div class="dip_info">
+                            <a class="diplome_name">Licence</a>
+                            <a class="diplome_domain">Biologie Cellulaire et Moléculaire</a>
+                            <a class="diplome_ecole">
+                                Université Bretagne Sud (UBS)
+                            </a>
+                        </div>
+
+                    </div> 
+
+                    <p class="xp_detail">
+                        J'ai acquis des compétences solides en biologie cellulaire, génétique et biotechnologie. J'ai maîtrisé diverses techniques de laboratoire telles que la culture cellulaire, la PCR, et l'électrophorèse. Mon expérience m'a permis de développer une approche scientifique rigoureuse, avec une capacité à analyser et interpréter des données. J'ai également renforcé mes aptitudes à travailler en équipe et à communiquer les résultats de manière claire et précise.
+                    </p>
+                </div>
+
+
+                <div class="xp_item diplome">
+                    <div class="dip_container">
+                        <div class="icon_periode">
+                            <div class="diplome_icon"></div>
+                            <div class="periode">
+                                <time class="xp_year" datetime="2020">2020</time> - 
+                                <time class="xp_year" datetime="2022">2022</time>
+                            </div>
+                        </div>
+
+                        <div class="dip_info">
+                            <a class="diplome_name">DUT</a>
+                            <a class="diplome_domain">Informatique -- Développeur d'application</a>
+                            <a class="diplome_ecole">
+                                IUT de Vannes - Université Bretagne Sud
+                            </a>
+                        </div>
+
+                    </div> 
+
+                    <p class="xp_detail">
+                        J'ai acquis des compétences en développement logiciel, en administration de systèmes et réseaux (Linux) ainsi qu'en gestion de bases de données relationnelles. J'ai également appris à travailler en méthodologie agile (Scrum) à travers des projets collaboratifs.
+                    </p>
+                </div>
             </div>
         </section>
+   
+        <!-- ################################################################################################################################################################ -->
 
-        <section id="sec_Atouts">
-            <div id="atout_lang">
-                <div id="logo_lang"></div>
-    
-                <div id="espagnol_circle" class="language_progress">
-                    <div class="cercle-container">
-                        <svg class="cercle-svg" width="200" height="200">
-                            <circle class="cercle-bg" cx="100" cy="100" r="70"/>
-                            <circle class="cercle-progress" cx="100" cy="100" r="70" />
-                        </svg>
-                        <a class="circle-progress-pourcentage">XX%</a>
-                    </div>
-                    Espagnol
-                </div>
-    
-                <div id="anglais_circle" class="language_progress">
-                    <div class="cercle-container">
-                        <svg class="cercle-svg" width="200" height="200">
-                            <circle class="cercle-bg" cx="50%" cy="50%" r="35%"/>
-                            <circle class="cercle-progress" cx="50%" cy="50%" r="35%"/>
-                        </svg>
-                        <a class="circle-progress-pourcentage">XX%</a>
-                    </div>
-                    Anglais
-                </div>
-    
-            </div>
-        </section>
+        <!-- <section id="sec_Lang">
+            <h2 class="sectitle">Languages...</h2>
+            <H1> Programmation orientée recherche</H1>
 
-         
-        <section id="sec_Contact">
-            <div id="big_reseau">
+            
+
+        </section> -->
+
+        <!-- ################################################################################################################################################################ -->
+
+        <section id="sec_Contact"> 
+            <div id="reseau" class="">
                 <a alt="Linkedin Link" title="Mon Profil Linkedin" href="https://www.linkedin.com/in/arnaud-s%C3%A9n%C3%A9caut-44a3231b8/" target="_blank" rel="noopener noreferrer" class="icon_reseau linkedin" id="big_item">
-                    <svg  viewBox="0 0 24 24"   fill="currentColor"  focusable="false">
+                    <svg viewBox="0 0 24 24" fill="currentColor" focusable="false">
                         <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
                     </svg>
-                    Linkedin
+                   
                 </a>
                 <a alt="Github Link" title="Mon Profil Github" href="https://github.com/Bacchvs" target="_blank" rel="noopener noreferrer" class="icon_reseau github" id="big_item"> 
-                    <svg viewBox="0 0 24 24"  fill="currentColor" focusable="false">
+                    <svg viewBox="0 0 24 24" fill="currentColor" focusable="false">
                         <path d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"></path>
                     </svg>
-                    Github
+                  
                 </a>
     
-                <a alt="Mail Link" title="Mon Addresse eMail" onclick="copyElemVal(this)" value="arnaud+cv@senecaut.fr" target="_blank" rel="noopener noreferrer" class="icon_reseau mail"  id="big_item">
-                    <svg  fill="currentColor" focusable="false" viewBox="0 0 75.294 75.294">
-                        <path d="M66.097,12.089h-56.9C4.126,12.089,0,16.215,0,21.286v32.722c0,5.071,4.126,9.197,9.197,9.197h56.9c5.071,0,9.197-4.126,9.197-9.197V21.287C75.295,16.215,71.169,12.089,66.097,12.089z M61.603,18.089L37.647,33.523L13.691,18.089H61.603z M66.097,57.206h-56.9C7.434,57.206,6,55.771,6,54.009V21.457l29.796,19.16c0.04,0.025,0.083,0.042,0.124,0.065c0.043,0.024,0.087,0.047,0.131,0.069c0.231,0.119,0.469,0.215,0.712,0.278c0.025,0.007,0.05,0.01,0.075,0.016c0.267,0.063,0.537,0.102,0.807,0.102c0.001,0,0.002,0,0.002,0c0.002,0,0.003,0,0.004,0c0.27,0,0.54-0.038,0.807-0.102c0.025-0.006,0.05-0.009,0.075-0.016c0.243-0.063,0.48-0.159,0.712-0.278c0.044-0.022,0.088-0.045,0.131-0.069c0.041-0.023,0.084-0.04,0.124-0.065l29.796-19.16v32.551C69.295,55.771,67.86,57.206,66.097,57.206z"/>
+                <a alt="Mail Link" title="Mon Addresse eMail" onclick="copyElemVal(this)" value="arnaud+cv@senecaut.fr" target="_blank" rel="noopener noreferrer" class="icon_reseau mail" id="big_item">
+                    <svg fill="currentColor" focusable="false" viewBox="0 0 75.294 75.294">
+                        <path d="M66.097,12.089h-56.9C4.126,12.089,0,16.215,0,21.286v32.722c0,5.071,4.126,9.197,9.197,9.197h56.9c5.071,0,9.197-4.126,9.197-9.197V21.287C75.295,16.215,71.169,12.089,66.097,12.089z M61.603,18.089L37.647,33.523L13.691,18.089H61.603z M66.097,57.206h-56.9C7.434,57.206,6,55.771,6,54.009V21.457l29.796,19.16c0.04,0.025,0.083,0.042,0.124,0.065c0.043,0.024,0.087,0.047,0.131,0.069c0.231,0.119,0.469,0.215,0.712,0.278c0.025,0.007,0.05,0.01,0.075,0.016c0.267,0.063,0.537,0.102,0.807,0.102c0.001,0,0.002,0,0.002,0c0.002,0,0.003,0,0.004,0c0.27,0,0.54-0.038,0.807-0.102c0.025-0.006,0.05-0.009,0.075-0.016c0.243-0.063,0.48-0.159,0.712-0.278c0.044-0.022,0.088-0.045,0.131-0.069c0.041-0.023,0.084-0.04,0.124-0.065l29.796-19.16v32.551C69.295,55.771,67.86,57.206,66.097,57.206z"></path>
                     </svg>
-                    Mail
+                    
                 </a>
 
-                <a class="icon_reseau" href="documents/CV_Arnaud_SENECAUT_Biologie_caviarde.pdf" onclick="messageCaviard()" target="_blank" rel="noopener noreferrer" id="big_item">
+
+                <a  class="icon_reseau rc_gate" id="big_item" href="https://www.researchgate.net/profile/Arnaud-Senecaut" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15"><rect x="1" y=".5" width="14" height="14" rx="2" style="fill:currentcolor"/><path d="M125.419 121.17c1.955 0 1.716-1.48 1.716-2.507h-1.529v.539h.9c0 .8-.377 1.339-1.091 1.339-.565 0-.89-.488-.89-1.164v-1.352a1.03 1.03 0 0 1 .988-.988 1.11 1.11 0 0 1 .988.625l.539-.364a1.44 1.44 0 0 0-1.519-.9 1.56 1.56 0 0 0-1.716 1.527v1.626a1.5 1.5 0 0 0 1.614 1.619m-5.536 7.072v-.415c-1-.137-1.3-.026-1.3-1.2V124.3c.338.026.629.021 1.078.021a21.4 21.4 0 0 0 2.126 3.209 2.38 2.38 0 0 0 2.5.714v-.376a2 2 0 0 1-1.365-.74 16.6 16.6 0 0 1-2.122-2.952 2.6 2.6 0 0 0 1.968-2.392c0-1.579-1.215-2.306-2.8-2.306-.9 0-2.276.086-3.568.038v.4c.774.15 1.1.077 1.1 1.2v5.506c0 1.138-.325 1.052-1.1 1.2v.415c.377-.013 1.027-.051 1.69-.051.625.005 1.442.031 1.793.056m-1.3-8.095c.325-.034.749-.034 1.125-.034a1.648 1.648 0 0 1 1.878 1.741 1.8 1.8 0 0 1-2 1.84c-.462 0-.676-.013-1-.038Z" transform="translate(-113.9 -115.039)" style="fill:#040041"/></svg>
+                </a>
+
+               <a class="icon_reseau" href="documents/CV_Arnaud_SENECAUT_Biologie_caviarde.pdf" onclick="messageCaviard()" target="_blank" rel="noopener noreferrer" id="big_item">
                     <div class="cv" alt="CV Link" title="Mon CV">
+
                     </div>
-                    Mon CV
                 </a>
     
             </div>
-
-            <footer class="footer">
-                <copyright/>
-            </footer>
         </section>
+        
+        <footer class="footer">
+            <copyright></copyright>
+        </footer>
+    </div>
+
+   
 
     
-        
-    </div>
 </body>
 </html>
