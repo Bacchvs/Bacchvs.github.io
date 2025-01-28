@@ -1,4 +1,15 @@
- 
+ #photo_pro_full{
+     
+    background: url('../img/full_transp.png') no-repeat;
+     
+    background-size: cover; 
+    background-position: center; 
+    background-size: contain;
+    
+   
+}
+
+
 #monNom{
     font-size: 2.5em;
 }
