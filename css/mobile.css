@@ -503,13 +503,14 @@ body{
     
 }
 
-
+/*
+A mettre en Brut, affin que le calcul de la taille de la vue ne soit pas biaisé ? à voir.  
+*/
 #sec_Experience::before{
    content: "Experience";
-   font-family: "Dosis";
    font-size: 1.5em;
 }
- 
+
 
 
 .xp_item{
@@ -547,6 +548,36 @@ body{
     
 }
 
+ 
+
+
+.xp_logo_container{ 
+    font-size: 0.50em;
+    display: flex;
+    flex-flow: row;
+    height: 50px;
+    width: 200px;
+    
+    grid-row: 1;
+    grid-column: 1;
+   
+    padding-inline:  5px;
+    padding-block: 5px;
+    
+   
+}
+
+.xp_logo_container  img { 
+    flex: 1; 
+    object-fit: contain;
+    
+    max-width: 100%;
+    
+    padding-inline: 5px;
+    padding-block:  5px;
+     
+}
+
 .xp_localisation{
     font-size: 16px; 
     font-size: 0.50em;
@@ -564,8 +595,7 @@ body{
     padding-inline: 5px;
     padding-block: 5px;
     
-    grid-row: 1;
-    
+    grid-row: 1;    
     border-radius: 5px;
     
     background: lightgray;
@@ -576,10 +606,10 @@ body{
     text-align: center;
     
     width: fit-content;
-    
+    height: 20px;
     
     font-family: Dosis;
-    font-weight: bold; /* Met en gras */
+    font-weight: bold;  
     color: black;  
     
 }
@@ -601,7 +631,7 @@ body{
     
     width: 100%;
  
-    grid-row: 5;
+    grid-row: 6;
 }
 
 .xp_encadrant{
@@ -612,7 +642,7 @@ body{
     font-size: 12px;
      
         
-    grid-row: 4;
+    grid-row: 5;
     
 }
 
