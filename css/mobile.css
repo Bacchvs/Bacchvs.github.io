@@ -751,6 +751,10 @@ body{
     margin: auto;
 }
 
+.dip_container img{ 
+    height: 80px;
+   
+}
 
 .icon_periode{
     margin-inline: 5px;
