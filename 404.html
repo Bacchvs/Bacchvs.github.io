@@ -1,21 +1,93 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link id="favicon" rel="icon" href="/img/favicons/favicon_light.png" type="image/png">
-    
-    <link href="/css/style.css" rel="stylesheet"/> 
-    <link href="/css/style_404.css" rel="stylesheet"/> 
-    <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 600px)">
-    <title>Page non trouvée</title>
- 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page non trouvée</title>
+  <link rel="icon" href="/img/favicons/favicon_light.png" type="image/png">
+
+  <style>
+    /* Animation d’apparition */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      color: aliceblue;
+      background: radial-gradient(circle, #2C015E, #012345);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    #messageErreur_404 {
+      font-size: 4em;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    #sadboy_404 {
+      height: 1.5em;
+      fill: currentColor;
+    }
+
+    #messageDetail_404 {
+      font-size: 2em;
+      margin-top: 20px;
+    }
+
+    #ret_404 {
+      margin-top: 2em;
+      padding: 0.5em 1em;
+      border: 2px solid aliceblue;
+      border-radius: 8px;
+      color: aliceblue;
+      text-decoration: none;
+      font-size: 1.5em;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    #ret_404:hover {
+      background-color: aliceblue;
+      color: #012345;
+    }
+
+    @media screen and (max-width: 600px) {
+      #messageErreur_404 {
+        font-size: 2.5em;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      #messageDetail_404 {
+        font-size: 1.2em;
+      }
+
+      #ret_404 {
+        font-size: 1.2em;
+      }
+    }
+  </style>
 </head>
 <body>
   <h1 id="messageErreur_404">Erreur 404 
-    <svg id="sadboy_404" fill="currentColor"  viewBox="-8 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm80 168c17.7 0 32 14.3 32 32s-14.3 32-32 32-32-14.3-32-32 14.3-32 32-32zM152 416c-26.5 0-48-21-48-47 0-20 28.5-60.4 41.6-77.8 3.2-4.3 9.6-4.3 12.8 0C171.5 308.6 200 349 200 369c0 26-21.5 47-48 47zm16-176c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm170.2 154.2C315.8 367.4 282.9 352 248 352c-21.2 0-21.2-32 0-32 44.4 0 86.3 19.6 114.7 53.8 13.8 16.4-11.2 36.5-24.5 20.4z"/></svg>
+    <svg id="sadboy_404" viewBox="-8 0 512 512" xmlns="http://www.w3.org/2000/svg">
+      <path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm80 168c17.7 0 32 14.3 32 32s-14.3 32-32 32-32-14.3-32-32 14.3-32 32-32zM152 416c-26.5 0-48-21-48-47 0-20 28.5-60.4 41.6-77.8 3.2-4.3 9.6-4.3 12.8 0C171.5 308.6 200 349 200 369c0 26-21.5 47-48 47zm16-176c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm170.2 154.2C315.8 367.4 282.9 352 248 352c-21.2 0-21.2-32 0-32 44.4 0 86.3 19.6 114.7 53.8 13.8 16.4-11.2 36.5-24.5 20.4z"></path>
+    </svg>
   </h1>
-  <p id="messageDetail_404">La page que vous recherchez n'existe pas.</p>
-  <p><a id="ret_404" href="/">Retour à l'accueil</a></p>
+
+  <p id="messageDetail_404">On dirait que cette page s’est volatilisée dans le vide quantique…</p>
+  <a id="ret_404" href="/">Retour à l'accueil</a>
 </body>
 </html>
