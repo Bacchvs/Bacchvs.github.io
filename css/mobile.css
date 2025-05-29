@@ -502,13 +502,11 @@ body{
    width: 100%;
     
 }
-
-/*
-A mettre en Brut, affin que le calcul de la taille de la vue ne soit pas biaisé ? à voir.  
-*/
-#sec_Experience::before{
-   content: "Experience";
-   font-size: 1.5em;
+ 
+.section_name{ 
+   font-size: 1.5em; 
+   font-family: "Dosis";
+    
 }
 
 
@@ -527,7 +525,7 @@ A mettre en Brut, affin que le calcul de la taille de la vue ne soit pas biaisé
     
     display: grid;
    
-    grid-gap: 10px;
+    grid-gap: 2px;
     
    
 }
@@ -535,11 +533,13 @@ A mettre en Brut, affin que le calcul de la taille de la vue ne soit pas biaisé
 .xp_title{
    
     padding-inline:  5px;
-    font-size: 20px;
     
     font-size: 0.65em;
     
-    font-weight: normal;
+    font-weight: bold;
+    font-style: italic;
+    
+    
     margin-block: 0;
     
     
@@ -548,34 +548,32 @@ A mettre en Brut, affin que le calcul de la taille de la vue ne soit pas biaisé
     
 }
 
+
  
-
-
-.xp_logo_container{ 
-    font-size: 0.50em;
+.xp_logo_container {
     display: flex;
-    flex-flow: row;
+    flex-wrap: nowrap;
+    
+    align-items: center; 
+    justify-content: left;
+
     height: 50px;
-    width: 200px;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box; 
+    overflow: hidden;
+    gap: 10px;  
     
-    grid-row: 1;
-    grid-column: 1;
-   
-    padding-inline:  5px;
-    padding-block: 5px;
-    
-   
+    grid-row: 4;
 }
 
-.xp_logo_container  img { 
-    flex: 1; 
-    object-fit: contain;
-    
+.xp_logo_container img {
+    height: 100%;
+    width: auto;
+    max-height: 100%;
     max-width: 100%;
-    
-    padding-inline: 5px;
-    padding-block:  5px;
-     
+    object-fit: contain;
+    flex-shrink: 1;
 }
 
 .xp_localisation{
@@ -653,7 +651,7 @@ A mettre en Brut, affin que le calcul de la taille de la vue ne soit pas biaisé
     flex: 1 1 100px;
     
     max-width: fit-content;
-    
+    height: fit-content;
     text-align: center;
     
     border: solid  1px;
@@ -679,12 +677,7 @@ A mettre en Brut, affin que le calcul de la taille de la vue ne soit pas biaisé
     padding: 10px;
    
 }
-
-#sec_Formation::before{
-   content: "Formation";
-   font-family: "Dosis";
-   font-size: 1.5em;
-}
+ 
 
 .diplome{
     display: flex; 
