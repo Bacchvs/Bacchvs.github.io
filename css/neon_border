@@ -1,0 +1,13 @@
+.xp_item{
+  
+      
+      border: 2px solid #0ff;
+      border-radius: 10px;
+      box-shadow:
+        0 0 5px #0ff,
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 40px #0ff;
+  
+      background-color: rgba(0, 255, 255, 0.05);
+    }

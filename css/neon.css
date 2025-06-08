@@ -33,9 +33,9 @@
 .neon[color="bleu"] {
   color: #EEEEFF;
   text-shadow: 0 0 7px #EEEEFF, 0 0 10px #EEEEFF,
-    0 0 21px #EEEEFF, 0 0 42px #00AAFF,
-    0 0 82px #00AAFF, 0 0 92px #00AAFF,
-    0 0 102px #00AAFF;
+    0 0 21px #EEEEFF, 0 0 42px #0ff,
+    0 0 82px #00AAFF, 0 0 92px #0ff,
+    0 0 102px #0ff;
 }
 
 /* Jaune */
