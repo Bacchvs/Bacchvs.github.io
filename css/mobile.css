@@ -31,12 +31,20 @@
 
 @font-face {
     font-family: "Dosis";
-    src: url("../font/Dosis-VariableFont_wght.ttf") format("truetype");
+    src: url("../font/Dosis.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "Caveat";
+    src: url("../font/Caveat.ttf") format("truetype");
+}
 
+@font-face {
+    font-family: "Neonderthaw";
+    src: url("../font/Neonderthaw.ttf") format("truetype");
+}
 
-
+ 
 
 html, body {  
     user-select: none;
@@ -118,6 +126,8 @@ section{
     align-items: center; /* Centre verticalement */
     
     font-size: 2em;
+    
+    
     color : var(--white);
     
     margin: 0;
@@ -341,6 +351,8 @@ body{
     font-size: 0.6em;
     text-align: center;   
     margin-top: 5px;
+    
+    font-family: Caveat;
 }
 
 #nom_titre{
@@ -506,6 +518,8 @@ body{
 .section_name{ 
    font-size: 1.5em; 
    font-family: "Dosis";
+    
+   font-size: clamp(1.5rem, 6vw, 5rem);
     
 }
 
@@ -775,24 +789,17 @@ body{
     
 }
 
-#sec_Contact::before{
-    content: "Retrouvez-moi sur ...";
-    font-family: "Dosis";
-    font-size: 1.5em;
-    height: 20%; 
-    
-    align-content: center;
-}
+ 
 
 
-#reseau {
+#reseau { 
     display: flex;  
     flex-wrap: wrap; 
     gap: 1rem;  
     justify-content: center;  
     padding: 1rem;  
     
-   
+    align-content: center;
     
     height: 80%;
     
