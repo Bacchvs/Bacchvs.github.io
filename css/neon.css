@@ -1,6 +1,8 @@
 .neon {
   font-family: Neonderthaw, cursive;
+  color : white;
 }
+
 
 /* Violet */
 .neon[color="violet"] {
@@ -21,8 +23,7 @@
 }
 
 /* Vert */
-.neon[color="vert"] {
-  color: #EEFFEE;
+.neon[color="vert"] { 
   text-shadow: 0 0 7px #EEFFEE, 0 0 10px #EEFFEE,
     0 0 21px #EEFFEE, 0 0 42px #00AA00,
     0 0 82px #00AA00, 0 0 92px #00AA00,
@@ -30,8 +31,7 @@
 }
 
 /* Bleu */
-.neon[color="bleu"] {
-  color: #EEEEFF;
+.neon[color="bleu"] { 
   text-shadow: 0 0 7px #EEEEFF, 0 0 10px #EEEEFF,
     0 0 21px #EEEEFF, 0 0 42px #0ff,
     0 0 82px #00AAFF, 0 0 92px #0ff,
@@ -39,8 +39,7 @@
 }
 
 /* Jaune */
-.neon[color="jaune"] {
-  color: #FFFFE0;
+.neon[color="jaune"] { 
   text-shadow: 0 0 7px #FFFFE0, 0 0 10px #FFFFE0,
     0 0 21px #FFFFE0, 0 0 42px #FFDD00,
     0 0 82px #FFDD00, 0 0 92px #FFDD00,
@@ -48,8 +47,7 @@
 }
 
 /* Orange */
-.neon[color="orange"] {
-  color: #FFEEDD;
+.neon[color="orange"] { 
   text-shadow: 0 0 7px #FFEEDD, 0 0 10px #FFEEDD,
     0 0 21px #FF9900, 0 0 42px #FF5500,
     0 0 82px #FF5500, 0 0 92px #FF5500,
@@ -65,8 +63,7 @@
 }
 
 /* Cyan */
-.neon[color="cyan"] {
-  color: #D6FFFF;
+.neon[color="cyan"] { 
   text-shadow: 0 0 7px #D6FFFF, 0 0 10px #D6FFFF,
     0 0 21px #00FFFF, 0 0 42px #00DDDD,
     0 0 82px #00DDDD, 0 0 92px #00DDDD,
@@ -74,8 +71,7 @@
 }
 
 /* Turquoise */
-.neon[color="turquoise"] {
-  color: #CCFFFF;
+.neon[color="turquoise"] { 
   text-shadow: 0 0 7px #CCFFFF, 0 0 10px #CCFFFF,
     0 0 21px #40E0D0, 0 0 42px #30D0C0,
     0 0 82px #30D0C0, 0 0 92px #30D0C0,
@@ -83,8 +79,7 @@
 }
 
 /* Lime */
-.neon[color="lime"] {
-  color: #EEFFEE;
+.neon[color="lime"] { 
   text-shadow: 0 0 7px #EEFFEE, 0 0 10px #EEFFEE,
     0 0 21px #ADFF2F, 0 0 42px #9ACD32,
     0 0 82px #9ACD32, 0 0 92px #9ACD32,
@@ -92,8 +87,7 @@
 }
 
 /* Magenta */
-.neon[color="magenta"] {
-  color: #FFDDFF;
+.neon[color="magenta"] { 
   text-shadow: 0 0 7px #FFDDFF, 0 0 10px #FFDDFF,
     0 0 21px #FF00FF, 0 0 42px #CC00CC,
     0 0 82px #CC00CC, 0 0 92px #CC00CC,
@@ -101,8 +95,7 @@
 }
 
 /* Blanc (neutre) */
-.neon[color="blanc"] {
-  color: #FFFFFF;
+.neon[color="blanc"] { 
   text-shadow: 0 0 7px #FFFFFF, 0 0 10px #FFFFFF,
     0 0 21px #CCCCCC, 0 0 42px #AAAAAA,
     0 0 82px #AAAAAA, 0 0 92px #AAAAAA,
