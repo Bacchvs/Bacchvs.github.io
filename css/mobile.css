@@ -44,6 +44,10 @@
     src: url("../font/Neonderthaw.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "OpenSans";
+    src: url("../font/OpenSans.ttf") format("truetype");
+}
  
 
 html, body {  
@@ -66,9 +70,12 @@ h2{
 }
   
 p{
+    
+    font-family: OpenSans, Arial, sans-serif;
     font-size: 14px;
     text-align: justify;
     padding: 10px;
+    
  
 }
 
