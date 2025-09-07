@@ -1,5 +1,7 @@
-# humans.txt — version Easter Egg
-
+---
+layout: null
+permalink: /humans.txt
+---
 author:
   name: "Arnaud Sénécaut"
   role: "Chercheur en biologie"
