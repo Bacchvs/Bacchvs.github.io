@@ -1,104 +1,127 @@
+/* Une version moins flashy */
+
 .neon {
   font-family: Neonderthaw, cursive;
-  color : white;
- 
+  color: white;
 }
-
 
 /* Violet */
 .neon[color="violet"] {
-  color: white;
-  text-shadow: 0 0 7px #FFEEFF, 0 0 10px #FFEEFF,
-    0 0 21px #FFEEFF, 0 0 42px #AA00AA,
-    0 0 82px #AA00AA, 0 0 92px #AA00AA,
-    0 0 102px #AA00AA;
+  text-shadow:
+    0 0 5px #FFEEFF,
+    0 0 10px #AA00AA,
+    0 0 20px #CC00CC,
+    0 0 40px #AA00AA,
+    0 0 60px #FFAAFF;
 }
 
 /* Rouge */
 .neon[color="rouge"] {
   color: #FFEEEE;
-  text-shadow: 0 0 7px #FFEEEE, 0 0 10px #FFEEEE,
-    0 0 21px #FFEEEE, 0 0 42px #AA0000,
-    0 0 82px #AA0000, 0 0 92px #AA0000,
-    0 0 102px #AA0000;
+  text-shadow:
+    0 0 5px #FFEEEE,
+    0 0 10px #AA0000,
+    0 0 20px #CC0000,
+    0 0 40px #AA0000,
+    0 0 60px #FF5555;
 }
 
 /* Vert */
 .neon[color="vert"] { 
-  text-shadow: 0 0 7px #EEFFEE, 0 0 10px #EEFFEE,
-    0 0 21px #EEFFEE, 0 0 42px #00AA00,
-    0 0 82px #00AA00, 0 0 92px #00AA00,
-    0 0 102px #00AA00;
+  text-shadow:
+    0 0 5px #EEFFEE,
+    0 0 10px #00AA00,
+    0 0 20px #00CC00,
+    0 0 40px #00AA00,
+    0 0 60px #55FF55;
 }
 
 /* Bleu */
 .neon[color="bleu"] { 
-  text-shadow: 0 0 7px #EEEEFF, 0 0 10px #EEEEFF,
-    0 0 21px #EEEEFF, 0 0 42px #0ff,
-    0 0 82px #00AAFF, 0 0 92px #0ff,
-    0 0 102px #0ff;
+  text-shadow:
+    0 0 5px #EEEEFF,
+    0 0 10px #00AAFF,
+    0 0 20px #00FFFF,
+    0 0 40px #0ff,
+    0 0 60px #00AAFF;
 }
 
 /* Jaune */
 .neon[color="jaune"] { 
-  text-shadow: 0 0 7px #FFFFE0, 0 0 10px #FFFFE0,
-    0 0 21px #FFFFE0, 0 0 42px #FFDD00,
-    0 0 82px #FFDD00, 0 0 92px #FFDD00,
-    0 0 102px #FFDD00;
+  text-shadow:
+    0 0 5px #FFFFE0,
+    0 0 10px #FFDD00,
+    0 0 20px #FFFF55,
+    0 0 40px #FFDD00,
+    0 0 60px #FFFFAA;
 }
 
 /* Orange */
 .neon[color="orange"] { 
-  text-shadow: 0 0 7px #FFEEDD, 0 0 10px #FFEEDD,
-    0 0 21px #FF9900, 0 0 42px #FF5500,
-    0 0 82px #FF5500, 0 0 92px #FF5500,
-    0 0 102px #FF5500;
+  text-shadow:
+    0 0 5px #FFEEDD,
+    0 0 10px #FF5500,
+    0 0 20px #FF9900,
+    0 0 40px #FF5500,
+    0 0 60px #FFAA33;
 }
 
 /* Rose */
 .neon[color="rose"] { 
-  text-shadow: 0 0 7px #FFD6F0, 0 0 10px #FFD6F0,
-    0 0 21px #FF66CC, 0 0 42px #FF00AA,
-    0 0 82px #FF00AA, 0 0 92px #FF00AA,
-    0 0 102px #FF00AA;
+  text-shadow:
+    0 0 5px #FFD6F0,
+    0 0 10px #FF00AA,
+    0 0 20px #FF66CC,
+    0 0 40px #FF00AA,
+    0 0 60px #FF99DD;
 }
 
 /* Cyan */
 .neon[color="cyan"] { 
-  text-shadow: 0 0 7px #D6FFFF, 0 0 10px #D6FFFF,
-    0 0 21px #00FFFF, 0 0 42px #00DDDD,
-    0 0 82px #00DDDD, 0 0 92px #00DDDD,
-    0 0 102px #00DDDD;
+  text-shadow:
+    0 0 5px #D6FFFF,
+    0 0 10px #00DDDD,
+    0 0 20px #00FFFF,
+    0 0 40px #00DDDD,
+    0 0 60px #55FFFF;
 }
 
 /* Turquoise */
 .neon[color="turquoise"] { 
-  text-shadow: 0 0 7px #CCFFFF, 0 0 10px #CCFFFF,
-    0 0 21px #40E0D0, 0 0 42px #30D0C0,
-    0 0 82px #30D0C0, 0 0 92px #30D0C0,
-    0 0 102px #30D0C0;
+  text-shadow:
+    0 0 5px #CCFFFF,
+    0 0 10px #30D0C0,
+    0 0 20px #40E0D0,
+    0 0 40px #30D0C0,
+    0 0 60px #70E0D0;
 }
 
 /* Lime */
 .neon[color="lime"] { 
-  text-shadow: 0 0 7px #EEFFEE, 0 0 10px #EEFFEE,
-    0 0 21px #ADFF2F, 0 0 42px #9ACD32,
-    0 0 82px #9ACD32, 0 0 92px #9ACD32,
-    0 0 102px #9ACD32;
+  text-shadow:
+    0 0 5px #EEFFEE,
+    0 0 10px #9ACD32,
+    0 0 20px #ADFF2F,
+    0 0 40px #9ACD32,
+    0 0 60px #CCFF55;
 }
 
 /* Magenta */
 .neon[color="magenta"] { 
-  text-shadow: 0 0 7px #FFDDFF, 0 0 10px #FFDDFF,
-    0 0 21px #FF00FF, 0 0 42px #CC00CC,
-    0 0 82px #CC00CC, 0 0 92px #CC00CC,
-    0 0 102px #CC00CC;
+  text-shadow:
+    0 0 5px #FFDDFF,
+    0 0 10px #CC00CC,
+    0 0 20px #FF00FF,
+    0 0 40px #CC00CC,
+    0 0 60px #FF66FF;
 }
 
-/* Blanc (neutre) */
+/* Blanc */
 .neon[color="blanc"] { 
-  text-shadow: 0 0 7px #FFFFFF, 0 0 10px #FFFFFF,
-    0 0 21px #CCCCCC, 0 0 42px #AAAAAA,
-    0 0 82px #AAAAAA, 0 0 92px #AAAAAA,
-    0 0 102px #AAAAAA;
+  text-shadow:
+    0 0 5px #FFFFFF,
+    0 0 10px #AAAAAA,
+    0 0 20px #CCCCCC,
+    0 0 40px #AAAAAA,
+    0 0 60px #FFFFFF;
 }
