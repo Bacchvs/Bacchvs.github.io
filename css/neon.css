@@ -1,4 +1,19 @@
-/* Une version moins flashy */
+/*
+================================================================================
+  CSS Néon V2 – Version simplifiée et brillante
+  Auteur : Arnaud Sénécaut - arnaud@senecaut.fr
+  Description :
+    Ce fichier définit des styles néon pour le texte avec différentes couleurs.
+    Utilisation : ajouter la classe "neon" et la classe de couleur correspondante
+      Exemple : <span class="neon bleu">Texte lumineux</span>
+
+    Les couleurs disponibles : violet, rouge, vert, bleu, jaune, orange, rose,
+                              cyan, turquoise, lime, magenta, blanc
+
+    Chaque style utilise 5 couches de text-shadow pour un halo lumineux et réaliste.
+================================================================================
+*/
+
 
 .neon {
   font-family: Neonderthaw, cursive;
@@ -6,7 +21,7 @@
 }
 
 /* Violet */
-.neon[color="violet"] {
+.neon.violet {
   text-shadow:
     0 0 5px #FFEEFF,
     0 0 10px #AA00AA,
@@ -16,7 +31,7 @@
 }
 
 /* Rouge */
-.neon[color="rouge"] {
+.neon.rouge {
   color: #FFEEEE;
   text-shadow:
     0 0 5px #FFEEEE,
@@ -27,7 +42,7 @@
 }
 
 /* Vert */
-.neon[color="vert"] { 
+.neon.vert { 
   text-shadow:
     0 0 5px #EEFFEE,
     0 0 10px #00AA00,
@@ -37,7 +52,7 @@
 }
 
 /* Bleu */
-.neon[color="bleu"] { 
+.neon.bleu { 
   text-shadow:
     0 0 5px #EEEEFF,
     0 0 10px #00AAFF,
@@ -47,7 +62,7 @@
 }
 
 /* Jaune */
-.neon[color="jaune"] { 
+.neon.jaune { 
   text-shadow:
     0 0 5px #FFFFE0,
     0 0 10px #FFDD00,
@@ -57,7 +72,7 @@
 }
 
 /* Orange */
-.neon[color="orange"] { 
+.neon.orange { 
   text-shadow:
     0 0 5px #FFEEDD,
     0 0 10px #FF5500,
@@ -67,7 +82,7 @@
 }
 
 /* Rose */
-.neon[color="rose"] { 
+.neon.rose { 
   text-shadow:
     0 0 5px #FFD6F0,
     0 0 10px #FF00AA,
@@ -77,7 +92,7 @@
 }
 
 /* Cyan */
-.neon[color="cyan"] { 
+.neon.cyan { 
   text-shadow:
     0 0 5px #D6FFFF,
     0 0 10px #00DDDD,
@@ -87,7 +102,7 @@
 }
 
 /* Turquoise */
-.neon[color="turquoise"] { 
+.neon.turquoise { 
   text-shadow:
     0 0 5px #CCFFFF,
     0 0 10px #30D0C0,
@@ -97,7 +112,7 @@
 }
 
 /* Lime */
-.neon[color="lime"] { 
+.neon.lime { 
   text-shadow:
     0 0 5px #EEFFEE,
     0 0 10px #9ACD32,
@@ -107,7 +122,7 @@
 }
 
 /* Magenta */
-.neon[color="magenta"] { 
+.neon.magenta { 
   text-shadow:
     0 0 5px #FFDDFF,
     0 0 10px #CC00CC,
@@ -117,7 +132,7 @@
 }
 
 /* Blanc */
-.neon[color="blanc"] { 
+.neon.blanc { 
   text-shadow:
     0 0 5px #FFFFFF,
     0 0 10px #AAAAAA,
