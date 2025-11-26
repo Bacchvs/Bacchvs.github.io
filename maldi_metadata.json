@@ -1,0 +1,71 @@
+{ 
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MALDI Metadata",
+  "version": "0.1",
+  "description": "Defines metadata for maldi files.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "ID Anapath."
+    },
+    "date": {
+      "type": "string",
+      "description": "Date d'aquisition."
+    },
+    "pretraitement": {
+      "type": "string",
+      "description": "Pretraitements"
+    }, 
+    "genotype": {
+      "type": "string",
+      "description": "le génotype"
+    }, 
+    "original_filename": {
+      "type": "string",
+      "description": "Le nom du fichier d'origine."
+    }, 
+    "roi_annot_filename": {
+      "type": "string",
+      "description": "Le nom du geojson"
+    },
+    "roi_annot":{
+      "type": "array",  
+      "description":"Une liste d'annotation.",
+      "items": {
+          "type": "object",
+          "description": "Un objet polygon.",
+          "properties": {
+            "type": { 
+              "type": "string",
+              "description": "Un type d'annotation. (ie. CHC, AAT, ...)" 
+            },
+            "poly": {
+              "type": "array",
+              "description": "Une liste de polygon composant l'annotation.",
+              "items": {
+                "type": "object",
+                "description": "Un objet polygon, contenant les coordonnées X et Y, mais aussi un booléen spécifiant si il sagit d'une annotation négative.",
+                "properties": {
+                  "isCenterPoly": { "type": "bool", "description": "Spécifie si le polygon détour un trou. (annotation négative)"},
+                  "x": { "type": "array", "items": { "type": "number" } },
+                  "y": { "type": "array", "items": { "type": "number" } }
+                },
+                "required": ["x", "y"]
+              }
+            }
+          },
+          "required": ["type", "poly"]
+        }
+      },
+      "saving_date":{
+      "type": "string",
+      "description": "Date de génération du fichier."
+    }, 
+    "sysinfo":{
+      "type": "array",
+      "description": "Info sur le systeme."
+    }
+  },
+  "required": ["id", "date", "pretraitement", "original_filename", "roi_annot_filename"]
+}
