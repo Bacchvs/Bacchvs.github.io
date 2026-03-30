@@ -428,7 +428,70 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("fin d'insertion copyright");
 
 
- 
+    
+
+    ////////////////////////// LE SLIDER DES LANGUAGES !!!
+
+    (function() {
+    const track    = document.getElementById('track');
+    const viewport = document.getElementById('viewport');
+    const dotsWrap = document.getElementById('dots');
+    const counter  = document.getElementById('counter');
+    const slides   = Array.from(track.querySelectorAll('.slide'));
+    const total    = slides.length;
+    let current = 0, autoTimer = null;
+    let isDragging = false, startX = 0, dragDelta = 0;
+
+    slides.forEach((_, i) => {
+        const d = document.createElement('div');
+        d.className = 'dot' + (i === 0 ? ' active' : '');
+        d.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(d);
+    });
+
+    function updateUI() {
+        dotsWrap.querySelectorAll('.dot').forEach((d, i) =>
+        d.classList.toggle('active', i === current));
+        counter.textContent = `${current + 1} / ${total}`;
+    }
+
+    function animateBars(slide) {
+        slide.querySelectorAll('.skill-bar-fill').forEach(bar => {
+        bar.style.width = '0%';
+        requestAnimationFrame(() => { bar.style.width = bar.dataset.width + '%'; });
+        });
+    }
+
+    function goTo(index, instant = false) {
+        current = (index + total) % total;
+        track.style.transition = instant ? 'none'
+        : 'transform 0.45s cubic-bezier(0.25,0.8,0.25,1)';
+        track.style.transform = `translateX(-${current * 100}%)`;
+        updateUI();
+        animateBars(slides[current]);
+    }
+
+    document.getElementById('prev').addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+    document.getElementById('next').addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+
+    function startAuto() { autoTimer = setInterval(() => goTo(current + 1), 3500); }
+    function resetAuto()  { clearInterval(autoTimer); startAuto(); }
+
+    function onStart(x) { isDragging=true; startX=x; dragDelta=0; track.style.transition='none'; clearInterval(autoTimer); }
+    function onMove(x)  { if(!isDragging) return; dragDelta=x-startX; track.style.transform=`translateX(${-current*viewport.offsetWidth+dragDelta}px)`; }
+    function onEnd()    { if(!isDragging) return; isDragging=false; const t=viewport.offsetWidth*0.2; goTo(dragDelta<-t?current+1:dragDelta>t?current-1:current); startAuto(); }
+
+    viewport.addEventListener('touchstart', e => onStart(e.touches[0].clientX), {passive:true});
+    viewport.addEventListener('touchmove',  e => onMove(e.touches[0].clientX),  {passive:true});
+    viewport.addEventListener('touchend',   onEnd);
+    viewport.addEventListener('mousedown',  e => onStart(e.clientX));
+    viewport.addEventListener('mousemove',  e => onMove(e.clientX));
+    viewport.addEventListener('mouseup',    onEnd);
+    viewport.addEventListener('mouseleave', onEnd);
+
+    animateBars(slides[0]);
+    startAuto();
+    })();
 
     /////////////////////////////////////////////// NIVEAU ANGLAIS ESPAGNOL
 
@@ -463,6 +526,3 @@ checkVariable(); // Commence la vérification
 
 
 
-
-
-////////////////////////// TEST PROGRESSBAR
