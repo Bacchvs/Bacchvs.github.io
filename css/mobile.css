@@ -1078,3 +1078,21 @@ body{
   border-color: rgba(255,255,255,0.25);
   transform: scale(1.07);
 }
+
+
+
+
+
+/*
+------------------------
+    SECTION PROGRAMMING LANGUAGES
+------------------------
+*/
+
+
+#sec_ProgrammingLanguages{
+    background: radial-gradient(circle, #351535, #151525);
+    height: fit-content;
+    padding: 10px;
+   
+}
